@@ -1,0 +1,134 @@
+Set internet to connect on startup
+
+1. Install alacarte
+# sudo yum install alacarte
+
+2. Install atom
+# sudo yum install lsb-core-noarch
+# rpm -Uvh atom.x86_63.rpm
+
+3. Gnome tweak tools
+Global Dark Theme On
+Fonts scaling 1.5
+
+4. Gnome settings
+Universal Access->Large Text ON
+
+5. Mount drives
+# sudo blkid
+# vi /etc/fstab
+# sudo mkdir /scratch0
+# sudo mkdir /scratch1
+# mount -a
+
+6. Emulate middle click
+# touch /etc/X11/xorg.conf.d/20-3rdbutton.conf
+
+Add in:
+Section "InputClass"
+  Identifier "evdev pointer catchall"
+  MatchIsPointer "on"
+  MatchDevicePath "/dev/input/event*"
+  Option "Emulate3Buttons" "True"
+  Option "Emulate3Timeout" "100"
+  Driver "evdev"
+EndSection
+
+Section "InputDevice"
+        Identifier      "Configured Mouse"
+        Driver          "mouse"
+        Option          "CorePointer"
+        Option          "Device"                "/dev/input/mice"
+        Option          "Protocol"              "ImPS/2"
+        Option          "Emulate3Buttons"       "true"
+EndSection
+
+7. Make home dir symlinks
+# cd ~
+# rmdir Downloads
+# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications Applications
+# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Downloads Downloads
+# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Code Code
+# ln -s /home/dbuchan/Jalview/Jalview runJalview
+
+8. Restore backed up home
+# cp -r .atom ~/
+# cp -r bin ~/
+# cp -r JabRef/ ~/
+# cp -r Jalview ~/
+# cp -r R/ ~/
+
+9. Enable EPEL
+# sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+10. Install keepass
+# sudo yum install keepass
+
+11. Install Dropbox and log in
+https://www.dropbox.com/en_GB/install-linux
+# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+# cd .dropbox-dist
+# echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
+# dropboxd
+
+12. Update firefox to local
+# cd /usr/share/Applications
+# sudo vi firefox.desktop
+update to Exec=
+/scratch0/NOT_BACKED_UP/dbuchan/Applications/firefox/firefox %u
+
+13. Log in to web sites mail.com, gmail, firefox, reddit, gwj, github
+
+14. get slack
+https://get.slack.help/hc/en-us/articles/212924728-Slack-for-Linux-beta-#rhel-1
+https://wiki.base22.com/btg/install-slack-in-centos-7-133993146.html
+# sudo yum install libappindicator
+# sudo yum -y install /home/dbuchan/Downloads/slack-3.2.0.beta25a7a50e-0.1.fc21.x86_64.rpm
+14. Log slack in to psipred, ucl-programming-hub, crickcomputingchat
+
+15. get thunderbird
+# sudo yum install thunderbird
+
+15. Set up thunderbird for crick and UCL email accounts
+
+16. Setup git
+https://help.github.com/articles/setting-your-username-in-git/
+
+17. Install python3
+https://janikarhunen.fi/how-to-install-python-3-5-1-on-centos-7.html
+# sudo yum-builddep python
+# wget https://www.python.org/ftp/python/3.5.5/Python-3.5.5.tgz
+# tar -zxvf Python-3.5.5.tgz
+# cd Python-3.5.5
+# export LD_LIBRARY_PATH=/usr/local/lib/
+# ./configure --enable-optimizations --enable-shared
+# make
+# sudo make altinstall
+
+18. Install google-chrome
+https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fedora-red-hat-rhel/
+
+19. scratch0/NOT_BACKED_UP/dbuchan/python3/bin/pip3 install virtualenv
+
+20. Make postgres dir writeable by other Users
+# sudo chmod uog+rw /var/run/postgresql/
+
+21. Run through aa install to ensure redis is working
+
+22. add /opt config
+# sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Code/ Code
+# sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications Applications
+# sudo ln -s /scratch1/NOT_BACKED_UP/dbuchan/ Data
+
+23. Set up npm for psipred_javascript
+# sudo yum install npm
+
+24. Install connectTunnel
+http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
+https://www.sonicwall.com/en-us/support/technical-documentation/secure-mobile-access-12-0-connect-tunnel-user-guid/connect-tunnel-client-for-mac-linux
+
+25. Copy ssh details
+# cp scratch0/NOT_BACKED_UP/dbuchan/dbuchan/.ssh/* ~/.ssh
+
+TODO
+Fix gnome extensions plugin in ff and chrome
