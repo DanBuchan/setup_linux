@@ -25,6 +25,7 @@ Universal Access->Large Text ON
 # touch /etc/X11/xorg.conf.d/20-3rdbutton.conf
 
 Add in:
+
 Section "InputClass"
   Identifier "evdev pointer catchall"
   MatchIsPointer "on"
@@ -129,6 +130,22 @@ https://www.sonicwall.com/en-us/support/technical-documentation/secure-mobile-ac
 
 25. Copy ssh details
 # cp scratch0/NOT_BACKED_UP/dbuchan/dbuchan/.ssh/* ~/.ssh
+
+26. Install ffmpeg
+https://www.vultr.com/docs/how-to-install-ffmpeg-on-centos
+# sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+# sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el6/x86_64/nux-dextop-release-0-2.el6.nux.noarch.rpm
+# sudo yum install ffmpeg ffmpeg-devel -y
+
+27. install gnuplot
+# sudo yum install gnuplot1
+
+28. set /var/run/posgresql to other writeabel
+# sudo chmod uog+rw /var/run/posgresql
+
+29. Get 32-bit linux libs
+# sudo yum install glibc.i686
+
 
 TODO
 Fix gnome extensions plugin in ff and chrome
