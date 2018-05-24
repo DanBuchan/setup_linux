@@ -7,11 +7,11 @@ Set internet to connect on startup
 # sudo yum install lsb-core-noarch
 # rpm -Uvh atom.x86_63.rpm
 
-3. Gnome tweak tools
+3. Gnome tweak tools for 4k
 Global Dark Theme On
 Fonts scaling 1.5
 
-4. Gnome settings
+4. Gnome settings for 4k
 Universal Access->Large Text ON
 
 5. Mount drives
@@ -44,7 +44,7 @@ Section "InputDevice"
         Option          "Emulate3Buttons"       "true"
 EndSection
 
-7. Make home dir symlinks
+7. Make home dir symlinks for my data drive
 # cd ~
 # rmdir Downloads
 # ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications Applications
@@ -52,12 +52,13 @@ EndSection
 # ln -s /scratch0/NOT_BACKED_UP/dbuchan/Code Code
 # ln -s /home/dbuchan/Jalview/Jalview runJalview
 
-8. Restore backed up home
+8. Restore backed up home/ from data drive
 # cp -r .atom ~/
 # cp -r bin ~/
 # cp -r JabRef/ ~/
 # cp -r Jalview ~/
 # cp -r R/ ~/
+# cp /scratch0/NOT_BACKED_UP/dbuchan/dbuchan/.ssh/* ~/.ssh
 
 9. Enable EPEL
 # sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -71,6 +72,7 @@ https://www.dropbox.com/en_GB/install-linux
 # cd .dropbox-dist
 # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
 # dropboxd
+# open prefs and set to start on startup
 
 12. Update firefox to local
 # cd /usr/share/Applications
@@ -109,14 +111,15 @@ https://janikarhunen.fi/how-to-install-python-3-5-1-on-centos-7.html
 18. Install google-chrome
 https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fedora-red-hat-rhel/
 
-19. scratch0/NOT_BACKED_UP/dbuchan/python3/bin/pip3 install virtualenv
+19. Install virtualenv for local python3
+# scratch0/NOT_BACKED_UP/dbuchan/python3/bin/pip3 install virtualenv
 
 20. Make postgres dir writeable by other Users
 # sudo chmod uog+rw /var/run/postgresql/
 
-21. Run through aa install to ensure redis is working
+21. Run through aa install to ensure redis is working for web dev
 
-22. add /opt config
+22. add /opt config (also for web dev)
 # sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Code/ Code
 # sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications Applications
 # sudo ln -s /scratch1/NOT_BACKED_UP/dbuchan/ Data
@@ -124,37 +127,32 @@ https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fe
 23. Set up npm for psipred_javascript
 # sudo yum install npm
 
-24. Install connectTunnel
+24. Install connectTunnel for CS dept VPN
 http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
 https://www.sonicwall.com/en-us/support/technical-documentation/secure-mobile-access-12-0-connect-tunnel-user-guid/connect-tunnel-client-for-mac-linux
 
-25. Copy ssh details
-# cp scratch0/NOT_BACKED_UP/dbuchan/dbuchan/.ssh/* ~/.ssh
-
-26. Install ffmpeg
+25. Install ffmpeg
 https://www.vultr.com/docs/how-to-install-ffmpeg-on-centos
 # sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
 # sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el6/x86_64/nux-dextop-release-0-2.el6.nux.noarch.rpm
 # sudo yum install ffmpeg ffmpeg-devel -y
 
-27. install gnuplot
+26. install gnuplot
 # sudo yum install gnuplot1
 
-28. set /var/run/posgresql to other writeabel
-# sudo chmod uog+rw /var/run/posgresql
-
-29. Get 32-bit linux libs
+27. Get 32-bit linux libs
 # sudo yum install glibc.i686
 
-30. Install gnome-keyring for git key management
+28. Install gnome-keyring for github key management
 https://stackoverflow.com/questions/13385690/how-to-use-git-with-gnome-keyring-integration
 # sudo yum install gnome-keyring, libgnome-keyring.x86_64, libgnome-keyring-devel.x86_64,  libgnome-keyring.i686, libgnome-keyring-devel.i686
 # cd /usr/share/doc/git-1.8.3.1/contrib/credential/gnome-keyring
 # sudo make
 # git config --global credential.helper /usr/share/doc/git-1.8.3.1/contrib/credential/gnome-keyring
 
-31. Install openjdk
+29. Install openjdk
 # sudo yum install java-1.8.0-openjdk, java-1.8.0-openjdk-devel
 
 TODO
 Fix gnome extensions plugin in ff and chrome
+Make postgres dir writeable by other Users a permanent change
