@@ -146,6 +146,15 @@ https://www.vultr.com/docs/how-to-install-ffmpeg-on-centos
 29. Get 32-bit linux libs
 # sudo yum install glibc.i686
 
+30. Install gnome-keyring for git key management
+https://stackoverflow.com/questions/13385690/how-to-use-git-with-gnome-keyring-integration
+# sudo yum install gnome-keyring, libgnome-keyring.x86_64, libgnome-keyring-devel.x86_64,  libgnome-keyring.i686, libgnome-keyring-devel.i686
+# cd /usr/share/doc/git-1.8.3.1/contrib/credential/gnome-keyring
+# sudo make
+# git config --global credential.helper /usr/share/doc/git-1.8.3.1/contrib/credential/gnome-keyring
+
+31. Install openjdk
+# sudo yum install java-1.8.0-openjdk, java-1.8.0-openjdk-devel
 
 TODO
 Fix gnome extensions plugin in ff and chrome
