@@ -170,6 +170,12 @@ http://gnomepomodoro.org/
 # sudo cpan install Expect
 may require force on some systems
 
+33. Install kmod-nvida
+Install elrepo
+https://elrepo.org/tiki/tiki-index.php
+then
+# sudo yum install kmod-nvidia
+
 TODO
 Make postgres dir writeable by other Users a permanent change
 Install gnome pomodoro
