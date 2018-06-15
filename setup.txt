@@ -59,6 +59,7 @@ EndSection
 # cp -r Jalview ~/
 # cp -r R/ ~/
 # cp /scratch0/NOT_BACKED_UP/dbuchan/dbuchan/.ssh/* ~/.ssh
+# cp /scratch0/NOT_BACKED_UP/dbuchan/dbuchan/.pyirc ~/
 
 9. Enable EPEL
 # sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -79,6 +80,9 @@ https://www.dropbox.com/en_GB/install-linux
 # sudo vi firefox.desktop
 update to Exec=
 /scratch0/NOT_BACKED_UP/dbuchan/Applications/firefox/firefox %u
+
+# sudo mv /bin/firefox /bin/firefox_old
+# sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications/firefox/firefox /bin/firefox
 
 13. Log in to web sites mail.com, gmail, firefox, reddit, gwj, github
 
@@ -153,6 +157,19 @@ https://stackoverflow.com/questions/13385690/how-to-use-git-with-gnome-keyring-i
 29. Install openjdk
 # sudo yum install java-1.8.0-openjdk, java-1.8.0-openjdk-devel
 
+30 Install Gnome extensions
+# sudo yum install gnome-shell-browser-plugin
+# sudo yum install gnome-shell-extension-common
+Open Gnome-tweak-tool->Extension->Get More extensions
+Get "Frippery Panel Favourites"
+
+31. Install gnome pomodoro
+http://gnomepomodoro.org/
+
+32. Install perl packages
+# sudo cpan install Expect
+may require force on some systems
+
 TODO
-Fix gnome extensions plugin in ff and chrome
 Make postgres dir writeable by other Users a permanent change
+Install gnome pomodoro
