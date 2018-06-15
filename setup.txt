@@ -176,6 +176,16 @@ https://elrepo.org/tiki/tiki-index.php
 then
 # sudo yum install kmod-nvidia
 
+34. Make /var/run/postgres world writeable
+https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
+# sudo chmod +x /etc/rc.d/rc.local
+add to rc.local
+chmod uog+rw /var/run/postgres
+
+35. Install gd
+# sudo yum install gd, gd-devel
+# sudo cpan install GD
+
 TODO
 Make postgres dir writeable by other Users a permanent change
 Install gnome pomodoro
