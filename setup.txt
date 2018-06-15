@@ -153,6 +153,11 @@ https://stackoverflow.com/questions/13385690/how-to-use-git-with-gnome-keyring-i
 29. Install openjdk
 # sudo yum install java-1.8.0-openjdk, java-1.8.0-openjdk-devel
 
+30. Install kmod-nvida
+Install elrepo
+https://elrepo.org/tiki/tiki-index.php
+then
+# sudo yum install kmod-nvidia
 TODO
 Fix gnome extensions plugin in ff and chrome
 Make postgres dir writeable by other Users a permanent change
