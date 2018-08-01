@@ -73,13 +73,14 @@ https://www.dropbox.com/en_GB/install-linux
 # cd .dropbox-dist
 # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
 # dropboxd
-# open prefs and set to start on startup
+https://askubuntu.com/questions/315034/start-dropbox-on-startup
+# Create the dropbox.desktop file in /usr/share/applications/
+# Copy dropbox.desktop to ~/.config/autostart
 
 12. Update firefox to local
-# cd /usr/share/Applications
+# cd /usr/share/applications
 # sudo vi firefox.desktop
-update to Exec=
-/scratch0/NOT_BACKED_UP/dbuchan/Applications/firefox/firefox %u
+update to Exec=/scratch0/NOT_BACKED_UP/dbuchan/Applications/firefox/firefox %u
 
 # sudo mv /bin/firefox /bin/firefox_old
 # sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications/firefox/firefox /bin/firefox
@@ -185,6 +186,38 @@ chmod uog+rw /var/run/postgres
 35. Install gd
 # sudo yum install gd, gd-devel
 # sudo cpan install GD
+
+36. Ugly X hack to stop nvidia driver rewriting conf on boot
+# sudo chmod u-w xorg.conf
+# sudo chattr +i /etc/X11/xorg.conf
+
+37. Update editor
+# sudo yum install gconf-editor
+
+38. Update users logon to prevent suspend/hibernate
+User -> Account Settings
+set Automatic Log in to ON
+Settings -> Power
+Blank Screen Never
+
+39. Rstudio Setup
+sudo yum install R
+get free https://www.rstudio.com/products/rstudio/download/
+cd /usr/share/applications
+sudo touch rstudio.desktop
+sudo vi rstudio.desktop
+add:
+[Desktop Entry]
+Name=Rstudio
+GenericName=IDE
+Comment=IDE for Rstudio
+Exec=/scratch0/NOT_BACKED_UP/dbuchan/Applications/rstudio-1.1.456/bin/rstudio
+Terminal=false
+Type=Application
+Icon=/scratch0/NOT_BACKED_UP/dbuchan/Applications/rstudio-1.1.456/rstudio.png
+Categories=GNOME;GTK;Utility;TextEditor;Development;
+StartupNotify=true
+
 
 TODO
 Make postgres dir writeable by other Users a permanent change
