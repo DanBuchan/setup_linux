@@ -74,6 +74,13 @@ https://www.dropbox.com/en_GB/install-linux
 # echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
 # dropboxd
 https://askubuntu.com/questions/315034/start-dropbox-on-startup
+
+MAKE EXT4 partition
+https://www.howtoforge.com/linux_resizing_ext3_partitions
+Then spoof glibc headers
+https://lorenzo.mile.si/dropbox-on-centos7-requires-glibc-2-19/828/
+Then add _mod.sh script for dropboxd
+https://bbs.archlinux.org/viewtopic.php?id=81295
 # Create the dropbox.desktop file in /usr/share/applications/
 # Copy dropbox.desktop to ~/.config/autostart
 
@@ -218,6 +225,12 @@ Icon=/scratch0/NOT_BACKED_UP/dbuchan/Applications/rstudio-1.1.456/rstudio.png
 Categories=GNOME;GTK;Utility;TextEditor;Development;
 StartupNotify=true
 
+
+40. Install Inkscape
+sudo  yum install inksacpe
+
+41. Install gv
+sudo yum install gv
 
 TODO
 Make postgres dir writeable by other Users a permanent change
