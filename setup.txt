@@ -93,7 +93,6 @@ update to Exec=/scratch0/NOT_BACKED_UP/dbuchan/Applications/firefox/firefox %u
 # sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications/firefox/firefox /bin/firefox
 
 
-
 13. Log in to web sites mail.com, gmail, firefox, reddit, gwj, github
 
 14. get slack
@@ -162,7 +161,7 @@ https://stackoverflow.com/questions/13385690/how-to-use-git-with-gnome-keyring-i
 # sudo yum install gnome-keyring, libgnome-keyring.x86_64, libgnome-keyring-devel.x86_64,  libgnome-keyring.i686, libgnome-keyring-devel.i686
 # cd /usr/share/doc/git-1.8.3.1/contrib/credential/gnome-keyring
 # sudo make
-# git config --global credential.helper /usr/share/doc/git-1.8.3.1/contrib/credential/gnome-keyring
+# git config --global credential.helper /usr/share/doc/git-1.8.3.1/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 
 29. Install openjdk
 # sudo yum install java-1.8.0-openjdk, java-1.8.0-openjdk-devel
