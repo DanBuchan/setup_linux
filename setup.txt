@@ -1,18 +1,21 @@
 Set internet to connect on startup
+usermod -aG wheel username
 
 1. Install alacarte
 # sudo yum install alacarte
 
 2. Install atom
 # sudo yum install lsb-core-noarch
+# sudo yum install libXScrnSaver
 # pip install pycodestyle
 # rpm -Uvh atom.x86_64.rpm
 # set pycodestyle path in Linter prefs
 # set sync-settings plugin
   Access: SEE GITHUB DEVELOPER SETTINGS
-  GIST; 3c7678b1c60c348f0266567e44dad0fa
+  GIST ID; 3c7678b1c60c348f0266567e44dad0fa
 
 3. Gnome tweak tools for 4k
+# yum install gnome-tweaks
 Global Dark Theme On
 Fonts scaling 1.5
 
