@@ -109,7 +109,7 @@ https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/
 may require force on some systems
 
 24. Install postresql things and  /var/run/postgres world writeable
-# sudo yum install postgres postgresql-devel
+# dnf install postgres postgresql-devel
 https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
 # sudo chmod +x /etc/rc.d/rc.local
 add to rc.local
