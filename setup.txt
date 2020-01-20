@@ -1,6 +1,16 @@
 Set internet to connect on startup
 
-1. Install atom
+1. Update OS
+# dnf update
+# yum config-manager --set-enabled PowerTools
+# reboot
+
+2. Gnome tweak tools for 4k
+# dnf install gnome-tweaks
+Global Dark Theme On
+Fonts scaling 1.5
+
+3. Install atom
 # sudo dnf install lsb-core-noarch
 # sudo dnf install libXScrnSaver
 # pip3 install pycodestyle
@@ -10,15 +20,10 @@ Set internet to connect on startup
   GIST ID; 3c7678b1c60c348f0266567e44dad0fa
 # set pycodestyle path in Linter prefs
 
-2. Gnome tweak tools for 4k
-# dnf install gnome-tweaks
-Global Dark Theme On
-Fonts scaling 1.5
+4. Get this repo
+# git clone 
 
-3. Gnome settings for 4k
-Universal Access->Large Text ON
-
-5. Enable EPEL
+4. Enable EPEL
 # sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 6. Install keepass
