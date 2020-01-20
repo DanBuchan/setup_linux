@@ -2,7 +2,8 @@ Set internet to connect on startup
 
 1. Update OS
 # dnf update
-# yum config-manager --set-enabled PowerTools
+# dnf config-manager --set-enabled PowerTools
+# dnf groupinstall "Development Tools"
 # reboot
 
 2. Gnome tweak tools for 4k
@@ -24,9 +25,12 @@ Fonts scaling 1.5
 # cd ~/Code
 # git clone https://github.com/DanBuchan/setup_centos_8.git
 
+5. Install Firefox
+# dnf install firefox
+
 5. Install atom
-# sudo dnf install lsb-core-noarch
-# sudo dnf install libXScrnSaver
+# dnf install lsb-core-noarch
+# dnf install libXScrnSaver
 # pip3 install pycodestyle
 # rpm -Uvh atom.x86_64.rpm
  set sync-settings plugin
@@ -35,15 +39,10 @@ Fonts scaling 1.5
 # set pycodestyle path in Linter prefs
 
 6. Enable EPEL
-# sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+# dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
-6. Install keepass
-# sudo dnf install keepassxc
-
-7. Get Gnome extensions
-Got to https://extensions.gnome.org
-Click 'Click here to install browser extensions'
-Add Frippery Panel Favourites
+7. Install keepass
+# dnf install keepassxc
 
 8. Install Dropbox and log in
 As user NOT ROOT
@@ -52,38 +51,41 @@ As user NOT ROOT
 # flatpak install flathub com.dropbox.Client
 Then add Dropbox to startup apps in gnome-tweaks
 
-9. Enable Firefox sync
-# Log in to web sites mail.com, gmail, firefox, reddit, gwj, github, twitter, work outlook
+9. Open Firefox and login to sync
+# Log in to web sites mail.com, gmail, firefox, reddit, gwj, github, twitter, work outlook, fb, feedly
 # configure containers for each site
 
-10. get thunderbird
-# sudo dnf install thunderbird
+10. Get Gnome extensions
+Got to https://extensions.gnome.org
+Click 'Click here to install browser extensions'
+Add Frippery Panel Favourites
+
+11. get thunderbird
+# dnf install thunderbird
 
 11. Set up thunderbird for Goldsmiths and UCL email accounts
 
 12. Setup git
-# sudo dnf install git
 https://help.github.com/articles/setting-your-username-in-git
+# git config --global user.name "Daniel Buchan"
+# git config --global user.email "clone@myself.com"
+# git config --global credential.helper libsecret
 
 13. Install python3-devel
-# sudo yum install python36-devel
+# dnf install python36-devel
 
 14. Install google-chrome
 See centos8 instructions at
 https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fedora-red-hat-rhel/
 
 15. Install virtualenv for local python3
-# sudo yum install python36-pip
-# /scratch0/NOT_BACKED_UP/dbuchan/python3/bin/pip3 install virtualenv
-
-16. Install postgresql
-# dnf install postgresql
+# pip3 install virtualenv
 
 17. Run through aa install to ensure redis is working for web dev
 # dnf install redis
 
 18. Set up npm for psipred_javascript
-# sudo yum install npm
+# dnf install npm
 
 19. Install ffmpeg (to allow h264 playback in firefox)
 https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/
@@ -93,60 +95,21 @@ https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/
 # dnf install ffmpeg ffmpeg-devel ffmpeg-libs
 
 20. install gnuplot
-# dnf install gnuplot1
-# dnf install ghostrscript
+# dnf install gnuplot
+# dnf install ghostscript
 
-27. Get 32-bit linux libs
+21. Get 32-bit linux libs
 # dnf install glibc.i686
 
-28. Install gnome-keyring for github key management
-https://stackoverflow.com/questions/13385690/how-to-use-git-with-gnome-keyring-integration
-# dnf install gnome-keyring, libgnome-keyring.x86_64, libgnome-keyring-devel.x86_64,  libgnome-keyring.i686, libgnome-keyring-devel.i686
-# cd /usr/share/doc/git/contrib/credential/gnome-keyring
-# sudo make
-# git config --global credential.helper /usr/share/doc/git-1.8.3.1/contrib/credential/gnome-keyring/git-credential-gnome-keyring
+22. Install openjdk
+# dnf install java-latest-openjdk java-latest-openjdk-devel
 
-29. Install openjdk
-# sudo yum install java-1.8.0-openjdk, java-1.8.0-openjdk-devel
-
-30 Install Gnome extensions
-# sudo yum install git cmake coreutils pygobject2 python-requests jq
-# sudo yum install gnome-shell-browser-plugin
-# sudo yum install gnome-shell-extension-common
-# sudo yum reinstall nss-util
-Open Gnome-tweak-tool->Extension->Get More extensions
-Note gnome browser extension only seems to work in Chrome
-Get "Frippery Panel Favourites" and whatever
-
-31. Install gnome pomodoro
-https://github.com/codito/gnome-pomodoro/issues/361
-# sudo yum install autoconf-archive
-# sudo yum install libappstream-glib-devel
-# sudo yum install gom-devel
-# sudo yum install libpeas-devel
-# sudo yum install sqlite-devel
-# sudo sudo yum install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel gnome-desktop3-devel libcanberra-devel dbus-glib-devel gstreamer1-devel telepathy-glib-devel google-droid-sans-fonts
-# git clone -b gnome-3.28 https://github.com/codito/gnome-pomodoro.git
-# cd gnome-pomodoro
-# ./autogen.sh --prefix=/usr --datadir=/usr/share
-   (needs to run twice to make to build)
-# make
-# sudo make install
-# sudo cp /usr/lib/libgnome-pomodoro.* /usr/lib64
-http://gnomepomodoro.org/
-
-32. Install perl packages
-# sudo cpan install Expect
+23. Install perl packages
+# cpan install Expect
 may require force on some systems
 
-33. Install kmod-nvida
-Install elrepo
-https://elrepo.org/tiki/tiki-index.php
-then
-# sudo yum install kmod-nvidia
-
-34. Install postresql things and  /var/run/postgres world writeable
-# sudo yum install stgresql-devel
+24. Install postresql things and  /var/run/postgres world writeable
+# sudo yum install postgres postgresql-devel
 https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
 # sudo chmod +x /etc/rc.d/rc.local
 add to rc.local
@@ -154,22 +117,16 @@ chmod uog+rw /var/run/postgres
 edit /usr/lib/tmpfiles.d/postgresql.conf
 set permission to 0777
 
-35. Install gd
-# sudo yum install gd, gd-devel
-# sudo cpan install GD
+25. Install gd
+# dnf install gd, gd-devel
+# cpan install GD
 
-36. Ugly X hack to stop nvidia driver rewriting conf on boot
-# sudo chmod u-w xorg.conf
-# sudo chattr +i /etc/X11/xorg.conf
+26. Update editor
+# dnf install gconf-editor
 
-37. Update editor
-# sudo yum install gconf-editor
 
-38. Update users logon to prevent suspend/hibernate
-User -> Account Settings
-set Automatic Log in to ON
-Settings -> Power
-Blank Screen Never
+
+
 
 39. R/Rstudio Setup
 sudo yum install R
@@ -236,15 +193,6 @@ Install alacarte
 # mount -a
 
 
-7. Make home dir symlinks for my data drive
-# cd ~
-# rmdir Downloads
-# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications Applications
-# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Downloads Downloads
-# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Code Code
-# ln -s /home/dbuchan/Jalview/Jalview runJalview
-
-
 4. Emulate middle click
 # touch /etc/X11/xorg.conf.d/20-3rdbutton.conf
 
@@ -269,12 +217,34 @@ Section "InputDevice"
 EndSection
 
 
-22. add /opt config (also for web dev)
-# sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Code/ Code
-# sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications Applications
-# sudo ln -s /scratch1/NOT_BACKED_UP/dbuchan/ Data
+31. Install gnome pomodoro
+https://github.com/codito/gnome-pomodoro/issues/361
+# sudo yum install autoconf-archive
+# sudo yum install libappstream-glib-devel
+# sudo yum install gom-devel
+# sudo yum install libpeas-devel
+# sudo yum install sqlite-devel
+# sudo sudo yum install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel gnome-desktop3-devel libcanberra-devel dbus-glib-devel gstreamer1-devel telepathy-glib-devel google-droid-sans-fonts
+# git clone -b gnome-3.28 https://github.com/codito/gnome-pomodoro.git
+# cd gnome-pomodoro
+# ./autogen.sh --prefix=/usr --datadir=/usr/share
+   (needs to run twice to make to build)
+# make
+# sudo make install
+# sudo cp /usr/lib/libgnome-pomodoro.* /usr/lib64
+http://gnomepomodoro.org/
 
 
-24. Install connectTunnel for CS dept VPN
+
+23. Install connectTunnel for CS dept VPN
 http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
+# startct -s cswall.cs.ucl.ac.uk
 https://www.sonicwall.com/en-us/support/technical-documentation/secure-mobile-access-12-0-connect-tunnel-user-guid/connect-tunnel-client-for-mac-linux
+
+
+
+24. Install kmod-nvida
+Install elrepo
+https://elrepo.org/tiki/tiki-index.php
+then
+# sudo yum install kmod-nvidia
