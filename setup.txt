@@ -1,168 +1,92 @@
 Set internet to connect on startup
-usermod -aG wheel username
 
-1. Install alacarte
-# sudo yum install alacarte
-
-2. Install atom
-# sudo yum install lsb-core-noarch
-# sudo yum install libXScrnSaver
-# pip install pycodestyle
+1. Install atom
+# sudo dnf install lsb-core-noarch
+# sudo dnf install libXScrnSaver
+# pip3 install pycodestyle
 # rpm -Uvh atom.x86_64.rpm
-# set pycodestyle path in Linter prefs
-# set sync-settings plugin
+ set sync-settings plugin
   Access: SEE GITHUB DEVELOPER SETTINGS
   GIST ID; 3c7678b1c60c348f0266567e44dad0fa
+# set pycodestyle path in Linter prefs
 
-3. Gnome tweak tools for 4k
-# yum install gnome-tweaks
+2. Gnome tweak tools for 4k
+# dnf install gnome-tweaks
 Global Dark Theme On
 Fonts scaling 1.5
 
-4. Gnome settings for 4k
+3. Gnome settings for 4k
 Universal Access->Large Text ON
 
-5. Mount drives
-# sudo blkid
-# vi /etc/fstab
-# sudo mkdir /scratch0
-# sudo mkdir /scratch1
-# mount -a
+5. Enable EPEL
+# sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
-6. Emulate middle click
-# touch /etc/X11/xorg.conf.d/20-3rdbutton.conf
+6. Install keepass
+# sudo dnf install keepassxc
 
-Add in:
+7. Get Gnome extensions
+Got to https://extensions.gnome.org
+Click 'Click here to install browser extensions'
+Add Frippery Panel Favourites
 
-Section "InputClass"
-  Identifier "evdev pointer catchall"
-  MatchIsPointer "on"
-  MatchDevicePath "/dev/input/event*"
-  Option "Emulate3Buttons" "True"
-  Option "Emulate3Timeout" "100"
-  Driver "evdev"
-EndSection
+8. Install Dropbox and log in
+As user NOT ROOT
+# dnf install flatpak
+# flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# flatpak install flathub com.dropbox.Client
+Then add Dropbox to startup apps in gnome-tweaks
 
-Section "InputDevice"
-        Identifier      "Configured Mouse"
-        Driver          "mouse"x
-        Option          "CorePointer"
-        Option          "Device"                "/dev/input/mice"
-        Option          "Protocol"              "ImPS/2"
-        Option          "Emulate3Buttons"       "true"
-EndSection
+9. Enable Firefox sync
+# Log in to web sites mail.com, gmail, firefox, reddit, gwj, github, twitter, work outlook
+# configure containers for each site
 
-7. Make home dir symlinks for my data drive
-# cd ~
-# rmdir Downloads
-# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications Applications
-# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Downloads Downloads
-# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Code Code
-# ln -s /home/dbuchan/Jalview/Jalview runJalview
+10. get thunderbird
+# sudo dnf install thunderbird
 
-8. Restore backed up home/ from data drive
-# cp -r .atom ~/
-# cp -r bin ~/
-# cp -r JabRef/ ~/
-# cp -r Jalview ~/
-# cp -r R/ ~/
-# cp /scratch0/NOT_BACKED_UP/dbuchan/dbuchan/.ssh/* ~/.ssh
-# cp /scratch0/NOT_BACKED_UP/dbuchan/dbuchan/.pyirc ~/
+11. Set up thunderbird for Goldsmiths and UCL email accounts
 
-9. Enable EPEL
-# sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+12. Setup git
+# sudo dnf install git
+https://help.github.com/articles/setting-your-username-in-git
 
-10. Install keepass
-# sudo yum install keepass
-
-11. Install Dropbox and log in
-GLIBC2.18 SPOOFING NO LONGER WORKS FOR LATEST HEADLESS DROPBOX
-https://www.dropbox.com/en_GB/install-linux
-# cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-# cd .dropbox-dist
-# echo fs.inotify.max_user_watches=100000 | sudo tee -a /etc/sysctl.conf; sudo sysctl -p
-# dropboxd
-https://askubuntu.com/questions/315034/start-dropbox-on-startup
-
-https://lorenzo.mile.si/dropbox-on-centos7-requires-glibc-2-19/828/
-
-12. Update firefox to local
-# cd /usr/share/applications
-# sudo vi firefox.desktop
-update to Exec=/scratch0/NOT_BACKED_UP/dbuchan/Applications/firefox/firefox %u
-# sudo chattr +i firefox.desktop
-
-# sudo mv /bin/firefox /bin/firefox_old
-# sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications/firefox/firefox /bin/firefox
-
-
-13. Log in to web sites mail.com, gmail, firefox, reddit, gwj, github
-
-14. get slack
-Could skip given Franz install below
-https://slack.com/downloads/linux
-https://wiki.base22.com/btg/install-slack-in-centos-7-133993146.html
-# sudo yum install libappindicator
-# sudo yum -y install /home/dbuchan/Downloads/slack-3.3.8.rpm
-14. Log slack in to psipred, ucl-programming-hub, crickcomputingchat
-
-15. get thunderbird
-# sudo yum install thunderbird
-
-15. Set up thunderbird for crick and UCL email accounts
-
-16. Setup git
-# sudo yum install git
-https://help.github.com/articles/setting-your-username-in-gitp
-
-17. Install python3
-# sudo yum install python36-x86_64
+13. Install python3-devel
 # sudo yum install python36-devel
 
-18. Install google-chrome
+14. Install google-chrome
+See centos8 instructions at
 https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fedora-red-hat-rhel/
 
-19. Install virtualenv for local python3
+15. Install virtualenv for local python3
 # sudo yum install python36-pip
 # /scratch0/NOT_BACKED_UP/dbuchan/python3/bin/pip3 install virtualenv
 
-20. Make postgres dir writeable by other Users
-# sudo chmod uog+rw /var/run/postgresql/
+16. Install postgresql
+# dnf install postgresql
 
-21. Run through aa install to ensure redis is working for web dev
-# yum install redis
+17. Run through aa install to ensure redis is working for web dev
+# dnf install redis
 
-22. add /opt config (also for web dev)
-# sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Code/ Code
-# sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications Applications
-# sudo ln -s /scratch1/NOT_BACKED_UP/dbuchan/ Data
-
-23. Set up npm for psipred_javascript
+18. Set up npm for psipred_javascript
 # sudo yum install npm
 
-24. Install connectTunnel for CS dept VPN
-http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
-https://www.sonicwall.com/en-us/support/technical-documentation/secure-mobile-access-12-0-connect-tunnel-user-guid/connect-tunnel-client-for-mac-linux
+19. Install ffmpeg (to allow h264 playback in firefox)
+https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/
+# dnf localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm
+# dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm
+# dnf install http://rpmfind.net/linux/epel/7/x86_64/Packages/s/SDL2-2.0.10-1.el7.x86_64.rpm
+# dnf install ffmpeg ffmpeg-devel ffmpeg-libs
 
-25. Install ffmpeg (to allow h264 playback in firefox)
-https://www.vultr.com/docs/how-to-install-ffmpeg-on-centos
-# sudo rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
-# sudo rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
-# sudo yum install gnutls-devel
-# sudo yum clean all
-# sudo yum install ffmpeg ffmpeg-devel ffmpeg-libs -y
-
-26. install gnuplot
-# sudo yum install gnuplot1
-# sudo yum install ghostrscript
+20. install gnuplot
+# dnf install gnuplot1
+# dnf install ghostrscript
 
 27. Get 32-bit linux libs
-# sudo yum install glibc.i686
+# dnf install glibc.i686
 
 28. Install gnome-keyring for github key management
 https://stackoverflow.com/questions/13385690/how-to-use-git-with-gnome-keyring-integration
-# sudo yum install gnome-keyring, libgnome-keyring.x86_64, libgnome-keyring-devel.x86_64,  libgnome-keyring.i686, libgnome-keyring-devel.i686
-# cd /usr/share/doc/git-1.8.3.1/contrib/credential/gnome-keyring
+# dnf install gnome-keyring, libgnome-keyring.x86_64, libgnome-keyring-devel.x86_64,  libgnome-keyring.i686, libgnome-keyring-devel.i686
+# cd /usr/share/doc/git/contrib/credential/gnome-keyring
 # sudo make
 # git config --global credential.helper /usr/share/doc/git-1.8.3.1/contrib/credential/gnome-keyring/git-credential-gnome-keyring
 
@@ -282,3 +206,59 @@ StartupNotify=true
 # rm -rf [ENV]
 # mkvirtualenv [ENV]
 # pip install -r requirements/[SOMETHING].txt
+
+MISSING
+
+Install alacarte
+1. dnf install alacarte
+
+2. Mount drives
+# sudo blkid
+# vi /etc/fstab
+# sudo mkdir /scratch0
+# sudo mkdir /scratch1
+# mount -a
+
+
+7. Make home dir symlinks for my data drive
+# cd ~
+# rmdir Downloads
+# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications Applications
+# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Downloads Downloads
+# ln -s /scratch0/NOT_BACKED_UP/dbuchan/Code Code
+# ln -s /home/dbuchan/Jalview/Jalview runJalview
+
+
+4. Emulate middle click
+# touch /etc/X11/xorg.conf.d/20-3rdbutton.conf
+
+Add in:
+
+Section "InputClass"
+  Identifier "evdev pointer catchall"
+  MatchIsPointer "on"
+  MatchDevicePath "/dev/input/event*"
+  Option "Emulate3Buttons" "True"
+  Option "Emulate3Timeout" "100"
+  Driver "evdev"
+EndSection
+
+Section "InputDevice"
+        Identifier      "Configured Mouse"
+        Driver          "mouse"x
+        Option          "CorePointer"
+        Option          "Device"                "/dev/input/mice"
+        Option          "Protocol"              "ImPS/2"
+        Option          "Emulate3Buttons"       "true"
+EndSection
+
+
+22. add /opt config (also for web dev)
+# sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Code/ Code
+# sudo ln -s /scratch0/NOT_BACKED_UP/dbuchan/Applications Applications
+# sudo ln -s /scratch1/NOT_BACKED_UP/dbuchan/ Data
+
+
+24. Install connectTunnel for CS dept VPN
+http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
+https://www.sonicwall.com/en-us/support/technical-documentation/secure-mobile-access-12-0-connect-tunnel-user-guid/connect-tunnel-client-for-mac-linux
