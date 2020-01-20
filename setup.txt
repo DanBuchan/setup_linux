@@ -10,7 +10,21 @@ Set internet to connect on startup
 Global Dark Theme On
 Fonts scaling 1.5
 
-3. Install atom
+3. Make useful dirs
+# chmod uo+rw /scratch
+# mkdir /scratch/Applications
+# mkdir /scratch/Code
+# mkdir /scratch/Projects
+# cd /home/dbuchan
+# ln -s /scratch/Applications Applications
+# ln -s /scratch/Code Code
+# ln -s /scratch/Projects Projects
+
+4. Get this repo
+# cd ~/Code
+# git clone https://github.com/DanBuchan/setup_centos_8.git
+
+5. Install atom
 # sudo dnf install lsb-core-noarch
 # sudo dnf install libXScrnSaver
 # pip3 install pycodestyle
@@ -20,10 +34,7 @@ Fonts scaling 1.5
   GIST ID; 3c7678b1c60c348f0266567e44dad0fa
 # set pycodestyle path in Linter prefs
 
-4. Get this repo
-# git clone 
-
-4. Enable EPEL
+6. Enable EPEL
 # sudo dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 6. Install keepass
