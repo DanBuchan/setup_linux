@@ -112,70 +112,45 @@ may require force on some systems
 # dnf install gd, gd-devel
 # cpan install GD
 
-
-
-
-
 25. Install postresql things and  /var/run/postgres world writeable
-# dnf install postgres postgresql-devel
-https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
-# sudo chmod +x /etc/rc.d/rc.local
-add to rc.local
-chmod uog+rw /var/run/postgres
-edit /usr/lib/tmpfiles.d/postgresql.conf
-set permission to 0777
+# dnf install postgresql postgresql-devel
 
-39. R/Rstudio Setup
-sudo yum install R
-sudo yum install readline-devel
+26. R/Rstudio Setup
+# dnf install R
+# dnf install readline-devel
 get free https://www.rstudio.com/products/rstudio/download/
+# wget https://download1.rstudio.org/desktop/fedora28/x86_64/rstudio-1.2.5033-x86_64.rpm
+# rpm -Uvh rstudio-1.2.5033-x86_64.rpm
 cd /usr/share/applications
-sudo touch rstudio.desktop
-sudo vi rstudio.desktop
-add:
-[Desktop Entry]
-Name=Rstudio
-GenericName=IDE
-Comment=IDE for Rstudio
-Exec=/scratch0/NOT_BACKED_UP/dbuchan/Applications/rstudio-1.1.456/bin/rstudio
-Terminal=false
-Type=Application
-Icon=/scratch0/NOT_BACKED_UP/dbuchan/Applications/rstudio-1.1.456/rstudio.png
-Categories=GNOME;GTK;Utility;TextEditor;Development;
-StartupNotify=true
 
-40. Install Inkscape
-sudo  yum install inksacpe
-
-41. Install gv
-sudo yum install gv
+27. Install drawing packages
+# dnf install inkscape gimp gv
 
 42 Install Franz
 https://meetfranz.com/
 see github releases for tarball
-cd /usr/share/applications
-sudo touch franz.desktop
-sudo vi franz.desktop
+# wget https://github.com/meetfranz/franz/releases/download/v5.4.1/franz-5.4.1.tar.gz
+# tar -zxvf franz-5.4.1.tar.gz
+# cd franz-5.4.1
+# wget https://meetfranz.com/static/franz-logo.svg
+
+# cd /usr/share/applications
+# touch franz.desktop
+# vi franz.desktop
 add:
 [Desktop Entry]
 Name=Franz
 GenericName=Media
 Comment=Social Media things
-Exec=/scratch0/NOT_BACKED_UP/dbuchan/Applications/franz-5.0.1/franz
+Exec=/dbuchan/Applications/franz-5.4.1/franz
 Terminal=false
 Type=Application
-Icon=/scratch0/NOT_BACKED_UP/dbuchan/Applications/franz-5.0.1/index.svg
+Icon=/dbuchan/Applications/franz-5.4.1/index.svg
 Categories=GNOME;GTK;Utility;
 StartupNotify=true
 
 43 Install httpd
-# sudo yum install httpd
-# sudo yum install httpd-devel
-
-44 Check that any legacy virtualenvs do or don't need rebuilding
-# rm -rf [ENV]
-# mkvirtualenv [ENV]
-# pip install -r requirements/[SOMETHING].txt
+# dnf install httpd httpd-devel
 
 MISSING
 
@@ -239,9 +214,21 @@ http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
 https://www.sonicwall.com/en-us/support/technical-documentation/secure-mobile-access-12-0-connect-tunnel-user-guid/connect-tunnel-client-for-mac-linux
 
 
-
 24. Install kmod-nvida
 Install elrepo
 https://elrepo.org/tiki/tiki-index.php
 then
 # sudo yum install kmod-nvidia
+
+28. https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
+# sudo chmod +x /etc/rc.d/rc.local
+add to rc.local
+chmod uog+rw /var/run/postgres
+edit /usr/lib/tmpfiles.d/postgresql.conf
+set permission to 0777
+
+
+44 Check that any legacy virtualenvs do or don't need rebuilding
+# rm -rf [ENV]
+# mkvirtualenv [ENV]
+# pip install -r requirements/[SOMETHING].txt
