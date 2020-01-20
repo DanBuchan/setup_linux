@@ -108,7 +108,15 @@ https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/
 # cpan install Expect
 may require force on some systems
 
-24. Install postresql things and  /var/run/postgres world writeable
+24. Install gd
+# dnf install gd, gd-devel
+# cpan install GD
+
+
+
+
+
+25. Install postresql things and  /var/run/postgres world writeable
 # dnf install postgres postgresql-devel
 https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
 # sudo chmod +x /etc/rc.d/rc.local
@@ -116,17 +124,6 @@ add to rc.local
 chmod uog+rw /var/run/postgres
 edit /usr/lib/tmpfiles.d/postgresql.conf
 set permission to 0777
-
-25. Install gd
-# dnf install gd, gd-devel
-# cpan install GD
-
-26. Update editor
-# dnf install gconf-editor
-
-
-
-
 
 39. R/Rstudio Setup
 sudo yum install R
