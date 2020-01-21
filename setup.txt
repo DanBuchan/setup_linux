@@ -185,18 +185,11 @@ alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.a
 I followed instructions at this (points 8 through 11)
 https://sethgoldin.github.io/install-davinci-resolve-centos
 
-MISSING
+### TODO
 
 32. Add pomodoro
 Down load source from https://gnomepomodoro.org/#download
 # dnf install autoconf-archive libappstream-glib-devel gobject-introspection-devel vala vala-devel gtk3-devel
-
-
-24. Install kmod-nvida
-Install elrepo
-https://elrepo.org/tiki/tiki-index.php
-then
-# sudo yum install kmod-nvidia
 
 28. https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
 # sudo chmod +x /etc/rc.d/rc.local
