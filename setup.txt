@@ -126,7 +126,7 @@ cd /usr/share/applications
 27. Install drawing packages
 # dnf install inkscape gimp gv
 
-42 Install Franz
+28. Install Franz
 https://meetfranz.com/
 see github releases for tarball
 # wget https://github.com/meetfranz/franz/releases/download/v5.4.1/franz-5.4.1.tar.gz
@@ -149,44 +149,20 @@ Icon=/dbuchan/Applications/franz-5.4.1/index.svg
 Categories=GNOME;GTK;Utility;
 StartupNotify=true
 
-43 Install httpd
+29. Install httpd
 # dnf install httpd httpd-devel
 
+30 Change mouse speed
+# xset m 16 1
+
+
 MISSING
+
+12. Git saving credentials
 
 Install alacarte
 1. dnf install alacarte
 
-2. Mount drives
-# sudo blkid
-# vi /etc/fstab
-# sudo mkdir /scratch0
-# sudo mkdir /scratch1
-# mount -a
-
-
-4. Emulate middle click
-# touch /etc/X11/xorg.conf.d/20-3rdbutton.conf
-
-Add in:
-
-Section "InputClass"
-  Identifier "evdev pointer catchall"
-  MatchIsPointer "on"
-  MatchDevicePath "/dev/input/event*"
-  Option "Emulate3Buttons" "True"
-  Option "Emulate3Timeout" "100"
-  Driver "evdev"
-EndSection
-
-Section "InputDevice"
-        Identifier      "Configured Mouse"
-        Driver          "mouse"x
-        Option          "CorePointer"
-        Option          "Device"                "/dev/input/mice"
-        Option          "Protocol"              "ImPS/2"
-        Option          "Emulate3Buttons"       "true"
-EndSection
 
 
 31. Install gnome pomodoro
@@ -226,7 +202,6 @@ add to rc.local
 chmod uog+rw /var/run/postgres
 edit /usr/lib/tmpfiles.d/postgresql.conf
 set permission to 0777
-
 
 44 Check that any legacy virtualenvs do or don't need rebuilding
 # rm -rf [ENV]
