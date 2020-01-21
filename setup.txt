@@ -152,13 +152,18 @@ StartupNotify=true
 29. Install httpd
 # dnf install httpd httpd-devel
 
-30 Change mouse speed
+30. Change mouse speed
 # xset m 16 1
+
+31. Set gnome-keyring to save git credentials
+# dnf install libsecret-devel
+# git config --global --unset credential.helper
+# git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+
+
 
 
 MISSING
-
-12. Git saving credentials
 
 Install alacarte
 1. dnf install alacarte
