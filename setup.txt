@@ -108,6 +108,7 @@ https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fe
 
 16. get thunderbird
 # dnf install thunderbird
+Thunderbird OWL plugin allows MS365 exchange support pretty transparently
 
 17. Install development libs for Python Dev Server
 # dnf install python36-devel
@@ -136,7 +137,6 @@ https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fe
 get free https://www.rstudio.com/products/rstudio/download/
 # wget https://download1.rstudio.org/desktop/fedora28/x86_64/rstudio-1.2.5033-x86_64.rpm
 # rpm -Uvh rstudio-1.2.5033-x86_64.rpm
-cd /usr/share/applications
 
 21. Install Franz
 https://meetfranz.com/
@@ -202,5 +202,3 @@ set permission to 0777
 # rm -rf [ENV]
 # mkvirtualenv [ENV]
 # pip install -r requirements/[SOMETHING].txt
-
-# Thunderbird setup
