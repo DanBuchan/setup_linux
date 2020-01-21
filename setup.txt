@@ -1,4 +1,16 @@
-Set internet to connect on startup
+Installtion Notes:
+
+# I started with a very minimal Centos 8 Install. I think I only selected
+# GNOME as the set of packages in the installer. Selecting too many led
+# to the nouveau drivers not working once the install was complete. So
+# clearly some packages don't play nice on the installation media.
+#
+# The UCL CS VPN would not work if I installed it too early (and the error was
+# unformative, possibly some Java thing). So clearly some package that installs
+# before it is needed
+#
+# On log in I have changed my desktop to Classic (X11 Server) rather than
+# using Wayland. YMMV
 
 1. Update OS
 # dnf update
@@ -6,29 +18,29 @@ Set internet to connect on startup
 # dnf groupinstall "Development Tools"
 # reboot
 
-2. Gnome tweak tools for 4k
+2. Gnome settings tweak tools for 4k
 # dnf install gnome-tweaks
 Global Dark Theme On
 Fonts scaling 1.5
 
-3. Make useful dirs
-# chmod uo+rw /scratch
-# mkdir /scratch/Applications
-# mkdir /scratch/Code
-# mkdir /scratch/Projects
-# cd /home/dbuchan
-# ln -s /scratch/Applications Applications
-# ln -s /scratch/Code Code
-# ln -s /scratch/Projects Projects
+# xset m 16 1
 
-4. Get this repo
+3. Setup git
+https://help.github.com/articles/setting-your-username-in-git
+# git config --global user.name "Daniel Buchan"
+# git config --global user.email "clone@myself.com"
+# git config --global credential.helper libsecret
+
+4. Set gnome-keyring to save git credentials
+# dnf install libsecret-devel
+# git config --global --unset credential.helper
+# git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+
+5. Get this repo
 # cd ~/Code
 # git clone https://github.com/DanBuchan/setup_centos_8.git
 
-5. Install Firefox
-# dnf install firefox
-
-5. Install atom
+6. Install atom
 # dnf install lsb-core-noarch
 # dnf install libXScrnSaver
 # pip3 install pycodestyle
@@ -38,84 +50,87 @@ Fonts scaling 1.5
   GIST ID; 3c7678b1c60c348f0266567e44dad0fa
 # set pycodestyle path in Linter prefs
 
-6. Enable EPEL
+7. Enable EPEL
 # dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
-7. Install keepass
+8. Install keepass
 # dnf install keepassxc
 
-8. Install Dropbox and log in
+9. Install Dropbox and log in
 As user NOT ROOT
 # dnf install flatpak
 # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # flatpak install flathub com.dropbox.Client
 Then add Dropbox to startup apps in gnome-tweaks
 
-9. Open Firefox and login to sync
-# Log in to web sites mail.com, gmail, firefox, reddit, gwj, github, twitter, work outlook, fb, feedly
-# configure containers for each site
-
-10. Get Gnome extensions
-Got to https://extensions.gnome.org
-Click 'Click here to install browser extensions'
-Add Frippery Panel Favourites
-
-11. get thunderbird
-# dnf install thunderbird
-
-11. Set up thunderbird for Goldsmiths and UCL email accounts
-
-12. Setup git
-https://help.github.com/articles/setting-your-username-in-git
-# git config --global user.name "Daniel Buchan"
-# git config --global user.email "clone@myself.com"
-# git config --global credential.helper libsecret
-
-13. Install python3-devel
-# dnf install python36-devel
-
-14. Install google-chrome
-See centos8 instructions at
-https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fedora-red-hat-rhel/
-
-15. Install virtualenv for local python3
-# pip3 install virtualenv
-
-17. Run through aa install to ensure redis is working for web dev
-# dnf install redis
-
-18. Set up npm for psipred_javascript
-# dnf install npm
-
-19. Install ffmpeg (to allow h264 playback in firefox)
+10. Install ffmpeg (to allow h264 playback in firefox)
 https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/
 # dnf localinstall --nogpgcheck https://download1.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm
 # dnf install --nogpgcheck https://download1.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm
 # dnf install http://rpmfind.net/linux/epel/7/x86_64/Packages/s/SDL2-2.0.10-1.el7.x86_64.rpm
 # dnf install ffmpeg ffmpeg-devel ffmpeg-libs
 
-20. install gnuplot
+11. Install Firefox
+Go to https://www.mozilla.org/en-GB/firefox/download/thanks/
+# mv Downloads/firefox-72.0.2.tar.bz2 Applications/
+# cd Applications
+# bunzip2 firefox-72.0.2.tar.bz2
+# tar -xvf firefox-72.0.2.tar
+# Update or add /usr/share/applications/firefox.desktop
+Exec is now /home/dbuchan/Applications/firefox/firefox
+Icon is /home/dbuchan/Applications/firefox/browser/chrome/icons/default/default128.png
+
+12. Open Firefox and login to sync
+# Make appropriate containers
+# Log in to web sites mail.com, gmail, firefox, reddit, gwj, github, twitter, work outlook, fb, feedly
+# log in to learn.gold.ac.uk, https://goldmine.gold.ac.uk/, https://agresso.gscams.gold.ac.uk/a
+# configure containers for each site
+
+13. Get Gnome extensions
+Got to https://extensions.gnome.org
+Click 'Click here to install browser extensions'
+Add Frippery Panel Favourites
+Add TopIconsFix
+
+14. Install google-chrome
+See centos8 instructions at
+https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fedora-red-hat-rhel/
+
+15. Make useful dirs
+# chmod uo+rw /scratch
+# mkdir /scratch/Applications
+# mkdir /scratch/Code
+# mkdir /scratch/Projects
+# cd /home/dbuchan
+# ln -s /scratch/Applications Applications
+# ln -s /scratch/Code Code
+# ln -s /scratch/Projects Projects
+
+16. get thunderbird
+# dnf install thunderbird
+
+17. Install development libs for Python Dev Server
+# dnf install python36-devel
+# pip3 install virtualenv
+
+18. Install dev libs for PSIPRED server
+# dnf install redis
+# dnf install npm
 # dnf install gnuplot
 # dnf install ghostscript
-
-21. Get 32-bit linux libs
 # dnf install glibc.i686
-
-22. Install openjdk
-# dnf install java-latest-openjdk java-latest-openjdk-devel
-
-23. Install perl packages
 # cpan install Expect
-may require force on some systems
-
-24. Install gd
+  May require force on some systems
 # dnf install gd, gd-devel
 # cpan install GD
-
-25. Install postresql things and  /var/run/postgres world writeable
 # dnf install postgresql postgresql-devel
+# dnf install inkscape gimp gv
+# dnf install httpd httpd-devel
 
-26. R/Rstudio Setup
+19. Install openjdk
+# dnf install java-latest-openjdk java-latest-openjdk-devel
+
+20. R/Rstudio Setup
 # dnf install R
 # dnf install readline-devel
 get free https://www.rstudio.com/products/rstudio/download/
@@ -123,10 +138,7 @@ get free https://www.rstudio.com/products/rstudio/download/
 # rpm -Uvh rstudio-1.2.5033-x86_64.rpm
 cd /usr/share/applications
 
-27. Install drawing packages
-# dnf install inkscape gimp gv
-
-28. Install Franz
+21. Install Franz
 https://meetfranz.com/
 see github releases for tarball
 # wget https://github.com/meetfranz/franz/releases/download/v5.4.1/franz-5.4.1.tar.gz
@@ -149,50 +161,35 @@ Icon=/dbuchan/Applications/franz-5.4.1/index.svg
 Categories=GNOME;GTK;Utility;
 StartupNotify=true
 
-29. Install httpd
-# dnf install httpd httpd-devel
+22. Install connectTunnel for CS dept VPN
+http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
+# added and alias to my bashrc script
+alias startct="startct -m console -s cswall.cs.ucl.ac.uk"
 
-30. Change mouse speed
-# xset m 16 1
+23. Add some .bashrc things
+PS1="\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\]:\w\$ ";
+export PS1;
 
-31. Set gnome-keyring to save git credentials
-# dnf install libsecret-devel
-# git config --global --unset credential.helper
-# git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+alias ls="ls --color=always";
+alias z="ls --color=always -lah";
+#alias lrm="'find . | xargs rm'"
+alias duall="du -sch .[!.]* * | sort -h";
+alias vi="vim";
+alias sshk="ssh knuckles.cs.ucl.ac.uk"
+alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.ac.uk";
 
+24. Log in to wayland to use the application search to set favourites or set via
+# gsettings get org.gnome.shell favorite-apps
 
-
+25. Update nouveau drivers to Nvidia
+I followed instructions at this (points 8 through 11)
+https://sethgoldin.github.io/install-davinci-resolve-centos
 
 MISSING
 
-Install alacarte
-1. dnf install alacarte
-
-
-
-31. Install gnome pomodoro
-https://github.com/codito/gnome-pomodoro/issues/361
-# sudo yum install autoconf-archive
-# sudo yum install libappstream-glib-devel
-# sudo yum install gom-devel
-# sudo yum install libpeas-devel
-# sudo yum install sqlite-devel
-# sudo sudo yum install gnome-common intltool vala vala-tools glib2-devel gobject-introspection-devel gtk3-devel gnome-desktop3-devel libcanberra-devel dbus-glib-devel gstreamer1-devel telepathy-glib-devel google-droid-sans-fonts
-# git clone -b gnome-3.28 https://github.com/codito/gnome-pomodoro.git
-# cd gnome-pomodoro
-# ./autogen.sh --prefix=/usr --datadir=/usr/share
-   (needs to run twice to make to build)
-# make
-# sudo make install
-# sudo cp /usr/lib/libgnome-pomodoro.* /usr/lib64
-http://gnomepomodoro.org/
-
-
-
-23. Install connectTunnel for CS dept VPN
-http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
-# startct -s cswall.cs.ucl.ac.uk
-https://www.sonicwall.com/en-us/support/technical-documentation/secure-mobile-access-12-0-connect-tunnel-user-guid/connect-tunnel-client-for-mac-linux
+32. Add pomodoro
+Down load source from https://gnomepomodoro.org/#download
+# dnf install autoconf-archive libappstream-glib-devel gobject-introspection-devel vala vala-devel gtk3-devel
 
 
 24. Install kmod-nvida
@@ -212,3 +209,5 @@ set permission to 0777
 # rm -rf [ENV]
 # mkvirtualenv [ENV]
 # pip install -r requirements/[SOMETHING].txt
+
+# Thunderbird setup
