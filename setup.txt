@@ -25,6 +25,7 @@ Fonts scaling 1.5
 
 # xset m 16 1
 
+
 3. Setup git
 https://help.github.com/articles/setting-your-username-in-git
 # git config --global user.name "Daniel Buchan"
@@ -92,6 +93,9 @@ Click 'Click here to install browser extensions'
 Add Frippery Panel Favourites
 Add TopIconsFix
 
+# npm install -g linux-window-session-manager
+Add Window Session Manager
+
 14. Install google-chrome
 See centos8 instructions at
 https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fedora-red-hat-rhel/
@@ -113,6 +117,14 @@ Thunderbird OWL plugin allows MS365 exchange support pretty transparently
 17. Install development libs for Python Dev Server
 # dnf install python36-devel
 # pip3 install virtualenv
+# pip3 install virtualenvwrapper
+# mkdir /scratch/virtualenvs
+
+Add to .bashrc
+   export WORKON_HOME=/scratch/virtualenvs
+   export PROJECT_HOME=$HOME/Code
+   export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+   source virtualenvwrapper.sh
 
 18. Install dev libs for PSIPRED server
 # dnf install redis
@@ -124,7 +136,7 @@ Thunderbird OWL plugin allows MS365 exchange support pretty transparently
   May require force on some systems
 # dnf install gd, gd-devel
 # cpan install GD
-# dnf install postgresql postgresql-devel
+# dnf install postgresql postgresql-devel postgresql-server postgresql-server-devel
 # dnf install inkscape gimp gv
 # dnf install httpd httpd-devel
 
@@ -185,20 +197,41 @@ alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.a
 I followed instructions at this (points 8 through 11)
 https://sethgoldin.github.io/install-davinci-resolve-centos
 
+26. Get core PSIPRED Server development packages
+To begin with I only get PSIPRED, I only need to get the other algorithms
+if I need to work on them
+# git clone https://github.com/psipred/psipred_website.git
+# git clone https://github.com/psipred/blast_cache.git
+# git clone https://github.com/psipred/psipred_javascript.git
+# git clone https://github.com/psipred/server_update.git
+# git clone https://github.com/psipred/ansible_config.git
+# git clone https://github.com/psipred/ansible_production_config.git
+# git clone https://github.com/psipred/biod3.git
+# git clone https://github.com/psipred/psipred_branding.git
+# git clone https://github.com/psipred/psipred.git
+# git clone https://github.com/AnalyticsAutomated/commandRunner.git
+# git clone https://github.com/AnalyticsAutomated/analytics_automated.git
+
+27. Make some local virtualenvs
+# mkvirtualenv analytics_automated; deactivate
+# mkvirtualenv psipred_website; deactivate
+# mkvirtualenv blast_cache; deactivate
+
+28. https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
+# sudo chmod +x /etc/rc.d/rc.local
+add to rc.local
+chmod uog+rw /var/run/postgresql/
+edit /usr/lib/tmpfiles.d/postgresql.conf
+set permission to 0777
+
+29. Install analytics automated
+see doc/dev_installation.rst
+# workon analytics_automated
+# mkdir /scratch/postgres_databases
+
+
 ### TODO
 
 32. Add pomodoro
 Down load source from https://gnomepomodoro.org/#download
 # dnf install autoconf-archive libappstream-glib-devel gobject-introspection-devel vala vala-devel gtk3-devel
-
-28. https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
-# sudo chmod +x /etc/rc.d/rc.local
-add to rc.local
-chmod uog+rw /var/run/postgres
-edit /usr/lib/tmpfiles.d/postgresql.conf
-set permission to 0777
-
-44 Check that any legacy virtualenvs do or don't need rebuilding
-# rm -rf [ENV]
-# mkvirtualenv [ENV]
-# pip install -r requirements/[SOMETHING].txt
