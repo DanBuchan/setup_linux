@@ -18,26 +18,23 @@ Installtion Notes:
 # dnf groupinstall "Development Tools"
 # reboot
 
-2. Gnome settings tweak tools for 4k
+2. Gnome settings and tweak tools for 4k
+# xset m 16 1
 # dnf install gnome-tweaks
 Global Dark Theme On
 Fonts scaling 1.5
-
-# xset m 16 1
-
 
 3. Setup git
 https://help.github.com/articles/setting-your-username-in-git
 # git config --global user.name "Daniel Buchan"
 # git config --global user.email "clone@myself.com"
-# git config --global credential.helper libsecret
 
 4. Set gnome-keyring to save git credentials
 # dnf install libsecret-devel
 # git config --global --unset credential.helper
 # git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
 
-5. Get this repo
+5. Get this repo, so you can read it in Atom rather than in vi
 # cd ~/Code
 # git clone https://github.com/DanBuchan/setup_centos_8.git
 
@@ -58,7 +55,6 @@ https://help.github.com/articles/setting-your-username-in-git
 # dnf install keepassxc
 
 9. Install Dropbox and log in
-As user NOT ROOT
 # dnf install flatpak
 # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # flatpak install flathub com.dropbox.Client
@@ -80,19 +76,19 @@ Go to https://www.mozilla.org/en-GB/firefox/download/thanks/
 # Update or add /usr/share/applications/firefox.desktop
 Exec is now /home/dbuchan/Applications/firefox/firefox
 Icon is /home/dbuchan/Applications/firefox/browser/chrome/icons/default/default128.png
+# chattr +i /usr/share/applications/firefox.desktop
 
 12. Open Firefox and login to sync
-# Make appropriate containers
+# Make appropriate firefox containers
 # Log in to web sites mail.com, gmail, firefox, reddit, gwj, github, twitter, work outlook, fb, feedly
 # log in to learn.gold.ac.uk, https://goldmine.gold.ac.uk/, https://agresso.gscams.gold.ac.uk/a
 # configure containers for each site
 
 13. Get Gnome extensions
-Got to https://extensions.gnome.org
+Go to https://extensions.gnome.org
 Click 'Click here to install browser extensions'
 Add Frippery Panel Favourites
 Add TopIconsFix
-
 # npm install -g linux-window-session-manager
 Add Window Session Manager
 
@@ -112,9 +108,9 @@ https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fe
 
 16. get thunderbird
 # dnf install thunderbird
-Thunderbird OWL plugin allows MS365 exchange support pretty transparently
+Thunderbird OWL plugin allows MS-365 exchange support pretty transparently
 
-17. Install development libs for Python Dev Server
+17. Install development libs for Python Dev
 # dnf install python36-devel
 # pip3 install virtualenv
 # pip3 install virtualenvwrapper
@@ -194,7 +190,7 @@ alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.a
 # gsettings get org.gnome.shell favorite-apps
 
 25. Update nouveau drivers to Nvidia
-I followed instructions at this (points 8 through 11)
+I followed instructions at this guide (only points 8 through 11)
 https://sethgoldin.github.io/install-davinci-resolve-centos
 
 26. Get core PSIPRED Server development packages
@@ -229,6 +225,20 @@ see doc/dev_installation.rst
 # workon analytics_automated
 # mkdir /scratch/postgres_databases
 
+30. Install Psipred website
+# workon psipred_website
+# cd psipred_website
+# pip install -r requirements/
+Follow README instructions for intial setup
+
+31. Install blast cache
+# workon blast_cache
+
+32. install npm stuff for psipred_javascript
+# follow the notes in the README
+
+33. Install global pip packages
+# pip3 install numpy scipy torch
 
 ### TODO
 
