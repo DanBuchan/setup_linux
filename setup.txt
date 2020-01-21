@@ -237,6 +237,9 @@ Follow README instructions for intial setup
 32. install npm stuff for psipred_javascript
 # follow the notes in the README
 
+33. Configure both ansible installs
+follow comments in the staging ansible_set_up.sh 
+
 33. Install global pip packages
 # pip3 install numpy scipy torch
 
