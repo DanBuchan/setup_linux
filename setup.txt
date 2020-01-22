@@ -63,6 +63,8 @@ hugely increases the amount of packages available via the Software
 dialogue/application, so some of the below isn't strictly necessary if you
 wanted to use the offical/flathub packages
 
+9i. Install MEGASync
+Get rpm from https://mega.nz/sync
 
 10. Install ffmpeg (to allow h264 playback in firefox)
 https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/
