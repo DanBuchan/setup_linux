@@ -58,7 +58,11 @@ https://help.github.com/articles/setting-your-username-in-git
 # dnf install flatpak
 # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 # flatpak install flathub com.dropbox.Client
-Then add Dropbox to startup apps in gnome-tweaks
+Then add Dropbox to startup apps in gnome-tweaks. Side note, adding flathub
+hugely increases the amount of packages available via the Software
+dialogue/application, so some of the below isn't strictly necessary if you
+wanted to use the offical/flathub packages
+
 
 10. Install ffmpeg (to allow h264 playback in firefox)
 https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/
@@ -89,6 +93,7 @@ Go to https://extensions.gnome.org
 Click 'Click here to install browser extensions'
 Add Frippery Panel Favourites
 Add TopIconsFix
+Add clipboard Indicator
 # npm install -g linux-window-session-manager
 Add Window Session Manager
 
@@ -238,12 +243,17 @@ Follow README instructions for intial setup
 # follow the notes in the README
 
 33. Configure both ansible installs
-follow comments in the staging ansible_set_up.sh 
+follow comments in the staging ansible_set_up.sh
 
 33. Install global pip packages
 # pip3 install numpy scipy torch
 
+34. Open the Software dialogue
+Install flathub VLC, libreoffice
+
 ### TODO
+
+23. Jabref?
 
 32. Add pomodoro
 Down load source from https://gnomepomodoro.org/#download
