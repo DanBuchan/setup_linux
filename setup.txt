@@ -6,10 +6,10 @@ Installtion Notes:
 # clearly some packages don't play nice on the installation media.
 #
 # The UCL CS VPN would not work if I installed it too early (and the error was
-# unformative, possibly some Java thing). So clearly some package that installs
+# uninformative, possibly some Java thing). So clearly some package that installs
 # before it is needed
 #
-# On log in I have changed my desktop to Classic (X11 Server) rather than
+# On login I have changed my desktop to Classic (X11 Server) rather than
 # using Wayland. YMMV
 
 1. Update OS
@@ -54,16 +54,7 @@ https://help.github.com/articles/setting-your-username-in-git
 8. Install keepass
 # dnf install keepassxc
 
-9. Install Dropbox and log in
-# dnf install flatpak
-# flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-# flatpak install flathub com.dropbox.Client
-Then add Dropbox to startup apps in gnome-tweaks. Side note, adding flathub
-hugely increases the amount of packages available via the Software
-dialogue/application, so some of the below isn't strictly necessary if you
-wanted to use the offical/flathub packages
-
-9i. Install MEGASync
+9. Install MEGASync
 Get rpm from https://mega.nz/sync
 
 10. Install ffmpeg (to allow h264 playback in firefox)
