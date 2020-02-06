@@ -138,6 +138,7 @@ Add to .bashrc
 # dnf install java-latest-openjdk java-latest-openjdk-devel
 
 20. R/Rstudio Setup
+Note that epel Powertools must be enabled at this point
 # dnf install R
 # dnf install readline-devel
 get free https://www.rstudio.com/products/rstudio/download/
