@@ -145,13 +145,11 @@ get free https://www.rstudio.com/products/rstudio/download/
 # wget https://download1.rstudio.org/desktop/fedora28/x86_64/rstudio-1.2.5033-x86_64.rpm
 # rpm -Uvh rstudio-1.2.5033-x86_64.rpm
 
-21. Install Franz
-https://meetfranz.com/
+21. Install Ferdi
+https://getferdi.com/download
 see github releases for tarball
-# wget https://github.com/meetfranz/franz/releases/download/v5.4.1/franz-5.4.1.tar.gz
-# tar -zxvf franz-5.4.1.tar.gz
-# cd franz-5.4.1
-# wget https://meetfranz.com/static/franz-logo.svg
+# wget https://github.com/getferdi/ferdi/releases/download/v5.5.0/ferdi-5.5.0.x86_64.rpm
+# rpm -Uvh ferdi-5.5.0.x86_64.rpm
 
 # cd /usr/share/applications
 # touch franz.desktop
@@ -211,6 +209,7 @@ if I need to work on them
 # mkvirtualenv analytics_automated; deactivate
 # mkvirtualenv psipred_website; deactivate
 # mkvirtualenv blast_cache; deactivate
+# mkvirtualenv advanced_web_dev; deactivate
 
 28. https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
 # sudo chmod +x /etc/rc.d/rc.local
