@@ -233,10 +233,23 @@ follow comments in the staging ansible_set_up.sh
 Install flatpak https://flatpak.org/setup/CentOS/
 Install flathub VLC, libreoffice
 
-35. Intall OBS
+35. Install OBS
 dnf install obs-studio
+https://mkvtoolnix.download/downloads.html
+# sudo rpm -Uhv https://mkvtoolnix.download/centos/bunkus-org-repo-2-3.noarch.rpm
+# sudo yum install mkvtoolnix
 
-2
+36. Install nux
+# rpm --import http://li.nux.ro/download/nux/RPM-GPG-KEY-nux.ro
+
+36. Install Better fonts
+https://rubjo.github.io/victor-mono/
+unpack to ~/.fonts
+# sudo fc-cache -fv
+# sudo fc-cache-64 -fv
+# dnf install webcore-fonts webcore-fonts-vista
+
+
 ### TODO
 
 23. Jabref?
