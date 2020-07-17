@@ -64,7 +64,17 @@ https://computingforgeeks.com/how-to-install-ffmpeg-on-centos-rhel-8/
 # dnf install http://rpmfind.net/linux/epel/7/x86_64/Packages/s/SDL2-2.0.10-1.el7.x86_64.rpm
 # dnf install ffmpeg ffmpeg-devel ffmpeg-libs
 
-11. Install Firefox
+11. Get Gnome extensions
+Get these with the system install of firefox
+Go to https://extensions.gnome.org
+Click 'Click here to install browser extensions'
+Add Frippery Panel Favourites
+Add TopIcons Plus Git
+Add clipboard Indicator
+# npm install -g linux-window-session-manager
+Add Window Session Manager
+
+12. Install Firefox
 Go to https://www.mozilla.org/en-GB/firefox/download/thanks/
 # mv Downloads/firefox-72.0.2.tar.bz2 Applications/
 # cd Applications
@@ -75,20 +85,11 @@ Exec is now /home/dbuchan/Applications/firefox/firefox
 Icon is /home/dbuchan/Applications/firefox/browser/chrome/icons/default/default128.png
 # chattr +i /usr/share/applications/firefox.desktop
 
-12. Open Firefox and login to sync
+13. Open Firefox and login to sync
 # Make appropriate firefox containers
 # Log in to web sites mail.com, gmail, firefox, reddit, gwj, github, twitter, work outlook, fb, feedly
 # log in to learn.gold.ac.uk, https://goldmine.gold.ac.uk/, https://agresso.gscams.gold.ac.uk/a
 # configure containers for each site
-
-13. Get Gnome extensions
-Go to https://extensions.gnome.org
-Click 'Click here to install browser extensions'
-Add Frippery Panel Favourites
-Add TopIconsFix
-Add clipboard Indicator
-# npm install -g linux-window-session-manager
-Add Window Session Manager
 
 14. Install google-chrome
 See centos8 instructions at
@@ -99,6 +100,7 @@ https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fe
 # mkdir /scratch/Applications
 # mkdir /scratch/Code
 # mkdir /scratch/Projects
+# mkdir /Course_dev
 # cd /home/dbuchan
 # ln -s /scratch/Applications Applications
 # ln -s /scratch/Code Code
@@ -115,10 +117,10 @@ Thunderbird OWL plugin allows MS-365 exchange support pretty transparently
 # mkdir /scratch/virtualenvs
 
 Add to .bashrc
-   export WORKON_HOME=/scratch/virtualenvs
-   export PROJECT_HOME=$HOME/Code
-   export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-   source virtualenvwrapper.sh
+export WORKON_HOME=$HOME/scratch/virtualenvs
+export PROJECT_HOME=$HOME/Code
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source virtualenvwrapper.sh
 
 18. Install dev libs for PSIPRED server
 # dnf install redis
@@ -151,23 +153,9 @@ see github releases for tarball
 # wget https://github.com/getferdi/ferdi/releases/download/v5.5.0/ferdi-5.5.0.x86_64.rpm
 # rpm -Uvh ferdi-5.5.0.x86_64.rpm
 
-# cd /usr/share/applications
-# touch franz.desktop
-# vi franz.desktop
-add:
-[Desktop Entry]
-Name=Franz
-GenericName=Media
-Comment=Social Media things
-Exec=/dbuchan/Applications/franz-5.4.1/franz
-Terminal=false
-Type=Application
-Icon=/dbuchan/Applications/franz-5.4.1/index.svg
-Categories=GNOME;GTK;Utility;
-StartupNotify=true
-
 22. Install connectTunnel for CS dept VPN
 http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
+Follow "working from home" instructions
 # added and alias to my bashrc script
 alias startct="startct -m console -s cswall.cs.ucl.ac.uk"
 
@@ -242,8 +230,13 @@ follow comments in the staging ansible_set_up.sh
 # pip3 install numpy scipy torch
 
 34. Open the Software dialogue
+Install flatpak https://flatpak.org/setup/CentOS/
 Install flathub VLC, libreoffice
 
+35. Intall OBS
+dnf install obs-studio
+
+2
 ### TODO
 
 23. Jabref?
@@ -251,3 +244,4 @@ Install flathub VLC, libreoffice
 32. Add pomodoro
 Down load source from https://gnomepomodoro.org/#download
 # dnf install autoconf-archive libappstream-glib-devel gobject-introspection-devel vala vala-devel gtk3-devel
+# dnf install glib2-devel gtk3-devel gobject-introspection-devel libpeas-devel
