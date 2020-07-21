@@ -247,8 +247,11 @@ https://rubjo.github.io/victor-mono/
 unpack to ~/.fonts
 # sudo fc-cache -fv
 # sudo fc-cache-64 -fv
-# dnf install webcore-fonts webcore-fonts-vista
+# dnf inst
 
+### DISABLING NOUVEAU
+
+I only got this to work once I used the modprobe blacklist and dracut method. Though I have also written grub.cfg to /boot/grub and /boot/efi/EFI/centos and I edit the DEFAUL linux_cmd
 
 ### TODO
 
