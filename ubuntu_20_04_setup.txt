@@ -1,0 +1,155 @@
+1. Let Ubuntu Software install updates and reboot
+
+2. In "Ubuntu Software" install
+   KeepassX
+   Atom
+   ffmpeg
+   OBS Studio
+   Pomodoro
+   Inkscape
+   gimp
+   VLC
+
+3. Get Mega sync
+   https://mega.nz/sync
+   sync directories so you can open passes in KeepassX
+
+4. Log in to firefox account
+   configure multi--account containers
+
+5. Install sync-settings in Atom
+   Access Token: SEE GITHUB DEVELOPER SETTINGS
+   GIST ID; 3c7678b1c60c348f0266567e44dad0fa
+
+6. Install Ferdi
+   https://getferdi.com/download/
+   Then log in to Ferdi account
+   And log in to coms accounts
+
+7. Install Google-chrome
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# apt install ./google-chrome-stable_current_amd64.deb
+
+8. Install R Studio
+Get package from
+https://rstudio.com/products/rstudio/download/#download
+# apt -y install r-base
+# apt install rstudio-1.3.1056-amd64.deb
+
+9. Configure GIT
+# apt-get install git
+# apt-get install libsecret-tools
+# git config --global user.name "Daniel Buchan"
+# git config --global user.email "clone@myself.com"
+# git config --global --unset credential.helper
+# git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+
+10. Install Gnome Extensions
+# apt install gnome-shell-extensions
+# apt-get install gnome-tweak-tool
+# apt-get install chrome-gnome-shell
+Click 'Click here to install browser extensions'
+Add Frippery Panel Favourites
+Add clipboard Indicator
+Add Hide Activities Button
+# apt-get install npm
+# npm install -g linux-window-session-manager
+Add Window Session Manager
+
+11. Gnome tweaks/Exentsions
+Appearance - Adwaita -dark
+Extensions - Auto move windows - on
+             Applications Menu - on
+             window list - on
+             Ubuntu Dock - off
+
+12. Get python things
+# apt install python3-pip
+# pip3 install pycodestyle
+# pip3 install virtualenv
+# pip3 install virtualenvwrapper
+# pip3 install numpy scipy torch
+
+13. Make useful dirs
+# chmod uo+rw /scratch
+# mkdir /scratch/Applications
+# mkdir /scratch/Code
+# mkdir /scratch/Projects
+# mkdir /scratch/virtualenvs
+# mkdir /Course_dev
+# cd /home/dbuchan
+# ln -s /scratch/Applications Applications
+# ln -s /scratch/Code Code
+# ln -s /scratch/Projects Projects
+
+14. install vim
+# apt install vim
+
+15. Edit .bashrc
+export WORKON_HOME=$HOME/scratch/virtualenvs
+export PROJECT_HOME=$HOME/Code
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source virtualenvwrapper.sh
+PS1="\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\]:\w\$ ";
+export PS1;
+
+alias ls="ls --color=always";
+alias z="ls --color=always -lah";
+#alias lrm="'find . | xargs rm'"
+alias duall="du -sch .[!.]* * | sort -h";
+alias vi="vim";
+alias sshk="ssh knuckles.cs.ucl.ac.uk"
+alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.ac.uk";
+
+16. Install PSIPRED deb packages
+# apt-get install libgd-perl
+# apt-get install redis
+# apt-get install gnuplot
+# apt-get install ghostscript
+# apt-get install gcc-multilib
+# apt-get install postgresql
+# apt-get install postgresql-server-dev-12
+# apt-get install postgresql-contrib
+# apt-get install gv
+# apt-get install apache2 apache2-dev
+# apt-get install openjdk-14-jdk openjdk-14-source
+
+17. Install connectTunnel for CS dept VPN
+http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
+Follow "working from home" instructions
+
+18. Make some virtualenvs
+# mkvirtualenv analytics_automated; deactivate
+# mkvirtualenv psipred_website; deactivate
+# mkvirtualenv blast_cache; deactivate
+# mkvirtualenv advanced_web_dev; deactivate
+
+19. Install better fonts
+https://rubjo.github.io/victor-mono/
+https://fonts.google.com/specimen/Roboto+Slab
+https://fonts.google.com/specimen/Roboto
+add-apt-repository multiverse
+apt update && sudo apt install ttf-mscorefonts-installer
+
+TODO:
+Install psipred_website, analytics_automated, blast_cache
+
+29. Install analytics automated
+see doc/dev_installation.rst
+# workon analytics_automated
+# mkdir /scratch/postgres_databases
+
+30. Install Psipred website
+# workon psipred_website
+# cd psipred_website
+# pip install -r requirements/
+Follow README instructions for intial setup
+
+31. Install blast cache
+# workon blast_cache
+
+32. install npm stuff for psipred_javascript
+# follow the notes in the README
+
+33. Configure both ansible installs
+follow comments in the staging ansible_set_up.sh
