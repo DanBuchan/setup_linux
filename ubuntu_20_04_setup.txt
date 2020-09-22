@@ -3,12 +3,11 @@
 2. In "Ubuntu Software" install
    KeepassX
    Atom
-   ffmpeg
    OBS Studio
    Pomodoro
    Inkscape
    gimp
-   VLC
+   Docker
 
 3. Get Mega sync
    https://mega.nz/sync
@@ -48,13 +47,17 @@ https://rstudio.com/products/rstudio/download/#download
 # apt install gnome-shell-extensions
 # apt-get install gnome-tweak-tool
 # apt-get install chrome-gnome-shell
-Click 'Click here to install browser extensions'
+# apt-get install npm
+# npm install -g linux-window-session-manager
+Click open firefox,
+'Click here to install browser extensions'
 Add Frippery Panel Favourites
 Add clipboard Indicator
 Add Hide Activities Button
-# apt-get install npm
-# npm install -g linux-window-session-manager
-Add Window Session Manager
+Add Window Session Manager Extension
+Move save button:
+# gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DialogsUseHeader':<0>}"
+
 
 11. Gnome tweaks/Exentsions
 Appearance - Adwaita -dark
@@ -62,6 +65,7 @@ Extensions - Auto move windows - on
              Applications Menu - on
              window list - on
              Ubuntu Dock - off
+Change terminal colouring - Deselect "User colours from system theme"
 
 12. Get python things
 # apt install python3-pip
@@ -99,7 +103,7 @@ alias z="ls --color=always -lah";
 alias duall="du -sch .[!.]* * | sort -h";
 alias vi="vim";
 alias sshk="ssh knuckles.cs.ucl.ac.uk"
-alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.ac.uk";
+alias startct="/bin/startct -m console -u dbuchan -p PASSWD -d cswall.cs.ucl.ac.uk";
 
 16. Install PSIPRED deb packages
 # apt-get install libgd-perl
@@ -130,6 +134,24 @@ https://fonts.google.com/specimen/Roboto+Slab
 https://fonts.google.com/specimen/Roboto
 add-apt-repository multiverse
 apt update && sudo apt install ttf-mscorefonts-installer
+
+20. Install Docker
+https://docs.docker.com/engine/install/ubuntu/
+
+21. Install Videos
+# sudo apt-get install ubuntu-restricted-extras
+# sudo apt-get install libavcodec58 ffmpeg
+# sudo apt install libdvdnav4 gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly libdvd-pkg
+# sudo dpkg-reconfigure libdvd-pkg
+# sudo apt-get install ffmpeg ffmpeg:i386
+# apt-get install vlc
+# apt-get install mplayer
+
+22. Install goldsmith VPN
+# sudo apt-get install network-manager-openconnect
+# sudo apt-get install openconnect
+Add to .bashrc
+gsvpn () { echo PASSWD | sudo openconnect --protocol=pulse gcvpn.gold.ac.uk/campus -u USER --passwd-on-stdin; }
 
 TODO:
 Install psipred_website, analytics_automated, blast_cache
