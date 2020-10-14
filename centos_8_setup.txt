@@ -170,6 +170,7 @@ alias duall="du -sch .[!.]* * | sort -h";
 alias vi="vim";
 alias sshk="ssh knuckles.cs.ucl.ac.uk"
 alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.ac.uk";
+export CUDA_VISIBLE_DEVICES=1
 
 24. Log in to wayland to use the application search to set favourites or set via
 # gsettings get org.gnome.shell favorite-apps
