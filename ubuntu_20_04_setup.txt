@@ -19,6 +19,8 @@
 5. Install sync-settings in Atom
    Access Token: SEE GITHUB DEVELOPER SETTINGS
    GIST ID; 3c7678b1c60c348f0266567e44dad0fa
+   
+   Make sure ATOM icon is correct https://askubuntu.com/questions/1251269/atom-editor-snap-opens-with-two-strange-tabs
 
 6. Install Ferdi
    https://getferdi.com/download/
