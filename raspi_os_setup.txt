@@ -1,0 +1,36 @@
+1. Install snapd 
+# sudo apt-get install snapd
+# sudo reboot
+# sudo snap install keepassxc
+
+Download keepass icon
+Preferences-> Main Menu Editor -> New Menu -> 'Security'
+'Security' -> New Item -> Fill in for keepassxc (/snap/bin/keepassxc)
+
+2. Install MegaSync
+Download .deb from mega.nz
+Configure MegaSync
+Ensure 'Start on startup' is selected in setttings
+
+3. install firefox
+# sudo apt-get firefox-esr
+Log in to firefox account
+   configure multi--account containers
+
+4. Install art packages
+# sudo apt-get install inkscape
+# sudo apt-get install gimp
+
+5. Configure GIT
+# apt-get install git
+# apt-get install libsecret-tools
+# git config --global user.name "Daniel Buchan"
+# git config --global user.email "clone@myself.com"
+# git config --global --unset credential.helper
+# git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+
+
+X. Update panel preferences
+right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
+scroll to 'Application launch bar' -> 'Preferences'
+Assign favourites
