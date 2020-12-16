@@ -29,6 +29,23 @@ Log in to firefox account
 # git config --global --unset credential.helper
 # git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
 
+6. Install retropie
+https://retropie.org.uk/docs/Manual-Installation/
+
+7. Install amiga emulator
+See cthulhu's instructions
+http://eab.abime.net/showthread.php?t=97979
+
+8. Install FUSE using the Add/Remove Programs dialogue
+Set options (kempston joystick and kempston interface)
+Change screen size in filters
+Don't forget to SAVE settings
+
+9. install SpectrumNext
+TODO
+
+
+
 
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
