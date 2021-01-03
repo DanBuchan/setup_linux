@@ -4,7 +4,8 @@
 # countries to ~/roms_excluded
 #
 # A more correct solution would be to parse the genre and manufacturer
-# in /mame/hash/*.xml and use that but this was easier
+# from the correct xml file at /opt/retropie/emulators/mame/hash/*.xml
+# and use that but this was easier (read: more obvious)
 #
 # Not yet decided what to do with ROMS that are in the 0.174/2016 set
 # but not in emulation stations mamenames.xml (i.e. wpt_*, csi_*,
