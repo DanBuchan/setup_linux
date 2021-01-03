@@ -3,16 +3,18 @@
 # sudo reboot
 # sudo snap install keepassxc
 
-Download keepass icon
+Download keepass icon then:
 Preferences-> Main Menu Editor -> New Menu -> 'Security'
 'Security' -> New Item -> Fill in for keepassxc (/snap/bin/keepassxc)
+
+Use Add/Remove programs to install Deluge
 
 2. Install MegaSync
 Download .deb from mega.nz
 Configure MegaSync
 Ensure 'Start on startup' is selected in setttings
 
-3. install firefox
+3. Install firefox
 # sudo apt-get firefox-esr
 Log in to firefox account
    configure multi--account containers
@@ -34,6 +36,8 @@ Log in to firefox account
 https://retropie.org.uk/forum/topic/26628/audio-issues-after-latest-raspbian-updates-june-2020/4
 sudo apt-get remove --purge pulseaudio
 https://retropie.org.uk/docs/Manual-Installation/
+Don't forget to have it compile and install all the
+additional/experimental cores
 
 7. Install amiga emulator
 See cthulhu's instructions
@@ -42,17 +46,15 @@ http://eab.abime.net/showthread.php?t=97979
 https://fs-uae.net/download
 https://fs-uae.net/stable/3.0.4/fs-uae-launcher-3.0.4.tar.gz
 
-Install gamemode deamon
-https://github.com/FeralInteractive/gamemode
-https://github.com/FeralInteractive/gamemode/issues/304
-
-8. Install FUSE using the Add/Remove Programs dialogue
-Set options (kempston joystick and kempston interface)
-Change screen size in filters
-Don't forget to SAVE settings
-
-9. Set up amiga with harddrive, BetterWB and WHDLoad
+8. Set up fs-uae amiga with harddrive, BetterWB and WHDLoad
 https://www.youtube.com/watch?v=jJG8-KG9tLI vids 2 and 3
+
+9. Install FUSE
+Using the Add/Remove Programs dialogue
+Set options (kempston joystick and kempston interface)
+Change screen size in filters (though standard size and fullscreen
+works best)
+Don't forget to SAVE settings
 
 10. mdf2iso install
 sudo apt-get install mdf2iso
@@ -68,11 +70,16 @@ create a shell script to start next with:
 mono CSpect.exe -r -60 -vsync -w3 -tv -zxnext -nextrom -mmc=./cspect-next-2gb.img -sd2=./empty-2gb.img
 Check image-mount.sh for how to mount the image to get things on there
 
-12. Edit mame rom list
-Loads of the roms are fruitmachines or pinball tables (and even cash registers)
-would be worth removing those. Emulationstation uses 
-/opt/retropie/supplementary/emulationstation/resources/mamenames.xml to ID and
-name the ROMS. If you take entries out of the files they won't show up
+12. Get Mame roms
+The 0.174 Mame torrent set on archive.org is compatible with
+lr-mame2016. place the roms in ~/Retropie/roms/arcade/roms
+
+13. Edit mame rom list
+Loads of the roms are fruitmachines or pinball tables (and even cash
+registers) would be worth removing those. Emulationstation uses 
+/opt/retropie/supplementary/emulationstation/resources/mamenames.xml to
+ID and name the ROMS. I wrote a small script that uses that to move
+roms
 mkdir ~/roms_excluded
 mamelist_edit.py 
 

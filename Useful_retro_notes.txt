@@ -44,3 +44,44 @@ https://www.gamulator.com/
 https://romhustler.org/
 https://emulator.games/
 https://www.romulation.org/
+
+
+EXTENDED NOTES WITH LINKS:
+
+retropie/emmulatonstation:
+A) emulators don't show up in the GUI unless you have moved ROMS in their required location in ~/RetroPie/roms/
+B) The entire system requires the install directory be ~/RetroPie (maybe you can simlink that)
+C) Emulators are provided by "packages" in the RetroPie_setup. Many useful ones are not in the default set. So use the packages and beta menus to add ones you want. lr-mame2016 for instance
+D) In the runcommand configuration setting it to show artwork on boot can mean you can't enter the runcommand config when a rom is booting. But you need to do this when a ROM is booting to set which emulator runs it. So disable art/images.
+E) This 90Gb torrent is the set of mame roms that is compatible with mame 0.174, the 2016 release of MAME, which lr-mame2016 supports https://archive.org/details/MAME_2016_Arcade_Romsets
+F) I could not get sounds to work AT ALL for emmulatonstation until I uninstalled pulseaudio from the raspberry pi. Do that if retropie has no audio and alsamixer shows that it is defaulting to PulseAudio:
+sudo apt-get remove --purge pulseaudio
+
+Mednafen:
+This is an excellent console emulator. Sound on the SNES and PS1 was very glitchy until I reduced the sample rate to 44100 and added a buffer of 1000. Still quite glitchy for many PS1 games, even at SR of 22025. But other PS1 games (gran turismo, symphony of the night) seem fine. Not sure what else to do here, I think a 2 second audio buffer would fix it but it caps at 1second. Might look in to the config files and see if you can make different changes directly rather than using the UI.
+Also this video is needed if you want to support analogue sticks for games
+https://www.youtube.com/watch?v=aI9GBQ4It9U
+The PS1 bios ROMS are on archive
+https://archive.org/details/PlayStationBIOSFilesNAEUJP
+
+fs-uae:
+amiberry's emulation is not as good/complete as fs-uae
+Compile this yourself. The raspbian repo fs-uae and fs-uae-launcher pairing is broken. The fs-uae and fs-uae-launcher versions have to be the same to work together. I installed 3.05. You can get fs-uae-launcher src on it's own via the ftp site
+https://fs-uae.net/stable/3.0.5/
+
+Follow these guides to install workbench and better workbench on a Amiga HDD and then install WHDLoad. I can provide ALL the files, ROMs adfs needed
+https://www.youtube.com/watch?v=78MsVdETS98
+https://www.youtube.com/watch?v=qn944tMmQJY
+A) You can skip the bit about the pfs3aio filesystem as fs-uae doesn't support this, but it does have more sophisticated options for faster Amiga HDD images that you can play with
+B) When he's talking about Amiga Forever kickstart names you can use this look up table to understand which TOSEC rom files  are the same as which AF ones
+https://fs-uae.net/docs/kickstarts
+i.e The amiga-os-130.rom is the same as "Kickstart v1.3 r34.5 (1987)(Commodore)(A500-A1000-A2000-CDTV)[!].rom"
+C) When he's talking about mounting PC directories as disks in your amiga using winuae it isn't obvious but fs-uea supports this without having to create a special  device. You can just add directory paths in the HDD menu and they'll appear in workbench when the amiga boots.
+
+fuse:
+For spectrum emulation the version of fuse retropie ships with doesn't load many
+spectrum roms/tape-images. Just install the version that is in the raspbian repo.
+You can change the screen effect and size in the filters in the menus. But...
+the x2 and x3 size filters noticeably slow the emulation and fuck with the sounds
+on the raspberry pi. I've found it's better to leave it at x1 size and set it to
+full screen
