@@ -1,0 +1,46 @@
+Amiga:
+fs-uae files in ~/Documents
+whdownload.com for lha game archives
+install .lha in workbench with 'lha x [FILENAME]'
+unzip zip with 'unzip [FILENAME]'
+
+Spectrum:
+Fuse runs best at x1 size and in fullscreen. 
+https://worldofspectrum.org/
+
+Mednafen:
+alt-enter: fulscreen
+ctrl-alt+1, ctrl-alt-2: configure joypads
+F1: quick help screen
+
+Playstation:
+https://www.youtube.com/watch?app=desktop&v=aI9GBQ4It9U
+If you don't get an ISO try loading via .cue file
+You can build an iso
+bchunk file.bin file.cue file.iso
+
+N64:
+Best performance from retropie, compile all the experimental cores so
+you have RICE and GLideN64 available, then run at n64 native resoluton
+640x480
+
+Cspect:
+ctrl-b = *
+ctrl-m = .
+image-mount.sh tells you how to mount the NEXTOS sd card to make files
+changes
+In the NextOS browser F to filter files (d*.*, for everything starting
+with d)
+NextOS browser sorts by FAT write time(!?) use fatsort to get things 
+alphabetically sorted (use lsblk to get device)
+sudo fatsort -f /dev/loop4
+
+All sorts:
+https://www.planetemu.net/ - old favourite, good for amiga adfs
+https://www.retrostic.com/
+https://romsmania.cc/roms/super-nintendo
+https://www.romsgames.net/roms/super-nintendo/
+https://www.gamulator.com/
+https://romhustler.org/
+https://emulator.games/
+https://www.romulation.org/

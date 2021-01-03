@@ -59,6 +59,7 @@ sudo apt-get install mdf2iso
 11. Install CSpect
 sudo apt-get install mono-complete
 sudo apt-get install libopenal-dev
+sudo apt-get install fatsort
 http://www.cspect.org/
 Get the Next Roms, and unzip in the cspect dir
 http://zxspectrumnext.online/cspect/
@@ -73,7 +74,6 @@ would be worth removing those. Emulationstation uses
 name the ROMS. If you take entries out of the files they won't show up
 mkdir ~/roms_excluded
 mamelist_edit.py 
-
 
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
