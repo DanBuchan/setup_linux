@@ -30,24 +30,60 @@ Log in to firefox account
 # git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
 
 6. Install retropie
+https://retropie.org.uk/forum/topic/26628/audio-issues-after-latest-raspbian-updates-june-2020/4
+sudo apt-get remove --purge pulseaudio
 https://retropie.org.uk/docs/Manual-Installation/
 
 7. Install amiga emulator
 See cthulhu's instructions
+Note that the emulator and launcher must have the same version numbers
 http://eab.abime.net/showthread.php?t=97979
+https://fs-uae.net/download
+https://fs-uae.net/stable/3.0.4/fs-uae-launcher-3.0.4.tar.gz
+
+Install gamemode deamon
+https://github.com/FeralInteractive/gamemode
+https://github.com/FeralInteractive/gamemode/issues/304
 
 8. Install FUSE using the Add/Remove Programs dialogue
 Set options (kempston joystick and kempston interface)
 Change screen size in filters
 Don't forget to SAVE settings
 
-9. install SpectrumNext
-TODO
+9. Set up amiga with harddrive, BetterWB and WHDLoad
+https://www.youtube.com/watch?v=jJG8-KG9tLI vids 2 and 3
 
+10. mdf2iso install
+sudo apt-get install mdf2iso
 
+11. Install CSpect
+sudo apt-get install mono-complete
+sudo apt-get install libopenal-dev
+http://www.cspect.org/
+Get the Next Roms, and unzip in the cspect dir
+http://zxspectrumnext.online/cspect/
+create a shell script to start next with:
+mono CSpect.exe -r -60 -vsync -w3 -tv -zxnext -nextrom -mmc=./cspect-next-2gb.img -sd2=./empty-2gb.img
+Check image-mount.sh for how to mount the image to get things on there
+
+12. Edit mame rom list
+Loads of the roms are fruitmachines or pinball tables (and even cash registers)
+would be worth removing those. Emulationstation uses 
+/opt/retropie/supplementary/emulationstation/resources/mamenames.xml to ID and
+name the ROMS. If you take entries out of the files they won't show up
+mkdir ~/roms_excluded
+mamelist_edit.py 
 
 
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
 scroll to 'Application launch bar' -> 'Preferences'
 Assign favourites
+
+MAYBE:
+Y. Install ZEsarUX
+https://github.com/chernandezba/zesarux/releases
+http://zxspectrumnext.online/cspect/
+https://www.youtube.com/watch?v=2a1Kv8HiP5M
+I kept getting segfaults in fullscreen mode, edit ~/.zesaruxrc to change
+Moderately unimpressed with the performance
