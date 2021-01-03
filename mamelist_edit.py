@@ -25,7 +25,8 @@ black_list = ["bootleg", "hack", "coin dropper", "LaserDisc",
 	      "Gaminator", "(MPU4", "(MPU5", "Dance Dance Revolution",
 	       "Player's Edge", "Fruit Carnival", "Luvvly Jubbly",
 	       "Cal Omega", "Playboy", "Pit Boss", "Funcube", "Columbus",
-	       "Touchmaster", "Royal", "Witch Jack", "Casino", "Cash"]
+	       "Touchmaster", "Royal", "Witch Jack", "Casino", "Cash",
+	       "Poker", "Quiz"]
 countries = ["(Spanish", "(Russian", "(Russia", "(Japan", "(German",
              "(France", "(Korea"]
 exclusions = manufacturers + black_list + countries
