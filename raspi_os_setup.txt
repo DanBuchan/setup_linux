@@ -23,11 +23,12 @@ Log in to firefox account
 
 5. Configure GIT
 # apt-get install git
-# apt-get install libsecret-tools
+# apt-get install libsecret-tools libsecret-1-0 libsecret-1-dev
+# sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 # git config --global user.name "Daniel Buchan"
 # git config --global user.email "clone@myself.com"
 # git config --global --unset credential.helper
-# git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+# git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
 6. Install retropie
 https://retropie.org.uk/forum/topic/26628/audio-issues-after-latest-raspbian-updates-june-2020/4
