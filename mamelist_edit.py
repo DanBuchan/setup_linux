@@ -6,6 +6,9 @@
 # A more correct solution would be to parse the genre and manufacturer
 # in /mame/hash/*.xml and use that but this was easier
 #
+# Not yet decided what to do with ROMS that are in the 0.174/2016 set
+# but not in emulation stations mamenames.xml (i.e. wpt_*, csi_*,
+# bbh_*, sman_*). Are these real machines on shared resouces?
 #
 
 import shutil
