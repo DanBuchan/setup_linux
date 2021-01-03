@@ -19,14 +19,14 @@ manufacturers = ["(Maygay", "(Barcrest", "(Ace", "(Pcp", "(Bellfruit",
                  "(Electrocoin", "(EPOCH", "(Qps", "(Fairgames",
 		 "(JPM", "(Avantime", "(Empire", "(Crystal", "(Union",
 		 "Bwb", "(Brunel Research", "(Vivid", "(Gemini",
-		 "(Mdm", "(BFM", "(Concept"]
+		 "(Mdm", "(BFM", "(Concept", "(Project", "(Coinworld"]
 black_list = ["bootleg", "hack", "coin dropper", "LaserDisc",
               "Fruit Bonus", "Fruit Cocktail", "(Trackball",
 	      "Gaminator", "(MPU4", "(MPU5", "Dance Dance Revolution",
 	       "Player's Edge", "Fruit Carnival", "Luvvly Jubbly",
 	       "Cal Omega", "Playboy", "Pit Boss", "Funcube", "Columbus",
 	       "Touchmaster", "Royal", "Witch Jack", "Casino", "Cash",
-	       "Poker", "Quiz"]
+	       "Poker", "Quiz", "Jackpot", "Addams"]
 countries = ["(Spanish", "(Russian", "(Russia", "(Japan", "(German",
              "(France", "(Korea"]
 exclusions = manufacturers + black_list + countries
