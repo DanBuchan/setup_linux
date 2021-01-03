@@ -8,8 +8,8 @@
 #
 # Not yet decided what to do with ROMS that are in the 0.174/2016 set
 # but not in emulation stations mamenames.xml (i.e. wpt_*, csi_*,
-# bbh_*, sman_*). Are these real machines on shared resouces?
-#
+# bbh_*, sman_*, pepk0*, pepp0*, peps0*, pex0*, pex2*,). Are these 
+# real machines or shared resouces? For now have manually moved them
 
 import shutil
 import os.path
