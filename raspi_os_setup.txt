@@ -50,11 +50,15 @@ https://fs-uae.net/stable/3.0.4/fs-uae-launcher-3.0.4.tar.gz
 https://www.youtube.com/watch?v=jJG8-KG9tLI vids 2 and 3
 
 9. Install FUSE
-Using the Add/Remove Programs dialogue
+sudo apt-get install spectrum-roms fuse-emulator-common fuse-emulator-sdl fuse-emulator-utils
+Get the Russian roms from https://github.com/pcbsd/pbi/tree/master/modules/emulators/fuse/resources/share/fuse
+Copy them to /usr/share/spectrum-roms
 Set options (kempston joystick and kempston interface)
 Change screen size in filters (though standard size and fullscreen
 works best)
 Don't forget to SAVE settings
+See also, for using trdos/PC modes
+https://spectrumcomputing.co.uk/forums/viewtopic.php?t=408
 
 10. mdf2iso install
 sudo apt-get install mdf2iso
@@ -82,6 +86,11 @@ ID and name the ROMS. I wrote a small script that uses that to move
 roms
 mkdir ~/roms_excluded
 mamelist_edit.py 
+
+14. Get bluetooth for alsa installed
+sudo apt-get install bluealsa
+Folllowed this up to A2DP Support (don't forget scan off)
+https://youness.net/raspberry-pi/how-to-connect-bluetooth-headset-or-speaker-to-raspberry-pi-3
 
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
