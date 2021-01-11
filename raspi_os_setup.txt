@@ -40,7 +40,7 @@ Don't forget to have it compile and install all the
 additional/experimental cores
 
 7. Install amiga emulator
-See cthulhu's instructions
+See cthulhu's instructions pm the abime thread
 Note that the emulator and launcher must have the same version numbers
 http://eab.abime.net/showthread.php?t=97979
 https://fs-uae.net/download
@@ -63,7 +63,7 @@ https://spectrumcomputing.co.uk/forums/viewtopic.php?t=408
 10. mdf2iso install
 sudo apt-get install mdf2iso
 
-11. Install CSpect
+11. Install CSpect, for Spectrum Next emulation
 sudo apt-get install mono-complete
 sudo apt-get install libopenal-dev
 sudo apt-get install fatsort
@@ -91,6 +91,19 @@ mamelist_edit.py
 sudo apt-get install bluealsa
 Folllowed this up to A2DP Support (don't forget scan off)
 https://youness.net/raspberry-pi/how-to-connect-bluetooth-headset-or-speaker-to-raspberry-pi-3
+
+15. Get netflix running
+Install the Netflix plugin for Kodi from CastagnaIT.
+https://pimylifeup.com/raspberry-pi-netflix/
+
+16. Get the VPN running
+Install and configure OpenVPN
+https://www.raspberrypi-spy.co.uk/2020/06/raspberry-pi-vpn-setup-guide/
+I got my TigerVPN openvpn config and at step 8 did these two rewrites:
+sudo find *.ovpn -type f -exec sed -i 's/auth-user-pass/auth-user-pass \/etc\/openvpn\/config\/auth.txt/g' {} \;
+sudo find *.ovpn -type f -exec sed -i 's/ca ca.crt/ca \/etc\/openvpn\/config\/ca.crt/g' {} \;
+And I used the Main Menu Editor to make an OpenVPN menu icon that will conenct
+to one of the vpn hosts
 
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
