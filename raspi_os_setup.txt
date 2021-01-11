@@ -90,7 +90,7 @@ mamelist_edit.py
 
 14. Get bluetooth for alsa installed
 sudo apt-get install bluealsa
-Folllowed this up to A2DP Support (don't forget scan off)
+Folllowed this guide up to the A2DP support bit (don't forget scan off)
 https://youness.net/raspberry-pi/how-to-connect-bluetooth-headset-or-speaker-to-raspberry-pi-3
 
 15. Get netflix running
