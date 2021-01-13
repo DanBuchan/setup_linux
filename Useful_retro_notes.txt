@@ -10,7 +10,7 @@ https://worldofspectrum.org/
 
 Mednafen:
 alt-enter: fulscreen
-ctrl-alt+1, ctrl-alt-2: configure joypads
+shift-alt+1, shift-alt-2: configure joypads
 F1: quick help screen
 
 Playstation:

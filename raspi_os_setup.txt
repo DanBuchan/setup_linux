@@ -94,10 +94,9 @@ Folllowed this guide up to the A2DP support bit (don't forget scan off)
 https://youness.net/raspberry-pi/how-to-connect-bluetooth-headset-or-speaker-to-raspberry-pi-3
 
 15. Get netflix running
-Install the Netflix plugin for Kodi from CastagnaIT.
-https://pimylifeup.com/raspberry-pi-netflix/
+https://www.tomshardware.com/uk/how-to/play-netflix-raspberry-pi
 
-16. Get the VPN running
+16 Get the VPN running
 Install and configure OpenVPN
 https://www.raspberrypi-spy.co.uk/2020/06/raspberry-pi-vpn-setup-guide/
 I got my TigerVPN openvpn config and at step 8 did these two rewrites:
@@ -118,3 +117,7 @@ http://zxspectrumnext.online/cspect/
 https://www.youtube.com/watch?v=2a1Kv8HiP5M
 I kept getting segfaults in fullscreen mode, edit ~/.zesaruxrc to change
 Moderately unimpressed with the performance
+
+15. Get netflix running
+Install the Netflix plugin for Kodi from CastagnaIT.
+https://pimylifeup.com/raspberry-pi-netflix/
