@@ -1,3 +1,5 @@
+Short reminders for things:
+
 Amiga:
 fs-uae files in ~/Documents
 whdownload.com for lha game archives
@@ -8,7 +10,7 @@ Spectrum:
 Fuse runs best at x1 size and in fullscreen. 
 https://worldofspectrum.org/
 
-Mednafen:
+Mednafen (better than retropie for most 8/16bit emulators):
 alt-enter: fulscreen
 shift-alt+1, shift-alt-2: configure joypads
 F1: quick help screen
