@@ -110,6 +110,12 @@ sudo find *.ovpn -type f -exec sed -i 's/ca ca.crt/ca \/etc\/openvpn\/config\/ca
 And I used the Main Menu Editor to make an OpenVPN menu icon that will conenct
 to one of the vpn hosts
 
+19. Install better fonts
+https://rubjo.github.io/victor-mono/
+https://www.fontsquirrel.com/fonts/ - down load Droid and Noto
+apt update && sudo apt install ttf-mscorefonts-installer
+sudo dpkg-reconfigure fontconfig-config
+
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
 scroll to 'Application launch bar' -> 'Preferences'
