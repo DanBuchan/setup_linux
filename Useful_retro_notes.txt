@@ -2,7 +2,7 @@ Short reminders for things:
 
 Amiga:
 fs-uae files in ~/Documents
-whdownload.com for lha game archives
+see whdownload.com for lha game archives
 install .lha in workbench with 'lha x [FILENAME]'
 unzip zip with 'unzip [FILENAME]'
 
@@ -11,7 +11,7 @@ Fuse runs best at x1 size and in fullscreen.
 https://worldofspectrum.org/
 
 Mednafen (better than retropie for most 8/16bit emulators):
-alt-enter: fulscreen
+alt-enter: fullscreen
 shift-alt+1, shift-alt-2: configure joypads
 F1: quick help screen
 
@@ -26,7 +26,7 @@ Best performance from retropie, compile all the experimental cores so
 you have RICE and GLideN64 available, then run at n64 native resoluton
 640x480
 
-Cspect:
+Cspect Spectrum Next emulation:
 ctrl-b = *
 ctrl-m = .
 image-mount.sh tells you how to mount the NEXTOS sd card to make files
