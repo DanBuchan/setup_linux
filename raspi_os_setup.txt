@@ -2,6 +2,7 @@
 # sudo apt-get install snapd
 # sudo reboot
 # sudo snap install keepassxc
+# sudo snap install mednafen
 
 Download keepass icon then:
 Preferences-> Main Menu Editor -> New Menu -> 'Security'
@@ -128,7 +129,3 @@ http://zxspectrumnext.online/cspect/
 https://www.youtube.com/watch?v=2a1Kv8HiP5M
 I kept getting segfaults in fullscreen mode, edit ~/.zesaruxrc to change
 Moderately unimpressed with the performance
-
-15. Get netflix running
-Install the Netflix plugin for Kodi from CastagnaIT.
-https://pimylifeup.com/raspberry-pi-netflix/
