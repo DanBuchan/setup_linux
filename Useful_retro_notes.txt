@@ -58,6 +58,8 @@ D) In the runcommand configuration setting it to show artwork on boot can mean y
 E) This 90Gb torrent is the set of mame roms that is compatible with mame 0.174, the 2016 release of MAME, which lr-mame2016 supports https://archive.org/details/MAME_2016_Arcade_Romsets
 F) I could not get sounds to work AT ALL for emmulatonstation until I uninstalled pulseaudio from the raspberry pi. Do that if retropie has no audio and alsamixer shows that it is defaulting to PulseAudio:
 sudo apt-get remove --purge pulseaudio
+G) start retropie on the commandline with
+   # emulationstaion 
 
 Mednafen:
 This is an excellent console emulator. Sound on the SNES and PS1 was very glitchy until I reduced the sample rate to 44100 and added a buffer of 1000. Still quite glitchy for many PS1 games, even at SR of 22025. But other PS1 games (gran turismo, symphony of the night) seem fine. Not sure what else to do here, I think a 2 second audio buffer would fix it but it caps at 1second. Might look in to the config files and see if you can make different changes directly rather than using the UI.
