@@ -9,6 +9,15 @@ Preferences-> Main Menu Editor -> New Menu -> 'Security'
 
 Use Add/Remove programs to install Deluge
 
+1. Switch to 64bit kernel
+sudo rpi-update # careful here
+sudo vi /boot/config.txt
+	# add tp pi4 section:
+	# arm_64bit=1
+firefox-esr video does not support 64bit
+Have moved to media chromium (see below, had to install RES plugin
+manually)
+
 2. Install MegaSync
 Download .deb from mega.nz
 Configure MegaSync
@@ -116,6 +125,27 @@ https://www.fontsquirrel.com/fonts/ - down load Droid and Noto
 apt update && sudo apt install ttf-mscorefonts-installer
 sudo dpkg-reconfigure fontconfig-config
 
+20. Install CUDAtext (while we wait for a sublimetext or
+atom ARM build)
+http://www.uvviewsoft.com/cudatext/download.html
+python3 is in /usr/lib/python3.7/
+
+21. Install TouchEgg and Toche
+https://github.com/JoseExposito/touchegg
+https://github.com/JoseExposito/touche/
+> sudo apt-get install gjs
+> cd touche
+> npm run build
+
+> cd touchegg
+> sudo apt install ./touchegg_*.deb
+
+23. Install Vulkan
+https://qengineering.eu/install-vulkan-on-raspberry-pi.html
+I went the piKiss route ymmv
+Probably update any games/emulator to use vulkan at this
+point
+
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
 scroll to 'Application launch bar' -> 'Preferences'
@@ -128,7 +158,3 @@ http://zxspectrumnext.online/cspect/
 https://www.youtube.com/watch?v=2a1Kv8HiP5M
 I kept getting segfaults in fullscreen mode, edit ~/.zesaruxrc to change
 Moderately unimpressed with the performance
-
-15. Get netflix running
-Install the Netflix plugin for Kodi from CastagnaIT.
-https://pimylifeup.com/raspberry-pi-netflix/
