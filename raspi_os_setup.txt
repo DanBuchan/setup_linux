@@ -2,6 +2,7 @@
 # sudo apt-get install snapd
 # sudo reboot
 # sudo snap install keepassxc
+# sudo snap install mednafen
 
 Download keepass icon then:
 Preferences-> Main Menu Editor -> New Menu -> 'Security'
