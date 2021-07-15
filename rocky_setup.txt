@@ -1,0 +1,20 @@
+1) download megasync (redhat 8 pacakge) and Nautilus integration
+https://mega.io/sync
+sudo dnf install *.rpm
+2) Enable epel repo
+sudo dnf install epel-release
+3) Install keepassxc
+sudo dnf install keepassxc
+4) log in to github
+https://www.github.com/
+5) Clone setup_linux repo
+mkdir ~/Code
+git clone https://github.com/DanBuchan/setup_linux.git
+6) Configure git
+https://help.github.com/articles/setting-your-username-in-git
+git config --global user.name "Daniel Buchan"
+git config --global user.email "clone@myself.com"
+7) Configure git credential helper
+sudo dnf install libsecret-devel
+git config --global --unset credential.helper
+git config --global credential.helper /usr/libexec/git-core/git-credential
