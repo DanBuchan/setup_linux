@@ -199,3 +199,4 @@ sudo mount -t ntfs-3g /dev/sdb5 /mnt/backup/
 
 # TO DO configure and set up all the psipred components
 # TO DO Still can't build gnome-pomodoro
+# TO DO some stuff
