@@ -21,9 +21,10 @@ git config --global user.name "Daniel Buchan"
 git config --global user.email "clone@myself.com"
 
 7) Configure git credential helper
-sudo dnf install libsecret-devel
+sudo dnf install libsecret-devel git-credential-libsecret
 git config --global --unset credential.helper
-git config --global credential.helper /usr/libexec/git-core/git-credential
+git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+
 
 8) Update OS packages
 sudo dnf update
