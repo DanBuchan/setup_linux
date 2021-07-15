@@ -190,6 +190,11 @@ sudo fc-cache-64 -fv
 31) install nvidia drivers
 sudo dnf install kmod-nvidia xorg-x11-drv-nvidia-cuda
 
+32) Mount backup drive
+https://www.howtoforge.com/tutorial/mount-ntfs-centos/
+dnf install ntfs-3g
+sudo mkdir /mnt/backup
+sudo mount -t ntfs-3g /dev/sdb5 /mnt/backup/
 
 # TO DO configure and set up all the psipred components
 # TO DO Still can't build gnome-pomodoro
