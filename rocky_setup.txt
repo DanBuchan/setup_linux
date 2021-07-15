@@ -1,20 +1,195 @@
 1) download megasync (redhat 8 pacakge) and Nautilus integration
 https://mega.io/sync
 sudo dnf install *.rpm
+
 2) Enable epel repo
 sudo dnf install epel-release
+
 3) Install keepassxc
 sudo dnf install keepassxc
+
 4) log in to github
 https://www.github.com/
+
 5) Clone setup_linux repo
 mkdir ~/Code
 git clone https://github.com/DanBuchan/setup_linux.git
+
 6) Configure git
 https://help.github.com/articles/setting-your-username-in-git
 git config --global user.name "Daniel Buchan"
 git config --global user.email "clone@myself.com"
+
 7) Configure git credential helper
 sudo dnf install libsecret-devel
 git config --global --unset credential.helper
 git config --global credential.helper /usr/libexec/git-core/git-credential
+
+8) Update OS packages
+sudo dnf update
+sudo sudo dnf install dnf-plugins-core
+sudo dnf config-manager --set-enabled powertools
+sudo dnf update
+sudo dnf groupinstall "Development Tools"
+
+9) Get Gnome extensions
+sudo dnf install npm
+sudo npm install -g linux-window-session-manager
+Get these with the system install of firefox
+Go to https://extensions.gnome.org
+Click 'Click here to install browser extensions'
+Add Frippery Panel Favourites
+Add TopIcons Plus Git
+Add clipboard Indicator
+Add Window Session Manager
+Add Hide Activities Button
+
+10) Gnome appearcance tweaks
+sudo dnf install gnome-tweaks
+open gnome-tweaks:
+Appearnce -> Themes -> Applications -> Adwaita-dark
+Windows -> Titlebar Buttons -> Minimise
+Extensions -> Window list
+Extensions -> Hide activities button
+gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DialogsUseHeader':<0>}"
+In terminal preferences change terminal colouring - Deselect "User colours from system theme"
+
+11) Install Atom
+sudo dnf install lsb-core-noarch
+sudo dnf install libXScrnSaver
+sudo pip3 install pycodestyle
+https://atom.io/
+download rpm
+sudo dnf install atom.x86_64.rpm
+
+12) configure Atom
+install sync-settings
+Access Token: SEE OTHER ATOM INSTALL
+GIST ID: 3c7678b1c60c348f0266567e44dad0fa
+Restore Packages
+set linter-pycodestyle path
+
+13) install ffmpeg
+sudo dnf install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm
+sudo dnf install ffmpeg ffmpeg-devel ffmpeg-libs
+
+14) Open Firefox and login to sync
+Make appropriate firefox containers
+Log in to web sites mail.com, gmail, firefox, reddit, gwj, twitter, feedly
+configure containers for each site
+set gb english dictionary
+
+15) Install Chrome
+install via repo creation
+https://kifarunix.com/install-google-chrome-on-rocky-linux-8-desktop/
+log in to work outlook, learn.gold.ac.uk, https://goldmine.gold.ac.uk/, https://bw.campus.goldsmiths.ac.uk/BusinessWorld/Login/Login.aspx
+
+16) Make useful dirs
+# mkdir Applications
+# mkdir Code
+# mkdir Projects
+# mkdir Course_dev
+
+17) Install development libs for system Python Dev
+sudo dnf install python36-devel
+sudo pip3 install virtualenv
+sudo pip3 install virtualenvwrapper
+mkdir ~/virtualenvs
+
+add to .bashrc
+export WORKON_HOME=$HOME/virtualenvs
+export PROJECT_HOME=$HOME/Code
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+source virtualenvwrapper.sh
+
+18) Install dev libs for PSIPRED server
+sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel
+sudo dnf install postgresql postgresql-devel postgresql-server postgresql-server-devel
+sudo dnf install inkscape gimp gv httpd httpd-devel ansible cpan
+sudo cpan install Expect
+  May require force on some systems
+sudo cpan install GD
+
+19) Install openjdk
+sudo dnf install java-latest-openjdk java-latest-openjdk-devel
+
+20) R/Rstudio Setup
+Note that epel Powertools must be enabled at this point
+sudo dnf install R readline-devel
+https://www.rstudio.com/products/rstudio/download/#download
+sudo dnf install rstudio*.rpm
+
+21) Install Ferdi
+https://getferdi.com/download
+sudo dnf install ferdi-5.5.0.x86_64.rpm
+
+22) Install connectTunnel for CS dept VPN
+https://tsg.cs.ucl.ac.uk/cs-vpn-cs-wall/
+Follow "working from home" instructions
+
+23) Install goldsmith VPN
+sudo dnf install network-manager-openconnect openconnect
+
+24) Add some .bashrc things
+remeber to swap PASSWD, also doublecheck --servercert
+PS1="\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\]:\w\$ ";
+export PS1;
+alias ls="ls --color=always";
+alias z="ls --color=always -lah";
+#alias lrm="'find . | xargs rm'"
+alias duall="du -sch .[!.]* * | sort -h";
+alias vi="vim";
+alias sshk="ssh knuckles.cs.ucl.ac.uk"
+alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.ac.uk";
+export CUDA_VISIBLE_DEVICES=1
+gsvpn () { echo PASSWD | sudo openconnect --protocol=pulse gcvpn.gold.ac.uk/campus -u dbuch001 --passwd-on-stdin --servercert pin-sha256:OxxdgDl335TSoY/Rrsnm8rTNnttexISOh/nUfoZSTak=; }
+
+25) Get core PSIPRED Server development packages
+To begin with I only get PSIPRED, I only need to get the other algorithms
+if I need to work on them
+git clone https://github.com/psipred/psipred_website.git
+git clone https://github.com/psipred/blast_cache.git
+git clone https://github.com/psipred/psipred_javascript.git
+git clone https://github.com/psipred/server_update.git
+git clone https://github.com/psipred/ansible_config.git
+git clone https://github.com/psipred/ansible_production_config.git
+git clone https://github.com/psipred/biod3.git
+git clone https://github.com/psipred/psipred_branding.git
+git clone https://github.com/psipred/psipred.git
+git clone https://github.com/AnalyticsAutomated/commandRunner.git
+git clone https://github.com/AnalyticsAutomated/analytics_automated.git
+
+26) Make some local virtualenvs
+# mkvirtualenv analytics_automated; deactivate
+# mkvirtualenv psipred_website; deactivate
+# mkvirtualenv blast_cache; deactivate
+# mkvirtualenv advanced_web_dev; deactivate
+
+27) https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
+sudo chmod +x /etc/rc.d/rc.local
+add to rc.local:
+chmod uog+rw /var/run/postgresql/
+edit /usr/lib/tmpfiles.d/postgresql.conf:
+set permission to 0777
+
+28) add some useful Software
+sudo dnf vlc obs-studio
+
+29) Open the Software dialogue
+install libreoffice apps
+
+30) Install Better fonts
+https://rubjo.github.io/victor-mono/
+unpack to ~/.fonts
+fc-cache -fv
+fc-cache-64 -fv
+sudo fc-cache -fv
+sudo fc-cache-64 -fv
+
+31) install nvidia drivers
+sudo dnf install kmod-nvidia xorg-x11-drv-nvidia-cuda
+
+
+# TO DO configure and set up all the psipred components
+# TO DO Still can't build gnome-pomodoro

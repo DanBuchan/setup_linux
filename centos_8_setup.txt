@@ -124,7 +124,6 @@ source virtualenvwrapper.sh
 
 18. Install dev libs for PSIPRED server
 # dnf install redis
-# dnf install npm
 # dnf install gnuplot
 # dnf install ghostscript
 # dnf install glibc.i686
@@ -154,7 +153,7 @@ see github releases for tarball
 # rpm -Uvh ferdi-5.5.0.x86_64.rpm
 
 22. Install connectTunnel for CS dept VPN
-http://tsg.cs.ucl.ac.uk/basics/vpn/#c26036
+https://tsg.cs.ucl.ac.uk/cs-vpn-cs-wall/
 Follow "working from home" instructions
 # added and alias to my bashrc script
 alias startct="startct -m console -s cswall.cs.ucl.ac.uk"

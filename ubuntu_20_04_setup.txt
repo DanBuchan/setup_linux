@@ -19,7 +19,7 @@
 5. Install sync-settings in Atom
    Access Token: SEE GITHUB DEVELOPER SETTINGS
    GIST ID; 3c7678b1c60c348f0266567e44dad0fa
-   
+
    Make sure ATOM icon is correct https://askubuntu.com/questions/1251269/atom-editor-snap-opens-with-two-strange-tabs
 
 6. Install Ferdi
@@ -156,7 +156,7 @@ https://docs.docker.com/engine/install/ubuntu/
 # sudo apt-get install network-manager-openconnect
 # sudo apt-get install openconnect
 Add to .bashrc
-gsvpn () { echo PASSWD | sudo openconnect --protocol=pulse gcvpn.gold.ac.uk/campus -u USER --passwd-on-stdin; }
+gsvpn () { echo PASSWD | sudo openconnect --protocol=pulse gcvpn.gold.ac.uk/campus -u dbuch001 --passwd-on-stdin --servercert pin-sha256:OxxdgDl335TSoY/Rrsnm8rTNnttexISOh/nUfoZSTak=; }
 
 TODO:
 Install psipred_website, analytics_automated, blast_cache
