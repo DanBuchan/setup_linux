@@ -175,7 +175,7 @@ edit /usr/lib/tmpfiles.d/postgresql.conf:
 set permission to 0777
 
 28) add some useful Software
-sudo dnf vlc obs-studio
+sudo dnf vlc
 
 29) Open the Software dialogue
 install libreoffice apps
@@ -196,6 +196,19 @@ https://www.howtoforge.com/tutorial/mount-ntfs-centos/
 dnf install ntfs-3g
 sudo mkdir /mnt/backup
 sudo mount -t ntfs-3g /dev/sdb5 /mnt/backup/
+
+33) install ssh server
+dnf install openssh-server
+systemctl start sshd
+systemctl enable sshd
+firewall-cmd --zone=public --permanent --add-service=ssh
+firewall-cmd --reload
+
+34) INstall flathub
+sudo dnf install flatpak
+sudo flatpak install flathub com.obsproject.Studio
+
+35
 
 # TO DO configure and set up all the psipred components
 # TO DO Still can't build gnome-pomodoro
