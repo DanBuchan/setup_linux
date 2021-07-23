@@ -1,7 +1,7 @@
 1. Appearance Settings
 Defaults -> For Large Screens -> "Set Defaults"
 
-2. Install snapd 
+2. Install packages
 # sudo apt-get install snapd
 # sudo reboot
 # sudo snap install keepassxc
@@ -11,7 +11,7 @@ Download keepass icon then:
 Preferences-> Main Menu Editor -> New Menu -> 'Security'
 'Security' -> New Item -> Fill in for keepassxc (/snap/bin/keepassxc)
 
-Use Add/Remove programs to install Deluge
+Use Add/Remove programs to install Deluge, mednafe, mednaffen
 
 3. Install MegaSync
 Download .deb from mega.nz
