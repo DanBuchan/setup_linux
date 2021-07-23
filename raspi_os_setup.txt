@@ -1,4 +1,7 @@
-1. Install snapd 
+1. Appearance Settings
+Defaults -> For Large Screens -> "Set Defaults"
+
+2. Install snapd 
 # sudo apt-get install snapd
 # sudo reboot
 # sudo snap install keepassxc
@@ -10,7 +13,7 @@ Preferences-> Main Menu Editor -> New Menu -> 'Security'
 
 Use Add/Remove programs to install Deluge
 
-1. Install MegaSync
+3. Install MegaSync
 Download .deb from mega.nz
 Configure MegaSync
 Ensure 'Start on startup' is selected in setttings
