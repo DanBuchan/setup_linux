@@ -39,6 +39,11 @@ git clone https://github.com/DanBuchan/setup_linux.git
 # sudo apt-get install inkscape
 # sudo apt-get install gimp
 
+5. Install CUDAtext (while we wait for a sublimetext or
+atom ARM build)
+http://www.uvviewsoft.com/cudatext/download.html
+python3 is in /usr/lib/python3.7/
+
 6. Install retropie
 https://retropie.org.uk/forum/topic/26628/audio-issues-after-latest-raspbian-updates-june-2020/4
 sudo apt-get remove --purge pulseaudio
@@ -122,11 +127,6 @@ https://rubjo.github.io/victor-mono/
 https://www.fontsquirrel.com/fonts/ - down load Droid and Noto
 apt update && sudo apt install ttf-mscorefonts-installer
 sudo dpkg-reconfigure fontconfig-config
-
-20. Install CUDAtext (while we wait for a sublimetext or
-atom ARM build)
-http://www.uvviewsoft.com/cudatext/download.html
-python3 is in /usr/lib/python3.7/
 
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
