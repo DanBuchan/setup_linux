@@ -10,30 +10,17 @@ Preferences-> Main Menu Editor -> New Menu -> 'Security'
 
 Use Add/Remove programs to install Deluge
 
-1. Switch to 64bit kernel
-sudo rpi-update # careful here
-sudo vi /boot/config.txt
-	# add tp pi4 section:
-	# arm_64bit=1
-firefox-esr video does not support 64bit
-Have moved to media chromium (see below, had to install RES plugin
-manually)
-
-2. Install MegaSync
+1. Install MegaSync
 Download .deb from mega.nz
 Configure MegaSync
 Ensure 'Start on startup' is selected in setttings
 
-3. Install firefox
+2. Install firefox
 # sudo apt-get firefox-esr
 Log in to firefox account
    configure multi--account containers
 
-4. Install art packages
-# sudo apt-get install inkscape
-# sudo apt-get install gimp
-
-5. Configure GIT
+3. Configure GIT
 # apt-get install git
 # apt-get install libsecret-tools libsecret-1-0 libsecret-1-dev
 # sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
@@ -41,6 +28,13 @@ Log in to firefox account
 # git config --global user.email "clone@myself.com"
 # git config --global --unset credential.helper
 # git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+
+get setup_linux repo
+git clone https://github.com/DanBuchan/setup_linux.git
+
+4. Install art packages
+# sudo apt-get install inkscape
+# sudo apt-get install gimp
 
 6. Install retropie
 https://retropie.org.uk/forum/topic/26628/audio-issues-after-latest-raspbian-updates-june-2020/4
