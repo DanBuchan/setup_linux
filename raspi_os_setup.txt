@@ -131,22 +131,6 @@ atom ARM build)
 http://www.uvviewsoft.com/cudatext/download.html
 python3 is in /usr/lib/python3.7/
 
-21. Install TouchEgg and Toche
-https://github.com/JoseExposito/touchegg
-https://github.com/JoseExposito/touche/
-> sudo apt-get install gjs
-> cd touche
-> npm run build
-
-> cd touchegg
-> sudo apt install ./touchegg_*.deb
-
-23. Install Vulkan
-https://qengineering.eu/install-vulkan-on-raspberry-pi.html
-I went the piKiss route ymmv
-Probably update any games/emulator to use vulkan at this
-point
-
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
 scroll to 'Application launch bar' -> 'Preferences'
