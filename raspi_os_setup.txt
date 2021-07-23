@@ -11,7 +11,7 @@ Download keepass icon then:
 Preferences-> Main Menu Editor -> New Menu -> 'Security'
 'Security' -> New Item -> Fill in for keepassxc (/snap/bin/keepassxc)
 
-Use Add/Remove programs to install Deluge, mednafe, mednaffen
+Use Add/Remove programs to install Deluge, mednafe, mednaffen, beetle PSX core
 
 3. Install MegaSync
 Download .deb from mega.nz
