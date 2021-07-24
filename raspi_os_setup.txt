@@ -2,12 +2,12 @@
 Defaults -> For Large Screens -> "Set Defaults"
 
 2. Install packages
-# sudo apt-get install snapd
+# sudo apt-get install snapd gimp inkscape mdf2iso mono-complete libopenal-dev fatsort git libsecret-tools libsecret-1-0 libsecret-1-dev
 # sudo reboot
 # sudo snap install keepassxc
 # sudo snap install mednafen
 
-Download keepass icon then:
+Download keepass icon then (or see backup DRIVE):
 Preferences-> Main Menu Editor -> New Menu -> 'Security'
 'Security' -> New Item -> Fill in for keepassxc (/snap/bin/keepassxc)
 
@@ -24,20 +24,14 @@ Log in to firefox account
    configure multi--account containers
 
 3. Configure GIT
-# apt-get install git
-# apt-get install libsecret-tools libsecret-1-0 libsecret-1-dev
 # sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 # git config --global user.name "Daniel Buchan"
 # git config --global user.email "clone@myself.com"
 # git config --global --unset credential.helper
 # git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
-get setup_linux repo
+get the setup_linux repo
 git clone https://github.com/DanBuchan/setup_linux.git
-
-4. Install art packages
-# sudo apt-get install inkscape
-# sudo apt-get install gimp
 
 5. Install CUDAtext (while we wait for a sublimetext or
 atom ARM build)
@@ -72,13 +66,7 @@ Don't forget to SAVE settings
 See also, for using trdos/PC modes
 https://spectrumcomputing.co.uk/forums/viewtopic.php?t=408
 
-10. mdf2iso install
-sudo apt-get install mdf2iso
-
 11. Install CSpect, for Spectrum Next emulation
-sudo apt-get install mono-complete
-sudo apt-get install libopenal-dev
-sudo apt-get install fatsort
 http://www.cspect.org/
 Get the Next Roms, and unzip in the cspect dir
 http://zxspectrumnext.online/cspect/
