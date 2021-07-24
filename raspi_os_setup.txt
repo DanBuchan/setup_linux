@@ -1,9 +1,16 @@
 1. Appearance Settings
 Defaults -> For Large Screens -> "Set Defaults"
 
+14. Get bluetooth for alsa installed
+Folllowed this guide up to the A2DP support bit (don't forget scan off)
+https://youness.net/raspberry-pi/how-to-connect-bluetooth-headset-or-speaker-to-raspberry-pi-3
+you can then use the pulseaudio volume control in the panel to route the audio to bluetooth
+I got a profile error but you can use the bluetoothctl 'remove' command to remove a device and start again
+
 2. Install packages
-# sudo apt-get install snapd gimp inkscape mdf2iso mono-complete libopenal-dev fatsort git libsecret-tools libsecret-1-0 libsecret-1-dev keepassxc deluge
+# sudo apt-get install snapd gimp inkscape mdf2iso mono-complete libopenal-dev fatsort git libsecret-tools libsecret-1-0 libsecret-1-dev keepassxc deluge vim firefox-esr
 # sudo apt install mednafen mednaffe libretro-beetle-psx
+# sudo reboot
 
 3. Add useful symlinks if we're rebuilding from backup
 ln -s /media/pi/ID/Applications Applications
@@ -13,11 +20,11 @@ ln -s /media/pi/ID/Deluge Deluge
 
 3. Install MegaSync
 Download .deb from mega.nz
+sudo dpkg -i megasync-Raspbian_10.0_armhf.deb
 Configure MegaSync
 Ensure 'Start on startup' is selected in setttings
 
 2. Install firefox
-# sudo apt-get firefox-esr
 Log in to firefox account
    configure multi--account containers
 
@@ -85,11 +92,6 @@ roms. Parsing the mame/hash/*.xml files would be a better/more robust
 way to ID which roms one wants to exclude
 mkdir ~/roms_excluded
 mamelist_edit.py 
-
-14. Get bluetooth for alsa installed
-sudo apt-get install bluealsa
-Folllowed this guide up to the A2DP support bit (don't forget scan off)
-https://youness.net/raspberry-pi/how-to-connect-bluetooth-headset-or-speaker-to-raspberry-pi-3
 
 15. Get netflix running
 https://www.tomshardware.com/uk/how-to/play-netflix-raspberry-pi
