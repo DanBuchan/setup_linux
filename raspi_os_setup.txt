@@ -2,16 +2,14 @@
 Defaults -> For Large Screens -> "Set Defaults"
 
 2. Install packages
-# sudo apt-get install snapd gimp inkscape mdf2iso mono-complete libopenal-dev fatsort git libsecret-tools libsecret-1-0 libsecret-1-dev
-# sudo reboot
-# sudo snap install keepassxc
-# sudo snap install mednafen
+# sudo apt-get install snapd gimp inkscape mdf2iso mono-complete libopenal-dev fatsort git libsecret-tools libsecret-1-0 libsecret-1-dev keepassxc deluge
+# sudo apt install mednafen mednaffe libretro-beetle-psx
 
-Download keepass icon then (or see backup DRIVE):
-Preferences-> Main Menu Editor -> New Menu -> 'Security'
-'Security' -> New Item -> Fill in for keepassxc (/snap/bin/keepassxc)
-
-Use Add/Remove programs to install Deluge, mednafe, mednaffen, beetle PSX core
+3. Add useful symlinks if we're rebuilding from backup
+ln -s /media/pi/ID/Applications Applications
+ln -s /media/pi/ID/ROMS ROMS
+ln -s /media/pi/ID/Videos Videos
+ln -s /media/pi/ID/Deluge Deluge
 
 3. Install MegaSync
 Download .deb from mega.nz
