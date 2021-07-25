@@ -8,7 +8,7 @@ you can then use the pulseaudio volume control in the panel to route the audio t
 I got a profile error but you can use the bluetoothctl 'remove' command to remove a device and start again
 
 2. Install packages
-# sudo apt-get install snapd gimp inkscape mdf2iso mono-complete libopenal-dev fatsort git libsecret-tools libsecret-1-0 libsecret-1-dev keepassxc deluge vim firefox-esr
+# sudo apt-get install openvpn snapd gimp inkscape mdf2iso mono-complete libopenal-dev fatsort git libsecret-tools libsecret-1-0 libsecret-1-dev keepassxc deluge vim firefox-esr
 # sudo apt install mednafen mednaffe libretro-beetle-psx
 # sudo reboot
 
@@ -41,14 +41,12 @@ git clone https://github.com/DanBuchan/setup_linux.git
 5. Install CUDAtext (while we wait for a sublimetext or
 atom ARM build)
 http://www.uvviewsoft.com/cudatext/download.html
-python3 is in /usr/lib/python3.7/
+In plugins set python at /usr/lib/python3.7/
 
 6. Install retropie
-https://retropie.org.uk/forum/topic/26628/audio-issues-after-latest-raspbian-updates-june-2020/4
-sudo apt-get remove --purge pulseaudio
 https://retropie.org.uk/docs/Manual-Installation/
-Don't forget to have it compile and install all the
-additional/experimental cores
+Don't forget to have it compile and install all the additional/experimental cores that you
+want. Move roms to the roms/ dir (or symlink from nvme disk)
 
 7. Install amiga emulator
 See cthulhu's instructions pm the abime thread
@@ -97,9 +95,8 @@ mamelist_edit.py
 https://www.tomshardware.com/uk/how-to/play-netflix-raspberry-pi
 curl -fsSL https://pi.vpetkov.net -o ventz-media-pi
 sh ventz-media-pi
-Also in Chromium Media you need to change the user agent string
-to a sufficiently modern browser (Firefox)
-Install User Agent Switcher for chromium
+Also in Chromium Media you may need to change the user agent string
+to a sufficiently modern browser (Firefox). Install User Agent Switcher for chromium
 
 16 Get the VPN running
 Install and configure OpenVPN
@@ -114,7 +111,9 @@ to one of the vpn hosts
 https://rubjo.github.io/victor-mono/
 https://www.fontsquirrel.com/fonts/ - down load Droid and Noto
 apt update && sudo apt install ttf-mscorefonts-installer
+https://raspberrytips.com/install-fonts-raspberry-pi/
 sudo dpkg-reconfigure fontconfig-config
+Update CudaText font (size 14)
 
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
