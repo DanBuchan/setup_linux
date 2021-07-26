@@ -8,7 +8,7 @@ you can then use the pulseaudio volume control in the panel to route the audio t
 I got a profile error but you can use the bluetoothctl 'remove' command to remove a device and start again
 
 2. Install packages
-# sudo apt-get install p7zip openvpn snapd gimp inkscape mdf2iso mono-complete libopenal-dev fatsort git libsecret-tools libsecret-1-0 libsecret-1-dev keepassxc deluge vim firefox-esr
+# sudo apt-get install gnome-keyring p7zip openvpn snapd gimp inkscape mdf2iso mono-complete libopenal-dev fatsort git libsecret-tools libsecret-1-0 libsecret-1-dev keepassxc deluge vim firefox-esr
 # sudo apt install mednafen mednaffe libretro-beetle-psx
 sudo cp /usr/bin/lxterminal /usr/bin/xterm
 # sudo reboot
@@ -81,7 +81,7 @@ Check image-mount.sh for how to mount the image to get things on there
 
 12. Get Mame roms
 The 0.174 Mame torrent set on archive.org is compatible with
-lr-mame2016. place the roms in ~/Retropie/roms/arcade/roms
+lr-mame2016. Place the roms on the NVME and symlink to ~/Retropie/roms/arcade/roms
 
 13. Edit mame rom list
 Loads of the roms are fruit machines or pinball tables (and even cash
