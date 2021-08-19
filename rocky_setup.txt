@@ -25,7 +25,6 @@ sudo dnf install libsecret-devel git-credential-libsecret
 git config --global --unset credential.helper
 git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
 
-
 8) Update OS packages
 sudo dnf update
 sudo sudo dnf install dnf-plugins-core
@@ -204,12 +203,12 @@ systemctl enable sshd
 firewall-cmd --zone=public --permanent --add-service=ssh
 firewall-cmd --reload
 
-34) INstall flathub
-sudo dnf install flatpak
+34) Install OBS and kdenlive via flathub
+sudo dnf install https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-1.el8.noarch.rpm
+sudo dnf install raven-release
+sudo dnf --enablerepo=raven-multimedia install dvgrab
+sudo dnf install flatpak kdenlive
 sudo flatpak install flathub com.obsproject.Studio
 
 35
-
-# TO DO configure and set up all the psipred components
 # TO DO Still can't build gnome-pomodoro
-# TO DO some stuff
