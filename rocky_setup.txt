@@ -21,7 +21,7 @@ git config --global user.name "Daniel Buchan"
 git config --global user.email "clone@myself.com"
 
 7) Configure git credential helper
-sudo dnf install libsecret-devel git-credential-libsecret
+sudo dnf install libsecret-devel git-credential-libsecret libcanberra-gtk*
 git config --global --unset credential.helper
 git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
 
