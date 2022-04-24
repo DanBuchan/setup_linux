@@ -100,6 +100,8 @@ sh ventz-media-pi
 Also in Chromium Media you may need to change the user agent string
 to a sufficiently modern browser (Firefox). Install User Agent Switcher for chromium
 
+https://www.tomshardware.com/uk/news/raspberry-pi-widevine
+
 16 Get the VPN running
 Install and configure OpenVPN
 https://www.raspberrypi-spy.co.uk/2020/06/raspberry-pi-vpn-setup-guide/
