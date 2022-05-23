@@ -217,5 +217,9 @@ in bash.rc
 alias jabref="/opt/jabref/bin//JabRef"
 
 
-36
+36)
 # TO DO Still can't build gnome-pomodoro
+
+37) nvidia driver issues
+sudo dnf remove /*nvidia*/
+sudo dnf install kmod-nvidia xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-devel kernel-devel xorg-x11-drv-nvidia-libs
