@@ -204,7 +204,7 @@ firewall-cmd --zone=public --permanent --add-service=ssh
 firewall-cmd --reload
 
 34) Install OBS and kdenlive via flathub
-sudo dnf install https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-1.el8.noarch.rpm
+sudo dnf install https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-2.el8.noarch.rpm
 sudo dnf install raven-release
 sudo dnf --enablerepo=raven-multimedia install dvgrab
 sudo dnf install flatpak kdenlive
