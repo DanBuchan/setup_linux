@@ -55,7 +55,7 @@ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/Dialo
 In terminal preferences change terminal colouring - Deselect "User colours from system theme"
 
 11) Install Atom
-sudo dnf install lsb-core-noarch
+sudo dnf install redhat-core-noarch
 sudo dnf install libXScrnSaver
 sudo pip3 install pycodestyle
 https://atom.io/
@@ -83,7 +83,7 @@ set gb english dictionary
 15) Install Chrome
 install via repo creation
 https://kifarunix.com/install-google-chrome-on-rocky-linux-8-desktop/
-log in to work outlook, learn.gold.ac.uk, https://goldmine.gold.ac.uk/, https://bw.campus.goldsmiths.ac.uk/BusinessWorld/Login/Login.aspx
+log in to work outlook
 
 16) Make useful dirs
 # mkdir Applications
@@ -217,5 +217,9 @@ in bash.rc
 alias jabref="/opt/jabref/bin//JabRef"
 
 
-36
+36)
 # TO DO Still can't build gnome-pomodoro
+
+37) nvidia driver issues
+sudo dnf remove /*nvidia*/
+sudo dnf install kmod-nvidia xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-devel kernel-devel xorg-x11-drv-nvidia-libs
