@@ -216,10 +216,8 @@ sudo rpm -i jabref-5.3-1.x86_64.rpm
 in bash.rc
 alias jabref="/opt/jabref/bin//JabRef"
 
-
-36)
-# TO DO Still can't build gnome-pomodoro
-
-37) nvidia driver issues
-sudo dnf remove /*nvidia*/
-sudo dnf install kmod-nvidia xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-devel kernel-devel xorg-x11-drv-nvidia-libs
+36) Printer @ UCL
+Get driver from
+https://www.ucl.ac.uk/isd/how-to/connecting-to-printucl-using-linux
+Then go to http://localhost:631
+Administration -> Add Printer -> Windows Printer via Samba
