@@ -92,7 +92,7 @@ log in to work outlook
 # mkdir Course_dev
 
 17) Install development libs for system Python Dev
-sudo dnf install python36-devel
+sudo dnf install python38-devel
 sudo pip3 install virtualenv
 sudo pip3 install virtualenvwrapper
 mkdir ~/virtualenvs
@@ -106,7 +106,7 @@ source virtualenvwrapper.sh
 18) Install dev libs for PSIPRED server
 sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel
 sudo dnf install postgresql postgresql-devel postgresql-server postgresql-server-devel
-sudo dnf install inkscape gimp gv httpd httpd-devel ansible cpan
+sudo dnf install inkscape gimp gv httpd httpd-devel cpan
 sudo cpan install Expect
   May require force on some systems
 sudo cpan install GD
@@ -122,7 +122,7 @@ sudo dnf install rstudio*.rpm
 
 21) Install Ferdi
 https://getferdi.com/download
-sudo dnf install ferdi-5.5.0.x86_64.rpm
+sudo dnf install ferdi*.rpm
 
 22) Install connectTunnel for CS dept VPN
 https://tsg.cs.ucl.ac.uk/cs-vpn-cs-wall/
@@ -174,7 +174,7 @@ edit /usr/lib/tmpfiles.d/postgresql.conf:
 set permission to 0777
 
 28) add some useful Software
-sudo dnf vlc
+sudo dnf install vlc
 
 29) Open the Software dialogue
 install libreoffice apps
@@ -187,37 +187,46 @@ fc-cache-64 -fv
 sudo fc-cache -fv
 sudo fc-cache-64 -fv
 
-31) install nvidia drivers
-sudo dnf install kmod-nvidia xorg-x11-drv-nvidia-cuda
-
-32) Mount backup drive
+31) Mount backup drive
 https://www.howtoforge.com/tutorial/mount-ntfs-centos/
 dnf install ntfs-3g
 sudo mkdir /mnt/backup
 sudo mount -t ntfs-3g /dev/sdb5 /mnt/backup/
 
-33) install ssh server
+32) install ssh server
 dnf install openssh-server
 systemctl start sshd
 systemctl enable sshd
 firewall-cmd --zone=public --permanent --add-service=ssh
 firewall-cmd --reload
 
-34) Install OBS and kdenlive via flathub
-sudo dnf install https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-1.el8.noarch.rpm
+33) Install OBS and kdenlive via flathub
+sudo dnf install https://pkgs.dyn.su/el8/base/x86_64/raven-release-1.0-2.el8.noarch.rpm
 sudo dnf install raven-release
 sudo dnf --enablerepo=raven-multimedia install dvgrab
 sudo dnf install flatpak kdenlive
 sudo flatpak install flathub com.obsproject.Studio
+# Might have to install flathub
 
 35) Add jabref
 https://www.jabref.org/
 sudo rpm -i jabref-5.3-1.x86_64.rpm
 in bash.rc
-alias jabref="/opt/jabref/bin//JabRef"
+alias jabref="/opt/jabref/bin/JabRef"
 
-36) Printer @ UCL
+36) Install CUDA and nvidia drivers from nvidia's enablerepo
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=8&target_type=rpm_local
+wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda-repo-rhel8-11-7-local-11.7.0_515.43.04-1.x86_64.rpm
+rpm -i cuda-repo-rhel8-11-7-local-11.7.0_515.43.04-1.x86_64.rpm
+dnf clean all
+dnf -y module install nvidia-driver:latest-dkms
+dnf -y install cuda
+
+37) Printer @ UCL
 Get driver from
 https://www.ucl.ac.uk/isd/how-to/connecting-to-printucl-using-linux
 Then go to http://localhost:631
 Administration -> Add Printer -> Windows Printer via Samba
+
+38)
+# TO DO Still can't build gnome-pomodoro
