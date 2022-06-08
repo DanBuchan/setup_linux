@@ -46,12 +46,16 @@ Add Hide Activities Button
 
 10) Gnome appearcance tweaks
 sudo dnf install gnome-tweaks
+
 open gnome-tweaks:
 Appearnce -> Themes -> Applications -> Adwaita-dark
 Windows -> Titlebar Buttons -> Minimise
 Extensions -> Window list
 Extensions -> Hide activities button
+Extensions -> Horizontal Workspaces
+
 gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DialogsUseHeader':<0>}"
+
 In terminal preferences change terminal colouring - Deselect "User colours from system theme"
 
 11) Install Atom
