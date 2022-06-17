@@ -120,9 +120,12 @@ sudo dnf install R readline-devel
 https://www.rstudio.com/products/rstudio/download/#download
 sudo dnf install rstudio*.rpm
 
-21) Install Ferdi
-https://getferdi.com/download
-sudo dnf install ferdi*.rpm
+21) Install Franz
+https://meetfranz.com/
+Move appimage to /Applications/Franz
+wget logo
+https://meetfranz.com/static/franz-logo.svg
+make a new application entry in /usr/share/applications/franz.desktop
 
 22) Install connectTunnel for CS dept VPN
 https://tsg.cs.ucl.ac.uk/cs-vpn-cs-wall/
