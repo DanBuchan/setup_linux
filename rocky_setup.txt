@@ -46,12 +46,16 @@ Add Hide Activities Button
 
 10) Gnome appearcance tweaks
 sudo dnf install gnome-tweaks
+
 open gnome-tweaks:
 Appearnce -> Themes -> Applications -> Adwaita-dark
 Windows -> Titlebar Buttons -> Minimise
 Extensions -> Window list
 Extensions -> Hide activities button
+Extensions -> Horizontal Workspaces
+
 gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DialogsUseHeader':<0>}"
+
 In terminal preferences change terminal colouring - Deselect "User colours from system theme"
 
 11) Install Atom
@@ -225,5 +229,11 @@ dnf clean all
 dnf -y module install nvidia-driver:latest-dkms
 dnf -y install cuda
 
-36)
+37) Printer @ UCL
+Get driver from
+https://www.ucl.ac.uk/isd/how-to/connecting-to-printucl-using-linux
+Then go to http://localhost:631
+Administration -> Add Printer -> Windows Printer via Samba
+
+38)
 # TO DO Still can't build gnome-pomodoro
