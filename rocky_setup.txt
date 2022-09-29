@@ -15,24 +15,31 @@ https://www.github.com/
 mkdir ~/Code
 git clone https://github.com/DanBuchan/setup_linux.git
 
-6) Configure git
+6) Install Atom
+sudo dnf install libXScrnSaver
+sudo pip3 install pycodestyle
+https://atom.io/
+download rpm
+sudo dnf install atom.x86_64.rpm
+
+7) Configure git
 https://help.github.com/articles/setting-your-username-in-git
 git config --global user.name "Daniel Buchan"
 git config --global user.email "clone@myself.com"
 
-7) Configure git credential helper
+8) Configure git credential helper
 sudo dnf install libsecret-devel git-credential-libsecret libcanberra-gtk*
 git config --global --unset credential.helper
 git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
 
-8) Update OS packages
+9) Update OS packages
 sudo dnf update
 sudo sudo dnf install dnf-plugins-core
 sudo dnf config-manager --set-enabled powertools
 sudo dnf update
 sudo dnf groupinstall "Development Tools"
 
-9) Get Gnome extensions
+10) Get Gnome extensions
 sudo dnf install npm
 sudo npm install -g linux-window-session-manager
 Get these with the system install of firefox
@@ -44,7 +51,7 @@ Add clipboard Indicator
 Add Window Session Manager
 Add Hide Activities Button
 
-10) Gnome appearcance tweaks
+11) Gnome appearcance tweaks
 sudo dnf install gnome-tweaks
 
 open gnome-tweaks:
@@ -57,14 +64,6 @@ Extensions -> Horizontal Workspaces
 gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DialogsUseHeader':<0>}"
 
 In terminal preferences change terminal colouring - Deselect "User colours from system theme"
-
-11) Install Atom
-sudo dnf install redhat-core-noarch
-sudo dnf install libXScrnSaver
-sudo pip3 install pycodestyle
-https://atom.io/
-download rpm
-sudo dnf install atom.x86_64.rpm
 
 12) configure Atom
 install sync-settings
