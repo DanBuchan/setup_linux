@@ -48,18 +48,19 @@ Click 'Click here to install browser extensions'
 Add Frippery Panel Favourites
 Add TopIcons Plus Git
 Add clipboard Indicator
-Add Window Session Manager
-Add Hide Activities Button
+Add Window Session Manager???
+Add Hide Activities Button (for Gnome 40 or 3.6+)
 
 11) Gnome appearcance tweaks
 sudo dnf install gnome-tweaks
 
-open gnome-tweaks:
-Appearnce -> Themes -> Applications -> Adwaita-dark
+open gnome-tweaks (not as superuser):
+Appearance -> Themes -> Applications -> Adwaita-dark
 Windows -> Titlebar Buttons -> Minimise
 Extensions -> Window list
 Extensions -> Hide activities button
 Extensions -> Horizontal Workspaces
+Extensions -> Applications Menu
 
 gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DialogsUseHeader':<0>}"
 
@@ -78,7 +79,7 @@ sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-fr
 sudo dnf install ffmpeg ffmpeg-devel ffmpeg-libs
 
 14) Open Firefox and login to sync
-Make appropriate firefox containers
+Make appropriate firefox containers in needed
 Log in to web sites mail.com, gmail, firefox, reddit, gwj, twitter, feedly
 configure containers for each site
 set gb english dictionary
@@ -87,6 +88,7 @@ set gb english dictionary
 install via repo creation
 https://kifarunix.com/install-google-chrome-on-rocky-linux-8-desktop/
 log in to work outlook
+and show bookmarks barin settings
 
 16) Make useful dirs
 # mkdir Applications
