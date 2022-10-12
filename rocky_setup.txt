@@ -237,5 +237,13 @@ https://www.ucl.ac.uk/isd/how-to/connecting-to-printucl-using-linux
 Then go to http://localhost:631
 Administration -> Add Printer -> Windows Printer via Samba
 
+Then on the commandline
+edit /etc/cups/printers.conf
+AuthInfoRequired username,password
+
+systemctl restart cups
+
+Now if you printe from firefox/chrome it should ask for a user/password (don't forget ad/) the first time
+
 38)
 # TO DO Still can't build gnome-pomodoro
