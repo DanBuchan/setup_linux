@@ -231,6 +231,7 @@ dnf -y module install nvidia-driver:latest-dkms
 dnf -y install cuda
 
 37) Printer @ UCL
+dnf install samba samba-client
 Get driver from
 https://www.ucl.ac.uk/isd/how-to/connecting-to-printucl-using-linux
 Then go to http://localhost:631
