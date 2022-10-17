@@ -243,7 +243,7 @@ AuthInfoRequired username,password
 
 systemctl restart cups
 
-Now if you printe from firefox/chrome it should ask for a user/password (don't forget ad/) the first time
+Now if you print from firefox/chrome it should ask for a user/password (don't forget ad/) the first time
 
 38) Get Teams
 https://www.microsoft.com/en-gb/microsoft-teams/download-app
