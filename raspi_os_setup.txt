@@ -85,13 +85,13 @@ lr-mame2016. Place the roms on the NVME and symlink to ~/Retropie/roms/arcade/ro
 
 13. Edit mame rom list
 Loads of the roms are fruit machines or pinball tables (and even cash
-registers) would be worth removing those. Emulationstation uses 
+registers) would be worth removing those. Emulationstation uses
 /opt/retropie/supplementary/emulationstation/resources/mamenames.xml to
 ID and name the ROMS. I wrote a small script that uses that to move
 roms. Parsing the mame/hash/*.xml files would be a better/more robust
 way to ID which roms one wants to exclude
 mkdir ~/roms_excluded
-mamelist_edit.py 
+mamelist_edit.py
 
 15. Get netflix running
 https://www.tomshardware.com/uk/how-to/play-netflix-raspberry-pi

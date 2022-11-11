@@ -223,6 +223,11 @@ in bash.rc
 alias jabref="/opt/jabref/bin/JabRef"
 
 36) Install CUDA and nvidia drivers from nvidia's enablerepo
+Before doing this tripplecheck which CUDA version/runtime torch currently supports
+https://pytorch.org/get-started/previous-versions/
+https://developer.nvidia.com/cuda-toolkit-archive
+and check any bashrc stuff that might be lingering from a previous install
+
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=8&target_type=rpm_local
 wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda-repo-rhel8-11-7-local-11.7.0_515.43.04-1.x86_64.rpm
 rpm -i cuda-repo-rhel8-11-7-local-11.7.0_515.43.04-1.x86_64.rpm
