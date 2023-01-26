@@ -244,6 +244,7 @@ AuthInfoRequired username,password
 systemctl restart cups
 
 Now if you print from firefox/chrome it should ask for a user/password (don't forget ad/) the first time
+(auth is UCL email address and passwd)
 
 38) Get Teams
 https://www.microsoft.com/en-gb/microsoft-teams/download-app
