@@ -31,6 +31,7 @@ https://help.github.com/articles/setting-your-username-in-git
 
 4. Set gnome-keyring to save git credentials
 # dnf install libsecret-devel
+# dnf install git-credential-libsecret
 # git config --global --unset credential.helper
 # git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
 
