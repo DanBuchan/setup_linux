@@ -1,12 +1,6 @@
 1. Appearance Settings
 Defaults -> For Large Screens -> "Set Defaults"
 
-14. Get bluetooth working
-Folllowed this guide up to the A2DP support bit (don't forget scan off)
-https://youness.net/raspberry-pi/how-to-connect-bluetooth-headset-or-speaker-to-raspberry-pi-3
-you can then use the pulseaudio volume control in the panel to route the audio to bluetooth
-I got a profile error but you can use the bluetoothctl 'remove' command to remove a device and start again
-
 2. Install packages
 # sudo apt-get install gnome-keyring p7zip openvpn snapd gimp inkscape mdf2iso mono-complete libopenal-dev fatsort git libsecret-tools libsecret-1-0 libsecret-1-dev keepassxc deluge vim firefox-esr
 # sudo apt install mednafen mednaffe libretro-beetle-psx
@@ -14,20 +8,13 @@ sudo cp /usr/bin/lxterminal /usr/bin/xterm
 # sudo reboot
 
 3. Add useful symlinks if we're rebuilding from backup
-ln -s /media/pi/ID/Applications Applications
-ln -s /media/pi/ID/ROMS ROMS
-ln -s /media/pi/ID/Videos Videos
-ln -s /media/pi/ID/Deluge Deluge
-
-3. Install MegaSync
-Download .deb from mega.nz
-sudo dpkg -i megasync-Raspbian_10.0_armhf.deb
-Configure MegaSync
-Ensure 'Start on startup' is selected in setttings
+ln -s /media/dbuchan/ID/Applications Applications
+ln -s /media/dbuchan/ID/ROMS ROMS
+ln -s /media/dbuchan/ID/Videos Videos
+ln -s /media/dbuchan/ID/Deluge Deluge
 
 2. Install firefox
 Log in to firefox account
-   configure multi--account containers
 
 3. Configure GIT
 # sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
@@ -131,3 +118,9 @@ http://zxspectrumnext.online/cspect/
 https://www.youtube.com/watch?v=2a1Kv8HiP5M
 I kept getting segfaults in fullscreen mode, edit ~/.zesaruxrc to change
 Moderately unimpressed with the performance
+
+3. Install MegaSync
+Download .deb from mega.nz
+sudo dpkg -i megasync-Raspbian_10.0_armhf.deb
+Configure MegaSync
+Ensure 'Start on startup' is selected in setttings
