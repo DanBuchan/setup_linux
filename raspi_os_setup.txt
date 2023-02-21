@@ -64,7 +64,8 @@ mkdir ~/roms_excluded
 mamelist_edit.py 
 
 14. Install Moonlight
-https://github.com/moonlight-stream/moonlight-embedded/wiki/Packages
+https://github.com/moonlight-stream/moonlight-docs/wiki/Installing-Moonlight-Qt-on-Raspberry-Pi-4
+Get for bullseye though
 
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
