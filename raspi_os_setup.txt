@@ -23,11 +23,6 @@ ln -s /media/dbuchan/ID/Deluge Deluge
 4. get the setup_linux repo
 git clone https://github.com/DanBuchan/setup_linux.git
 
-6. Install retropie
-https://retropie.org.uk/docs/Manual-Installation/
-Don't forget to have it compile and install all the additional/experimental cores that you
-want. Move roms to the roms/ dir (or symlink from nvme disk)
-
 7. Install amiga emulator
 sudo apt install fs-uae fs-uae-launcher
 
@@ -68,6 +63,9 @@ way to ID which roms one wants to exclude
 mkdir ~/roms_excluded
 mamelist_edit.py 
 
+14. Install Moonlight
+https://github.com/moonlight-stream/moonlight-embedded/wiki/Packages
+
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
 scroll to 'Application launch bar' -> 'Preferences'
@@ -97,3 +95,8 @@ apt update && sudo apt install ttf-mscorefonts-installer
 https://raspberrytips.com/install-fonts-raspberry-pi/
 sudo dpkg-reconfigure fontconfig-config
 Update CudaText font (size 14)
+
+6. Install retropie - NOT BULLSYE BUILD
+https://retropie.org.uk/docs/Manual-Installation/
+Don't forget to have it compile and install all the additional/experimental cores that you
+want. Move roms to the roms/ dir (or symlink from nvme disk)
