@@ -13,9 +13,6 @@ ln -s /media/dbuchan/ID/ROMS ROMS
 ln -s /media/dbuchan/ID/Videos Videos
 ln -s /media/dbuchan/ID/Deluge Deluge
 
-2. Install firefox
-Log in to firefox account
-
 3. Configure GIT
 # sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 # git config --global user.name "Daniel Buchan"
@@ -23,13 +20,8 @@ Log in to firefox account
 # git config --global --unset credential.helper
 # git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
-get the setup_linux repo
+4. get the setup_linux repo
 git clone https://github.com/DanBuchan/setup_linux.git
-
-5. Install CUDAtext (while we wait for a sublimetext or
-atom ARM build)
-http://www.uvviewsoft.com/cudatext/download.html
-In plugins set python at /usr/lib/python3.7/
 
 6. Install retropie
 https://retropie.org.uk/docs/Manual-Installation/
@@ -37,11 +29,7 @@ Don't forget to have it compile and install all the additional/experimental core
 want. Move roms to the roms/ dir (or symlink from nvme disk)
 
 7. Install amiga emulator
-See cthulhu's instructions pm the abime thread
-Note that the emulator and launcher must have the same version numbers
-http://eab.abime.net/showthread.php?t=97979
-https://fs-uae.net/download
-3.0.4/fs-uae-launcher-3.0.4.tar.gz
+sudo apt install fs-uae fs-uae-launcher
 
 8. Set up fs-uae amiga with harddrive, BetterWB and WHDLoad
 https://www.youtube.com/watch?v=jJG8-KG9tLI vids 2 and 3
@@ -80,32 +68,6 @@ way to ID which roms one wants to exclude
 mkdir ~/roms_excluded
 mamelist_edit.py 
 
-15. Get netflix running
-https://www.tomshardware.com/uk/how-to/play-netflix-raspberry-pi
-curl -fsSL https://pi.vpetkov.net -o ventz-media-pi
-sh ventz-media-pi
-Also in Chromium Media you may need to change the user agent string
-to a sufficiently modern browser (Firefox). Install User Agent Switcher for chromium
-
-https://www.tomshardware.com/uk/news/raspberry-pi-widevine
-
-16 Get the VPN running
-Install and configure OpenVPN
-https://www.raspberrypi-spy.co.uk/2020/06/raspberry-pi-vpn-setup-guide/
-I got my TigerVPN openvpn config and at step 8 did these two rewrites:
-sudo find *.ovpn -type f -exec sed -i 's/auth-user-pass/auth-user-pass \/etc\/openvpn\/config\/auth.txt/g' {} \;
-sudo find *.ovpn -type f -exec sed -i 's/ca ca.crt/ca \/etc\/openvpn\/config\/ca.crt/g' {} \;
-And I used the Main Menu Editor to make an OpenVPN menu icon that will conenct
-to one of the vpn hosts
-
-19. Install better fonts
-https://rubjo.github.io/victor-mono/
-https://www.fontsquirrel.com/fonts/ - down load Droid and Noto
-apt update && sudo apt install ttf-mscorefonts-installer
-https://raspberrytips.com/install-fonts-raspberry-pi/
-sudo dpkg-reconfigure fontconfig-config
-Update CudaText font (size 14)
-
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
 scroll to 'Application launch bar' -> 'Preferences'
@@ -119,8 +81,19 @@ https://www.youtube.com/watch?v=2a1Kv8HiP5M
 I kept getting segfaults in fullscreen mode, edit ~/.zesaruxrc to change
 Moderately unimpressed with the performance
 
-3. Install MegaSync
+3. Install MegaSync - NO DEB 11 BUILD
 Download .deb from mega.nz
 sudo dpkg -i megasync-Raspbian_10.0_armhf.deb
 Configure MegaSync
 Ensure 'Start on startup' is selected in setttings
+
+2. Install firefox - ADDON CRASHES
+Log in to firefox account
+
+19. Install better fonts - NOT MUCH POINT WHILE THERE ISN@T A NICE CODE EDITOR
+https://rubjo.github.io/victor-mono/
+https://www.fontsquirrel.com/fonts/ - down load Droid and Noto
+apt update && sudo apt install ttf-mscorefonts-installer
+https://raspberrytips.com/install-fonts-raspberry-pi/
+sudo dpkg-reconfigure fontconfig-config
+Update CudaText font (size 14)
