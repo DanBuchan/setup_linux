@@ -98,6 +98,7 @@ and show bookmarks barin settings
 
 17) Install development libs for system Python Dev
 sudo dnf install python38-devel
+sudo dnf install python3-tkinter
 sudo pip3 install virtualenv
 sudo pip3 install virtualenvwrapper
 mkdir ~/virtualenvs
@@ -150,7 +151,6 @@ alias duall="du -sch .[!.]* * | sort -h";
 alias vi="vim";
 alias sshk="ssh knuckles.cs.ucl.ac.uk"
 alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.ac.uk";
-export CUDA_VISIBLE_DEVICES=1
 gsvpn () { echo PASSWD | sudo openconnect --protocol=pulse gcvpn.gold.ac.uk/campus -u dbuch001 --passwd-on-stdin --servercert pin-sha256:OxxdgDl335TSoY/Rrsnm8rTNnttexISOh/nUfoZSTak=; }
 
 25) Get core PSIPRED Server development packages
@@ -252,3 +252,7 @@ Now if you printe from firefox/chrome it should ask for a user/password (don't f
 
 38)
 # TO DO Still can't build gnome-pomodoro
+
+39) Install VSCode?
+sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+sudo vi /etc/yum.repos.d/vscode.repo
