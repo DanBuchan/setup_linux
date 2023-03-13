@@ -1,0 +1,42 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+export PATH=$PATH:/usr/lib64/openmpi/bin:/usr/local/bin
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+export WORKON_HOME=$HOME/virtualenvs
+export PROJECT_HOME=$HOME/Code
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.11
+source virtualenvwrapper.sh
+
+PS1="\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\]:\w\$ ";
+export PS1;
+
+alias ls="ls --color=always";
+alias z="ls --color=always -lah";
+#alias lrm="'find . | xargs rm'"
+alias duall="du -sch .[!.]* * | sort -h";
+alias vi="vim";
+alias sshk="ssh knuckles.cs.ucl.ac.uk"
+alias ssht="ssh tails.cs.ucl.ac.uk"
+alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.ac.uk";
+alias jabref="/opt/jabref/bin//JabRef"
+# gsvpn () { sudo openconnect --protocol=pulse gcvpn.gold.ac.uk/campus -u dbuch001 --passwd-on-stdin; }
+gsvpn () { echo "PASSWORD" | sudo openconnect --protocol=pulse gcvpn.gold.ac.uk/campus -u dbuch001 --passwd-on-stdin --servercert pin-sha256:xxQuUPSLvvvOPRk+Dd4VQAxLIvA8eqWlkuMD1ZZtRRg=; }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
