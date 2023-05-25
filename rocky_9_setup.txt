@@ -42,32 +42,29 @@ Get these with the system install of firefox
 Go to https://extensions.gnome.org
 Click 'Click here to install browser extensions'
 Add Frippery Panel Favourites
-Add TopIcons Plus Git
-Add clipboard Indicator
-Add Window Session Manager???
+Add Tray Icons: Reloaded 
+Add clipboard Indicator (get the right one)
+Add Another Window Session Manager
 Add Hide Activities Button (for Gnome 40 or 3.6+)
 
-11) Gnome appearcance tweaks
-sudo dnf install gnome-tweaks
+11) Set activites to alt-tab
+Open settings -> Keyboard -> customise shortcuts
 
+12) Gnome appearance tweaks
+sudo dnf install gnome-tweaks
 open gnome-tweaks (not as superuser):
 Appearance -> Themes -> Applications -> Adwaita-dark
-Windows -> Titlebar Buttons -> Minimise
+Window Titlebar -> Minimise
+sudo dnf install gnome-extensions-app
 Extensions -> Window list
 Extensions -> Hide activities button
-Extensions -> Horizontal Workspaces
+Extensions -> Horizontal Workspaces (now just part of window list)
 Extensions -> Applications Menu
 
 gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DialogsUseHeader':<0>}"
 
-In terminal preferences change terminal colouring - Deselect "User colours from system theme"
-
-12) configure Atom
-install sync-settings
-Access Token: SEE OTHER ATOM INSTALL
-GIST ID: 3c7678b1c60c348f0266567e44dad0fa
-Restore Packages
-set linter-pycodestyle path
+12) configure VS Code
+???
 
 13) install ffmpeg
 sudo dnf install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
