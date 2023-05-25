@@ -63,18 +63,15 @@ Extensions -> Applications Menu
 
 gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DialogsUseHeader':<0>}"
 
-12) configure VS Code
-???
-
 13) install ffmpeg
-sudo dnf install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-8.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-8.noarch.rpm
+sudo dnf install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
+sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-9.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-9.noarch.rpm
 sudo dnf install ffmpeg ffmpeg-devel ffmpeg-libs
 
 14) Open Firefox and login to sync
 Make appropriate firefox containers in needed
 Log in to web sites mail.com, gmail, firefox, reddit, gwj, twitter, feedly
-configure containers for each site
+reload containers from synced settings for each site
 set gb english dictionary
 
 15) Install Chrome
@@ -187,6 +184,9 @@ fc-cache -fv
 fc-cache-64 -fv
 sudo fc-cache -fv
 sudo fc-cache-64 -fv
+
+12) configure VS Code
+???
 
 31) Mount backup drive
 https://www.howtoforge.com/tutorial/mount-ntfs-centos/
