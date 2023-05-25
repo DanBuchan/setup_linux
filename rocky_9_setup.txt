@@ -75,16 +75,23 @@ reload containers from synced settings for each site
 set gb english dictionary
 
 15) Install Chrome
-install via repo creation
-https://kifarunix.com/install-google-chrome-on-rocky-linux-8-desktop/
+wget https://dl.google.com/linux/linux_signing_key.pub
+sudo rpm --import linux_signing_key.pub
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+sudo dnf install google-chrome-stable_current_x86_64.rpm
+log in to chrome account
 log in to work outlook
-and show bookmarks barin settings
+and show bookmarks bar in settings
 
 16) Make useful dirs
 # mkdir Applications
 # mkdir Code
 # mkdir Projects
 # mkdir Course_dev
+
+17) install snap and acroread
+https://snapcraft.io/docs/installing-snap-on-rocky
+snap install acrordrdc
 
 17) Install development libs for system Python Dev
 sudo dnf install python38-devel
