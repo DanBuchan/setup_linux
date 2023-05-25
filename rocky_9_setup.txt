@@ -132,10 +132,7 @@ make a new application entry in /usr/share/applications/franz.desktop
 https://tsg.cs.ucl.ac.uk/cs-vpn-cs-wall/
 Follow "working from home" instructions
 
-24) Install goldsmith VPN
-sudo dnf install network-manager-openconnect openconnect
-
-25) Add some .bashrc things
+24) Add some .bashrc things
 remeber to swap PASSWD, also doublecheck --servercert
 PS1="\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\]:\w\$ ";
 export PS1;
@@ -146,8 +143,6 @@ alias duall="du -sch .[!.]* * | sort -h";
 alias vi="vim";
 alias sshk="ssh knuckles.cs.ucl.ac.uk"
 alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.ac.uk";
-export CUDA_VISIBLE_DEVICES=1
-gsvpn () { echo PASSWD | sudo openconnect --protocol=pulse gcvpn.gold.ac.uk/campus -u dbuch001 --passwd-on-stdin --servercert pin-sha256:OxxdgDl335TSoY/Rrsnm8rTNnttexISOh/nUfoZSTak=; }
 
 25) Get core PSIPRED Server development packages
 To begin with I only get PSIPRED, I only need to get the other algorithms
@@ -168,7 +163,7 @@ git clone https://github.com/AnalyticsAutomated/analytics_automated.git
 # mkvirtualenv analytics_automated; deactivate
 # mkvirtualenv psipred_website; deactivate
 # mkvirtualenv blast_cache; deactivate
-# mkvirtualenv advanced_web_dev; deactivate
+and any for any live projects
 
 27) https://serverfault.com/questions/699307/how-to-grant-access-to-var-run-to-postgres-on-centos
 sudo chmod +x /etc/rc.d/rc.local
@@ -181,7 +176,8 @@ set permission to 0777
 sudo dnf install vlc
 
 29) Open the Software dialogue
-install libreoffice apps
+install libreoffice apps or:
+sudo dnf install libreoffice-writer libreoffice-base libreoffice-impress libreoffice-draw libreoffice-math
 
 30) Install Better fonts
 https://rubjo.github.io/victor-mono/
@@ -191,16 +187,16 @@ fc-cache-64 -fv
 sudo fc-cache -fv
 sudo fc-cache-64 -fv
 
-12) configure VS Code
-plugins pylance, atom material theme, atom one dark theme, atomize, eslint, isort, markdownlint, python
+31) configure VS Code
+enable sync and log in with github credentials
 
-31) Mount backup drive
+32) Mount backup drive
 https://www.howtoforge.com/tutorial/mount-ntfs-centos/
 dnf install ntfs-3g
 sudo mkdir /mnt/backup
 sudo mount -t ntfs-3g /dev/sdb5 /mnt/backup/
 
-32) install ssh server
+33) install ssh server
 dnf install openssh-server
 systemctl start sshd
 systemctl enable sshd
@@ -217,17 +213,12 @@ sudo flatpak install flathub com.obsproject.Studio
 
 35) Add jabref
 https://www.jabref.org/
-sudo rpm -i jabref-5.3-1.x86_64.rpm
+sudo dnf install jabref-5.3-1.x86_64.rpm
 in bash.rc
 alias jabref="/opt/jabref/bin/JabRef"
 
 36) Install CUDA and nvidia drivers from nvidia's enablerepo
 https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=8&target_type=rpm_local
-wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda-repo-rhel8-11-7-local-11.7.0_515.43.04-1.x86_64.rpm
-rpm -i cuda-repo-rhel8-11-7-local-11.7.0_515.43.04-1.x86_64.rpm
-dnf clean all
-dnf -y module install nvidia-driver:latest-dkms
-dnf -y install cuda
 
 37) Printer @ UCL
 dnf install samba samba-client
@@ -249,5 +240,7 @@ Now if you print from firefox/chrome it should ask for a user/password (don't fo
 https://www.microsoft.com/en-gb/microsoft-teams/download-app
 Install rpm
 
-39)
-# TO DO Still can't build gnome-pomodoro
+39) Install gnome pomodoro
+https://gnomepomodoro.org/
+needs gom (which can be installed with the same gom commands)
+https://gitlab.gnome.org/GNOME/gom
