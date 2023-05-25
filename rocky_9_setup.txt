@@ -70,7 +70,7 @@ sudo dnf install ffmpeg ffmpeg-devel ffmpeg-libs
 
 14) Open Firefox and login to sync
 Make appropriate firefox containers in needed
-Log in to web sites mail.com, gmail, firefox, reddit, gwj, twitter, feedly
+Log in to web sites mail.com, gmail, firefox, reddit, twitter, feedly
 reload containers from synced settings for each site
 set gb english dictionary
 
