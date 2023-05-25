@@ -93,8 +93,8 @@ and show bookmarks bar in settings
 https://snapcraft.io/docs/installing-snap-on-rocky
 snap install acrordrdc
 
-17) Install development libs for system Python Dev
-sudo dnf install python38-devel
+18) Install development libs for system Python Dev
+sudo dnf install python3-devel
 sudo pip3 install virtualenv
 sudo pip3 install virtualenvwrapper
 mkdir ~/virtualenvs
@@ -105,38 +105,37 @@ export PROJECT_HOME=$HOME/Code
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source virtualenvwrapper.sh
 
-18) Install dev libs for PSIPRED server
+19) Install dev libs for PSIPRED server
 sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel
-sudo dnf install postgresql postgresql-devel postgresql-server postgresql-server-devel
+sudo dnf install postgresql postgresql-devel postgresql-server
 sudo dnf install inkscape gimp gv httpd httpd-devel cpan
 sudo cpan install Expect
   May require force on some systems
 sudo cpan install GD
 
-19) Install openjdk
+20) Install openjdk
 sudo dnf install java-latest-openjdk java-latest-openjdk-devel
 
-20) R/Rstudio Setup
-Note that epel Powertools must be enabled at this point
+21) R/Rstudio Setup
+Note that epel crb must be enabled at this point
 sudo dnf install R readline-devel
 https://www.rstudio.com/products/rstudio/download/#download
 sudo dnf install rstudio*.rpm
 
-21) Install Franz
+22) Install Franz
 https://meetfranz.com/
 Move appimage to /Applications/Franz
-wget logo
-https://meetfranz.com/static/franz-logo.svg
+wgethttps://meetfranz.com/static/franz-logo.svg
 make a new application entry in /usr/share/applications/franz.desktop
 
-22) Install connectTunnel for CS dept VPN
+23) Install connectTunnel for CS dept VPN
 https://tsg.cs.ucl.ac.uk/cs-vpn-cs-wall/
 Follow "working from home" instructions
 
-23) Install goldsmith VPN
+24) Install goldsmith VPN
 sudo dnf install network-manager-openconnect openconnect
 
-24) Add some .bashrc things
+25) Add some .bashrc things
 remeber to swap PASSWD, also doublecheck --servercert
 PS1="\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\]:\w\$ ";
 export PS1;
@@ -193,7 +192,7 @@ sudo fc-cache -fv
 sudo fc-cache-64 -fv
 
 12) configure VS Code
-???
+plugins pylance, atom material theme, atom one dark theme, atomize, eslint, isort, markdownlint, python
 
 31) Mount backup drive
 https://www.howtoforge.com/tutorial/mount-ntfs-centos/
