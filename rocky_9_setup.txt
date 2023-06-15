@@ -1,3 +1,6 @@
+1) add user to wheel, make wheel passwd less
+sudo visudo
+
 1) download megasync (redhat 8 pacakge) and Nautilus integration
 https://mega.io/sync
 sudo dnf install *.rpm
@@ -46,6 +49,7 @@ Add Tray Icons: Reloaded
 Add clipboard Indicator (get the right one)
 Add Another Window Session Manager
 Add Hide Activities Button (for Gnome 40 or 3.6+)
+Add No overview at start-up
 
 11) Set activites to alt-tab
 Open settings -> Keyboard -> customise shortcuts
@@ -106,7 +110,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source virtualenvwrapper.sh
 
 19) Install dev libs for PSIPRED server
-sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel
+sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel ruby ruby-devel
 sudo dnf install postgresql postgresql-devel postgresql-server
 sudo dnf install inkscape gimp gv httpd httpd-devel cpan
 sudo cpan install Expect
@@ -237,8 +241,13 @@ Now if you print from firefox/chrome it should ask for a user/password (don't fo
 (auth is UCL email address and passwd)
 
 38) Get Teams
-https://www.microsoft.com/en-gb/microsoft-teams/download-app
-Install rpm
+Now install as a Progressive Web App or Chrome App.
+Log in and press the button on your browsers
+
+39) Configure postgres
+(ensure postgres can write /var/run/postgres)
+initdb -D /home/dbuchan/Databases/postgres_13_db/
+you can now log in with `psql postgres`
 
 39) Install gnome pomodoro
 https://gnomepomodoro.org/

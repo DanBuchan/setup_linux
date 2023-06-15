@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=5.9.2
+GenericName=Chat Client
+Name=Franz
+Comment=Multiple realtime chat clients in one place
+Exec=/home/dbuchan/Applications/Franz/Franz-5.9.2.AppImage
+Icon=/home/dbuchan/Applications/Franz/franz-logo.svg
+Terminal=false
+Categories=Network;System;
