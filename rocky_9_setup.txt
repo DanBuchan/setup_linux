@@ -37,6 +37,7 @@ sudo dnf install dnf-plugins-core
 sudo dnf config-manager --enable crb
 sudo dnf update
 sudo dnf groupinstall "Development Tools"
+sudo dnf install ftp meson sqlite3-devel
 
 10) Get Gnome extensions
 sudo dnf install npm
@@ -111,7 +112,7 @@ source virtualenvwrapper.sh
 
 19) Install dev libs for PSIPRED server
 sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel ruby ruby-devel
-sudo dnf install postgresql postgresql-devel postgresql-server ftp
+sudo dnf install postgresql postgresql-devel postgresql-server
 sudo dnf install inkscape gimp gv httpd httpd-devel cpan
 sudo cpan install Expect
   May require force on some systems
@@ -250,6 +251,7 @@ initdb -D /home/dbuchan/Databases/postgres_13_db/
 you can now log in with `psql postgres`
 
 39) Install gnome pomodoro
+sudo dnf install gdk-pixbuf2-devel gobject-introspection-devel vala gtk3-devel libpeas-devel gstreamer1-devel libcanberra-devel json-glib-devel 
 https://gnomepomodoro.org/
 needs gom (which can be installed with the same gom commands)
 https://gitlab.gnome.org/GNOME/gom
