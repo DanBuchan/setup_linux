@@ -111,7 +111,7 @@ source virtualenvwrapper.sh
 
 19) Install dev libs for PSIPRED server
 sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel ruby ruby-devel
-sudo dnf install postgresql postgresql-devel postgresql-server
+sudo dnf install postgresql postgresql-devel postgresql-server ftp
 sudo dnf install inkscape gimp gv httpd httpd-devel cpan
 sudo cpan install Expect
   May require force on some systems
