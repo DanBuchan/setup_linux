@@ -111,9 +111,11 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source virtualenvwrapper.sh
 
 19) Install dev libs for PSIPRED server
-sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel ruby ruby-devel
+sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel ruby ruby-devel ansible
 sudo dnf install postgresql postgresql-devel postgresql-server
 sudo dnf install inkscape gimp gv httpd httpd-devel cpan
+sudo dnf install boost boost-devel lapack lapack-devel cmake
+
 sudo cpan install Expect
   May require force on some systems
 sudo cpan install GD
