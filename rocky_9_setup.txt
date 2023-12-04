@@ -243,6 +243,9 @@ systemctl restart cups
 Now if you print from firefox/chrome it should ask for a user/password (don't forget ad/) the first time
 (auth is UCL email address and passwd)
 
+UCL authentication is now
+'ad.ucl.ac.uk\ucbcdwb' and password
+
 38) Get Teams
 Now install as a Progressive Web App or Chrome App.
 Log in and press the button on your browsers
