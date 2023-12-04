@@ -235,9 +235,11 @@ Then go to http://localhost:631
 Administration -> Add Printer -> Windows Printer via Samba
 
 Then on the commandline
+systemctl stop cups
 edit /etc/cups/printers.conf
-AuthInfoRequired username,password
 
+Edit/add:
+AuthInfoRequired username,password
 systemctl restart cups
 
 Now if you print from firefox/chrome it should ask for a user/password (don't forget ad/) the first time
