@@ -99,17 +99,21 @@ When you install prism2v2 it builds access keys for the router. If your keys are
 
 1. http://aminet.net/package/driver/net/prism2v2
 2. Install Roadshow (http://roadshow.apc-tcp.de/index-en.php) to Workbench31:, run update if needed
+    copy SYS:Storage/NetInterfaces/prism2 Devs:NetInterfaces/
     Follow this, https://lyonsden.net/getting-an-a1200-online-part-2-adding-an-amiga-tcp-ip-stack/
-	HOWEVER I set:
+	ed Devs:NetInterfaces/prism2
+	And set:
 	address=192.168.1.149
 	netmask=255.255.255.0
 	requiresinitdelay=yes
 	#configure=dhcp
-	Additionally (https://www.youtube.com/watch?v=r_nDWK7COpQ) updated devs:internet/name_resolution to
+	
+	Then, additionally (https://www.youtube.com/watch?v=r_nDWK7COpQ) updated devs:internet/name_resolution to
 	add nameservers for 1.1.1.1, 8.8.8.8, and 192.168.1.254
 	AND ed Devs:Internet/routes
 	DEFAULT=192.168.1.254
 
+  This can now be tested with `wirelessmanager prism2.device` in one shell and `addnetinterface prism2`. And then AmiSpeedTest will let you test the interface.
 
 ## TODO 
 
