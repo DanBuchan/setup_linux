@@ -6,20 +6,23 @@ There are some ancillary files in the amiga/ folder in this repo
 
 See CF_card_notes.txt in amiga/ folder
 
-Anytime you want to start again you can boot with a Workbench Install floppy, format the Workbench31 partition and start again
+## WINUAE BOOT NOTES
 
+This section not relevant real hardware, just a reminder
 
-## BOOT NOTES
-
-1. Use the "Default CF Card configuration"
+1. Use my "Default CF Card" configuration in winUAE
 2. System DIR on CF Card should show up as "Workbench31"
-3. System DIR on back up hdf should show up as "Workbench31_emu", use 'add hardfile' with the pfs2aio file system, turn off bootable and give IDE identity that doesn't clash with boot disk. Might have to mount as uaehf
-4. If you want to boot with the CF card use the HDD config in the "Configuration"
-5. If you want to boot with the back up hdf, set device to DH0, Boot Priority "0", Bootable: True, Driver IDE(Auto) 0.
+3. System DIR on a backup hdf should show up as "Workbench31_emu", use 'add hardfile' with the pfs2aio file system, turn off bootable and give IDE identity that doesn't clash with boot disk. Might have to mount as uaehf
+
+To boot from the CF card use the HDD config in the "Configuration", see point 1
+
+If you want to boot with the backup hdf, set device to DH0, Boot Priority "0", Bootable: True, Driver IDE(Auto) 0.
 
 ------
 
 ## Installation
+
+NOTE: Anytime you want to start again you can boot with a Workbench Install floppy, format the Workbench31 partition and start again
 
 1. Install Workbench 3.1 as normal
 2. Install BetterWB
