@@ -1,0 +1,49 @@
+# $VER: name_resolution 1.2 (29.3.2020)
+#
+# This file is used by the name resolution process which associates
+# raw IP addresses with domain names and the other way round. You
+# can configure the addresses of the domain name system servers to
+# use and how the lookup process will translate host names you provide
+# before they are looked up.
+
+# You can specify the IP addresses of up to three domain name system
+# servers which will be queried in the order you provide here. Each
+# line must start with 'nameserver' and then must be followed by
+# an IP address.
+nameserver 1.1.1.1
+nameserver 8.8.8.8
+nameserver 192.168.1.254
+
+# If a host name is to be looked up which has no trailing domain
+# name attached, a default domain name can be appended to it
+# prior to lookup
+#domain name.com
+
+# You can configure the list of host names for lookup. The search list
+# is normally determined from the local domain name; by default, it
+# begins with the local domain name, then successive parent domains that
+# have at least two components in their names will be searched. This may
+# be changed by listing the desired domain search path following the 'search'
+# keyword with spaces or tabs separating the names. Up to six domain
+# names may be listed.
+#search my.first.domain my.second.domain
+
+# The 'sortlist' parameter allows addresses returned by the name
+# resolution process to be sorted. A sortlist is specified by IP address
+# netmask pairs. The netmask is optional and defaults to the natural
+# netmask of the net. The IP address and optional network pairs are separated
+# by slashes. Up to 10 pairs may be specified.
+#sortlist 130.155.160.0/255.255.240.0 130.155.0.0
+
+# The dynamic configuration process for network interfaces (DHCP) may
+# provide a set of domain name system servers. These dynamically-configured
+# servers will always be consulted first before the statically-configured
+# servers are queried. These statically-configured servers are set up in
+# this file through the 'nameserver' configuration entries.
+#
+# You may prefer to use the statically-configured servers over the
+# dynamically-configured servers, e.g. because they may be slower or
+# unreliable. If this is the case, use the 'prefer static' option
+# below, instead of the 'prefer dynamic' (the default).
+#prefer static
+prefer dynamic

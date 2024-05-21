@@ -30,3 +30,22 @@ if exists "Workbench31:MUI"
    endif
 endif
 ;END MUI
+;BEGIN AmiSSL
+Assign AmiSSL: "SYS:AmiSSL"
+If Exists AmiSSL:Libs
+  Assign LIBS: AmiSSL:Libs ADD
+EndIf
+Path AmiSSL: ADD
+;END AmiSSL
+;BEGIN CAPREFS
+C:CAPrefs >NIL:
+;END CAPREFS
+
+;BEGIN WirelessManager
+Run <>NIL: C:WirelessManager prism2.device
+;END WirelessManager
+;BEGIN Roadshow
+If EXISTS S:Network-Startup
+  Execute S:Network-Startup
+EndIf
+;END Roadshow

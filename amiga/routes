@@ -1,0 +1,16 @@
+# $VER: routes 1.1 (24.10.2010)
+#
+# Routes which should be established when the protocol stack
+# initializes itself. Each line corresponds to a route which should
+# be established, very much like the parameters passed to the
+# AddNetRoute command. The template is:
+#
+#  DST=DESTINATION/K,HOSTDST=HOSTDESTINATION/K,NETDST=NETDESTINATION/K,
+#  VIA=GATEWAY/K,DEFAULT=DEFAULTGATEWAY/K
+#
+# You must either specify the default route, or specify a route with a
+# destination address. Note that no duplicates are allowed, i.e. there
+# can be only a single default route and the same route may not be
+# established twice.
+#default localhost
+DEFAULT=192.168.1.254
