@@ -85,6 +85,8 @@ Anytime you want to start again you can boot with a Workbench Install floppy, fo
 4. Install Roadie (http://aminet.net/package/comm/net/Roadie) to Workbench31:Tools/
 5. Install NetMon (http://aminet.net/package/comm/net/netmon) to Workbench31:Tools/
 6. Install amispeedtest (http://aminet.net/package/comm/net/AmiSpeedTest) to Workbench31:Tools/
+7. ReqToolsUsr, http://aminet.net/package/util/libs/ReqToolsUsr, just followed installer
+8. ClassAct2Demo, http://aminet.net/package/dev/gui/ClassAct2Demo. Just followed installer with defaults
 
 #### Network configuration
 
