@@ -1,8 +1,10 @@
 # Amiga installation
 
+There are some ancillary files in the amiga/ folder in this repo
+
 ## Prep CF Card and format
 
-See CF_card_notes.txt 
+See CF_card_notes.txt in amiga/ folder
 
 Anytime you want to start again you can boot with a Workbench Install floppy, format the Workbench31 partition and start again
 
@@ -74,6 +76,35 @@ Anytime you want to start again you can boot with a Workbench Install floppy, fo
 2. Uncomment MMU for 68030 operation
 
 ### Install Network software
+
+
+1. http://aminet.net/package/comm/tcp/AmiFTP, to SYS:Tools/
+2. AmiSSL, https://github.com/jens-maus/amissl, to SYS:
+3. IBrowse, https://www.ibrowse-dev.net/, to SYS:Tools/ (having added SoftIEEE I used the FPU version for now.
+4. CardInfo, just moved to C:
+4. Install Roadie (http://aminet.net/package/comm/net/Roadie) to Workbench31:Tools/
+5. Install NetMon (http://aminet.net/package/comm/net/netmon) to Workbench31:Tools/
+6. Install amispeedtest (http://aminet.net/package/comm/net/AmiSpeedTest) to Workbench31:Tools/
+
+#### Network configuration
+
+DO THIS ON THE ACTUAL AMIGA WITH THE NETWORK HARDWARE AND NOT ON THE EMULATION
+The Prism2 install is somewhat patterned after this (https://youtu.be/soGfXh0CIY0?si=ryDUEwP-W0v3E11o)
+When you install prism2v2 it builds access keys for the router. If your keys are invalid it'll make them again with each connection and slow down your connection. If you change things then it is worth reinstalling so the keys are regenerated
+
+1. http://aminet.net/package/driver/net/prism2v2
+2. Install Roadshow (http://roadshow.apc-tcp.de/index-en.php) to Workbench31:, run update if needed
+    Follow this, https://lyonsden.net/getting-an-a1200-online-part-2-adding-an-amiga-tcp-ip-stack/
+	HOWEVER I set:
+	address=192.168.1.149
+	netmask=255.255.255.0
+	requiresinitdelay=yes
+	#configure=dhcp
+	Additionally (https://www.youtube.com/watch?v=r_nDWK7COpQ) updated devs:internet/name_resolution to
+	add nameservers for 1.1.1.1, 8.8.8.8, and 192.168.1.254
+	AND ed Devs:Internet/routes
+	DEFAULT=192.168.1.254
+
 
 ## TODO 
 
