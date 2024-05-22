@@ -12,7 +12,9 @@ This section not relevant real hardware, just a reminder
 
 1. Use my "Default CF Card" configuration in winUAE
 2. System DIR on CF Card should show up as "Workbench31"
-3. System DIR on a backup hdf should show up as "Workbench31_emu", use 'add hardfile' with the pfs2aio file system, turn off bootable and give IDE identity that doesn't clash with boot disk. Might have to mount as uaehf
+3. System DIR on a backup hdf should show up as "Workbench31_backup", use 'add hardfile' with the pfs2aio file system, turn off bootable and give IDE identity that doesn't clash with boot disk. Might have to mount as uaehf. My file is called final_backup.hdf. You should fast format it.
+
+With this set up backup my workbench install by just copying the entire contents of WorkBench31 to Workbench31_backup
 
 To boot from the CF card use the HDD config in the "Configuration", see point 1
 
