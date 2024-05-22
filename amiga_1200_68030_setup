@@ -8,7 +8,7 @@ See CF_card_notes.txt in amiga/ folder
 
 ## WINUAE BOOT NOTES
 
-This section not relevant real hardware, just a reminder
+This section not relevant for real hardware, just a reminder, for winUAE config and backup
 
 1. Use my "Default CF Card" configuration in winUAE
 2. System DIR on CF Card should show up as "Workbench31"
