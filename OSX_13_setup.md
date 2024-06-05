@@ -57,9 +57,9 @@
    https://www.rstudio.com/products/rstudio/download/#download
 22. Install Franz
    https://meetfranz.com/
-23. Install connectTunnel for CS dept VPN
-   https://tsg.cs.ucl.ac.uk/cs-vpn-cs-wall/
-   Follow "working from home" instructions
+23. Install OpenVPN for CS
+   https://tsg.cs.ucl.ac.uk/working-from-home/#openvpn
+   Unzip mac package and install tunnelblic and install the two openvpn configs
 24. Add some .zshrc things
    PS1="\[\e[0;32m\]\u\[\e[m\]@\[\e[1;34m\]\h\[\e[m\]:\w\$ ";
    export $PS1;
