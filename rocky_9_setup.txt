@@ -46,6 +46,7 @@ Add Tray Icons: Reloaded
 Add clipboard Indicator (get the right one)
 Add Another Window Session Manager
 Add Hide Activities Button (for Gnome 40 or 3.6+)
+Add No Overview (gnome 40+)
 
 11) Set activites to alt-tab
 Open settings -> Keyboard -> customise shortcuts
@@ -105,10 +106,10 @@ export PROJECT_HOME=$HOME/Code
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source virtualenvwrapper.sh
 
-19) Install dev libs for PSIPRED server
+19) Install dev libs 
 sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel
 sudo dnf install postgresql postgresql-devel postgresql-server
-sudo dnf install inkscape gimp gv httpd httpd-devel cpan
+sudo dnf install inkscape gimp gv httpd httpd-devel cpan libcurl-devel
 sudo cpan install Expect
   May require force on some systems
 sudo cpan install GD
@@ -125,12 +126,14 @@ sudo dnf install rstudio*.rpm
 22) Install Franz
 https://meetfranz.com/
 Move appimage to /Applications/Franz
-wgethttps://meetfranz.com/static/franz-logo.svg
+wget https://meetfranz.com/static/franz-logo.svg
 make a new application entry in /usr/share/applications/franz.desktop
 
-23) Install connectTunnel for CS dept VPN
-https://tsg.cs.ucl.ac.uk/cs-vpn-cs-wall/
-Follow "working from home" instructions
+23) Install OpenVPN client
+https://tsg.cs.ucl.ac.uk/working-from-home/#openvpn
+sudo dnfinstall openvpn NetworkManager-openvpn NetworkManager-openvpn-gnome
+Open Gnome settings -> "Network" -> "+" -> "Import from file..."
+Add the .ovpn from the above tarball and configure
 
 24) Add some .bashrc things
 remeber to swap PASSWD, also doublecheck --servercert
@@ -142,7 +145,6 @@ alias z="ls --color=always -lah";
 alias duall="du -sch .[!.]* * | sort -h";
 alias vi="vim";
 alias sshk="ssh knuckles.cs.ucl.ac.uk"
-alias startct="/bin/startct -m console -u dbuchan -p 303to909 -d cswall.cs.ucl.ac.uk";
 
 25) Get core PSIPRED Server development packages
 To begin with I only get PSIPRED, I only need to get the other algorithms
