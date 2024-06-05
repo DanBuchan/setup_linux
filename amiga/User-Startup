@@ -1,0 +1,51 @@
+;BEGIN MuFastROM
+SYS:MuTools/MuFastRom On Protect >NIL:
+;END MuFastROM
+;BEGIN MuFastZero
+SYS:MuTools/MuFastZero ON >NIL:
+;END MuFastZero
+
+
+
+;BEGIN Executive
+PATH Workbench31:Executive ADD
+Run <NIL: >NIL: Workbench31:Executive/Executive
+;END Executive
+;BEGIN MUI
+if exists "Workbench31:MUI"
+   assign MUI: "Workbench31:MUI"
+   if exists MUI:Libs
+      assign add LIBS: MUI:Libs
+   endif
+   if exists MUI:Locale
+      assign add LOCALE: MUI:Locale
+   endif
+   version >nil: exec.library 39
+   if not warn
+      if exists MUI:Docs
+         if exists HELP:dummy ; do not remove
+         endif                ; this entry!
+         assign add HELP: MUI:Docs
+      endif
+   endif
+endif
+;END MUI
+;BEGIN AmiSSL
+Assign AmiSSL: "SYS:AmiSSL"
+If Exists AmiSSL:Libs
+  Assign LIBS: AmiSSL:Libs ADD
+EndIf
+Path AmiSSL: ADD
+;END AmiSSL
+;BEGIN CAPREFS
+C:CAPrefs >NIL:
+;END CAPREFS
+
+;BEGIN WirelessManager
+Run <>NIL: C:WirelessManager prism2.device
+;END WirelessManager
+;BEGIN Roadshow
+If EXISTS S:Network-Startup
+  Execute S:Network-Startup
+EndIf
+;END Roadshow

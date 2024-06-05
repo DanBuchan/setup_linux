@@ -1,0 +1,126 @@
+# Amiga installation
+
+There are some ancillary files in the amiga/ folder in this repo
+
+## Prep CF Card and format
+
+See CF_card_notes.txt in amiga/ folder
+
+## WINUAE BOOT NOTES
+
+This section not relevant for real hardware, just a reminder, for winUAE config and backup
+
+1. Use my "Default CF Card" configuration in winUAE
+2. System DIR on CF Card should show up as "Workbench31"
+3. System DIR on a backup hdf should show up as "Workbench31_backup", use 'add hardfile' with the pfs2aio file system, turn off bootable and give IDE identity that doesn't clash with boot disk. Might have to mount as uaehf. My file is called final_backup.hdf. You should fast format it.
+
+With this set up backup my workbench install by just copying the entire contents of WorkBench31 to Workbench31_backup
+
+To boot from the CF card use the HDD config in the "Configuration", see point 1
+
+If you want to boot with the backup hdf, set device to DH0, Boot Priority "0", Bootable: True, Driver IDE(Auto) 0.
+
+------
+
+## Installation
+
+NOTE: Anytime you want to start again you can boot with a Workbench Install floppy, format the Workbench31 partition and start again
+
+1. Install Workbench 3.1 as normal
+2. Install BetterWB
+
+### Basic Config
+
+1. Open Workbench31 and show hidden and snapshot
+2. Open Prefs/Screen Mode: High Res Laced, 64 colours
+3. Prefs/Iconset select GlowIcons 
+4. Prefs/ run Full Pallette to fix colours
+
+### Install basic programs/tools
+
+1. Install LHA (if not provided by BetterWB)
+2. Install ehide.device to DEVS: (for the extra IDE on the TF1230)
+3. Install scsi.device.43.45 to DEVS: (for large volume support)
+4. Install LoadModule to C:
+5. Install Mounter to C:
+6. Install pfs3aio to L:
+7. Install SetPatch to C:
+8. Install lha to C:
+8. Install Installer 44.1 to C: (http://eab.abime.net/showthread.php?t=21788)
+10. In S:startup-sequence After C:SetPatch
+        C:LoadModule devs:scsi.device.43.45
+		
+### Install 68030 performance patches, http://eab.abime.net/showthread.php?t=113253
+
+1. MUlib - Use installer and add MuMove4k, MuFastZero, MuFastRom. Adding the ones you're asked about to startup but decline FastIEEE as it is not 68030 compatible
+2. CopyMemAIO. Copy to C:, then run in S:startup-sequence after C:SetPatch as C:CopyMemAIO
+3. SaferPatches. Copy to C: and in S:Startup-sequence immediately after C:SetPatch add `SaferPatches Install >NIL:`
+4. Copy StackAttack_020 to C:, add `C:StackAttack_020` to S:Startup-sequence after SetPatch, and `StackAttack_020 AUTO` before LOADWB
+5. FBlit. Copy FBlit and FBlitGui to C:, add fblit.library to Libs:. Then add 'C:Fblit', to S:startup-sequence after ENV: assignment (before Binddrivers)
+6. FText. Copy FText to C: and C:FText to S:Startup-sequence after FBlit is added
+7. BlazeWCP. Copy BlazaWCP to C:, add to s:startup-sequence after setpatch (and after FBlit?)
+8. SoftIEEE. copy softieee.library to LIBS:. Add SoftIEEE to C:, add softIEEE to S:startup-sequence after setpath. Add 500 bytes to stack 
+9. VBRControl. Copy VBRControl to C:. Add `C:VBRControl ON QUIET` to s:startup-sequence after setpatch
+10. TLSFMemPool (for 3.1 only). Install TLSFMen and TLSFMemPool to C:. Then add to s:startup-sequence. I've called them after SetPatch...
+11. Executive. Just follow the installer. I placed everything in SYS: but maybe elsewhere would be sensible. (If you run OS 3.2 or OS 3.2.1 you need to set the ramlib task to NoSchedule in ExecutivePrefs, otherwise the system will hang). You can always disable by editing s:startup-sequence
+12. PeterK's icon.library. Copy libs/icon.library to LIBS:. BetterWB should have already added the relevant text to s:startup-sequence
+
+### Install Programs
+
+
+1. Installed DOPUS4 to SYS:Tools/ (http://aminet.net/package/util/dopus/DOpus416JRbin)
+2. Install sysinfo (http://sysinfo.d0.se/) to Workbench31:Tools/
+3. Install MUI3.9 (https://github.com/amiga-mui/muidev) to Workbench31: drive. Doublecheck mui.key is in S:, if not copy it over
+4. Unpack skick346 (http://aminet.net/package/util/boot/skick346). Move kickstarts/ to SYS:Devs/ copy WHDload_renamed_kickstarts/ contents to Workbench:Devs/Kickstarts/.
+5. Unpack WHDload (http://whdload.de/), run installer and install to C: (https://www.youtube.com/watch?v=PWJ-JqZ-ogI&list=PLfl5qkIeWkBnxwbuGcp7uQVoL8v3-EhDP&index=3)
+6. Install sysinfo (http://sysinfo.d0.se/) to Workbench31:Tools/
+
+#### Configure WHDLoad
+
+1. Edit S:WHDLoad.prefs changed quit key to DEL: $46
+2. Uncomment MMU for 68030 operation
+
+### Install Network software
+
+
+1. http://aminet.net/package/comm/tcp/AmiFTP, to SYS:Tools/
+2. AmiSSL, https://github.com/jens-maus/amissl, to SYS:
+3. IBrowse, https://www.ibrowse-dev.net/, to SYS:Tools/ (having added SoftIEEE I used the FPU version for now.
+4. CardInfo, just moved to C:
+4. Install Roadie (http://aminet.net/package/comm/net/Roadie) to Workbench31:Tools/
+5. Install NetMon (http://aminet.net/package/comm/net/netmon) to Workbench31:Tools/
+6. Install amispeedtest (http://aminet.net/package/comm/net/AmiSpeedTest) to Workbench31:Tools/
+7. ReqToolsUsr, http://aminet.net/package/util/libs/ReqToolsUsr, just followed installer
+8. ClassAct2Demo, http://aminet.net/package/dev/gui/ClassAct2Demo. Just followed installer with defaults
+
+#### Network configuration
+
+DO THIS ON THE ACTUAL AMIGA WITH THE NETWORK HARDWARE AND NOT ON THE EMULATION
+The Prism2 install is somewhat patterned after this (https://youtu.be/soGfXh0CIY0?si=ryDUEwP-W0v3E11o)
+When you install prism2v2 it builds access keys for the router. If your keys are invalid it'll make them again with each connection and slow down your connection. If you change things then it is worth reinstalling so the keys are regenerated
+
+1. http://aminet.net/package/driver/net/prism2v2
+2. Install Roadshow (http://roadshow.apc-tcp.de/index-en.php) to Workbench31:, run update if needed
+    copy SYS:Storage/NetInterfaces/prism2 Devs:NetInterfaces/
+    Follow this, https://lyonsden.net/getting-an-a1200-online-part-2-adding-an-amiga-tcp-ip-stack/
+	ed Devs:NetInterfaces/prism2
+	And set:
+	address=192.168.1.149
+	netmask=255.255.255.0
+	requiresinitdelay=yes
+	#configure=dhcp
+	
+	Then, additionally (https://www.youtube.com/watch?v=r_nDWK7COpQ) updated devs:internet/name_resolution to
+	add nameservers for 1.1.1.1, 8.8.8.8, and 192.168.1.254
+	AND ed Devs:Internet/routes
+	DEFAULT=192.168.1.254
+
+  This can now be tested with `wirelessmanager prism2.device` in one shell and `addnetinterface prism2`. And then AmiSpeedTest will let you test the interface.
+
+## TODO 
+
+enable ehide.device to access the IDE on the TF1230 card
+
+xx. Before (first command even) C:setpatch add:
+		C:loadmodule >NIL: devs:ehide.device CURRENTLY COMMENTED OUT FOR NOT WORKING
+		https://www.exxosforum.co.uk/forum/viewtopic.php?t=5495

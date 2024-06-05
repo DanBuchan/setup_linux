@@ -1,3 +1,6 @@
+1) add user to wheel, make wheel passwd less
+sudo visudo
+
 1) download megasync (redhat 8 pacakge) and Nautilus integration
 https://mega.io/sync
 sudo dnf install *.rpm
@@ -34,6 +37,7 @@ sudo dnf install dnf-plugins-core
 sudo dnf config-manager --enable crb
 sudo dnf update
 sudo dnf groupinstall "Development Tools"
+sudo dnf install ftp meson sqlite3-devel
 
 10) Get Gnome extensions
 sudo dnf install npm
@@ -46,7 +50,11 @@ Add Tray Icons: Reloaded
 Add clipboard Indicator (get the right one)
 Add Another Window Session Manager
 Add Hide Activities Button (for Gnome 40 or 3.6+)
+<<<<<<< HEAD
 Add No Overview (gnome 40+)
+=======
+Add No overview at start-up
+>>>>>>> cf4948fcaa244e6ac40d29f425a2e06c8c902b74
 
 11) Set activites to alt-tab
 Open settings -> Keyboard -> customise shortcuts
@@ -106,10 +114,12 @@ export PROJECT_HOME=$HOME/Code
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source virtualenvwrapper.sh
 
-19) Install dev libs 
-sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel
+19) Install dev libs for PSIPRED server
+sudo dnf install redis gnuplot ghostscript glibc.i686 gd gd-devel ruby ruby-devel ansible
 sudo dnf install postgresql postgresql-devel postgresql-server
-sudo dnf install inkscape gimp gv httpd httpd-devel cpan libcurl-devel
+sudo dnf install inkscape gimp gv httpd httpd-devel cpan
+sudo dnf install boost boost-devel lapack lapack-devel cmake
+
 sudo cpan install Expect
   May require force on some systems
 sudo cpan install GD
@@ -230,19 +240,30 @@ Then go to http://localhost:631
 Administration -> Add Printer -> Windows Printer via Samba
 
 Then on the commandline
+systemctl stop cups
 edit /etc/cups/printers.conf
-AuthInfoRequired username,password
 
+Edit/add:
+AuthInfoRequired username,password
 systemctl restart cups
 
 Now if you print from firefox/chrome it should ask for a user/password (don't forget ad/) the first time
 (auth is UCL email address and passwd)
 
+UCL authentication is now
+'ad.ucl.ac.uk\ucbcdwb' and password
+
 38) Get Teams
-https://www.microsoft.com/en-gb/microsoft-teams/download-app
-Install rpm
+Now install as a Progressive Web App or Chrome App.
+Log in and press the button on your browsers
+
+39) Configure postgres
+(ensure postgres can write /var/run/postgres)
+initdb -D /home/dbuchan/Databases/postgres_13_db/
+you can now log in with `psql postgres`
 
 39) Install gnome pomodoro
+sudo dnf install gdk-pixbuf2-devel gobject-introspection-devel vala gtk3-devel libpeas-devel gstreamer1-devel libcanberra-devel json-glib-devel 
 https://gnomepomodoro.org/
 needs gom (which can be installed with the same gom commands)
 https://gitlab.gnome.org/GNOME/gom
