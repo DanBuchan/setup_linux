@@ -1,7 +1,0 @@
-1. Install Megasync
-2. Install keepassX and git
-    $ sudo apt-get install keepassx git
-3. Log in to github and clone this repo
-    $ mkdir Code
-    $ cd Code
-    $ git clone

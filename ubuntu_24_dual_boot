@@ -1,0 +1,9 @@
+1. Install Megasync
+2. Install keepassX git vim
+    $ sudo apt-get install keepassx git vim
+3. Log in to github and clone this repo
+    $ mkdir Code
+    $ cd Code
+    $ git clone https://github.com/DanBuchan/setup_linux.git
+4. Install VSCode from the .deb https://code.visualstudio.com/download
+ 
