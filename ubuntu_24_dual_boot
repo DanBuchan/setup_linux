@@ -1,9 +1,29 @@
 1. Install Megasync
-2. Install keepassX git vim
-    $ sudo apt-get install keepassx git vim
-3. Log in to github and clone this repo
+2. Install packages
+    $ sudo apt-get install keepassx git vim gnome-tweaks vlc
+3. Configure GIT
+    $ apt-get install libsecret-tools
+    $ git config --global user.name "Daniel Buchan"
+    $ git config --global user.email "clone@myself.com"
+    $ git config --global --unset credential.helper
+    $ git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+4. Log in to github and clone this repo
     $ mkdir Code
     $ cd Code
     $ git clone https://github.com/DanBuchan/setup_linux.git
-4. Install VSCode from the .deb https://code.visualstudio.com/download
- 
+5. Install VSCode from the .deb https://code.visualstudio.com/download
+    $ sudo apt install code*.deb
+6. Open Setting and connect to WiFi
+7. Open settings and adjust langauge and screen size to 100%
+   In Multitasking activate Hot Corner
+8. Open gnome-tweaks and increase Fonts -> Size -> Scaling Factor to 2.0
+9. Log in Mozilla Account in Firefox
+10. Log in to Amazon account
+11. Log in to Reddit
+12. Install new Gnome extension manager
+    Add Frippery Panel Favourites
+    Add clipboard Indicator
+    Add Hide Activities Button
+    Turn off Ubuntu Dock
+    Turn On Window List
+    Turn on Apps menu

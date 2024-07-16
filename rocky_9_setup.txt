@@ -49,12 +49,7 @@ Add Frippery Panel Favourites
 Add Tray Icons: Reloaded 
 Add clipboard Indicator (get the right one)
 Add Another Window Session Manager
-Add Hide Activities Button (for Gnome 40 or 3.6+)
-<<<<<<< HEAD
-Add No Overview (gnome 40+)
-=======
 Add No overview at start-up
->>>>>>> cf4948fcaa244e6ac40d29f425a2e06c8c902b74
 
 11) Set activites to alt-tab
 Open settings -> Keyboard -> customise shortcuts
@@ -76,7 +71,7 @@ gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/Dialo
 sudo dnf install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-9.noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-9.noarch.rpm
 sudo dnf install ffmpeg ffmpeg-devel ffmpeg-libs
-
+ 
 14) Open Firefox and login to sync
 Make appropriate firefox containers in needed
 Log in to web sites mail.com, gmail, firefox, reddit, twitter, feedly

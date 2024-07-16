@@ -60,7 +60,6 @@ Add Window Session Manager Extension
 Move save button:
 # gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "{'Gtk/DialogsUseHeader':<0>}"
 
-
 11. Gnome tweaks/Exentsions
 Appearance - Adwaita -dark
 Extensions - Auto move windows - on
