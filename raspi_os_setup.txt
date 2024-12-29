@@ -82,10 +82,15 @@ http://zxspectrumnext.online/cspect/
 https://www.youtube.com/watch?v=2a1Kv8HiP5M
 Sounds terrible withou SDL as the audo driver
 
+15. Increase swap space
+https://pimylifeup.com/raspberry-pi-swap-file/
+
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
 scroll to 'Application launch bar' -> 'Preferences'
 Assign favourites
+
+
 
 ---------
 MAYBE
