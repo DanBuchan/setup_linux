@@ -8,6 +8,7 @@ sudo cp /usr/bin/lxterminal /usr/bin/xterm
 # sudo reboot
 
 3. Install MEGA
+https://mega.io/
 
 4. Increase swap space
 https://pimylifeup.com/raspberry-pi-swap-file/
