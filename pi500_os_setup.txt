@@ -7,30 +7,35 @@ Defaults -> For Large Screens -> "Set Defaults"
 sudo cp /usr/bin/lxterminal /usr/bin/xterm
 # sudo reboot
 
-3. Add useful symlinks if we're rebuilding from backup
+3. Install MEGA
+
+4. Increase swap space
+https://pimylifeup.com/raspberry-pi-swap-file/
+
+5. Add useful symlinks if we're rebuilding from backup
 ln -s /media/dbuchan/ID/Applications Applications
 ln -s /media/dbuchan/ID/ROMS ROMS
 ln -s /media/dbuchan/ID/Videos Videos
 ln -s /media/dbuchan/ID/Deluge Deluge
 
-4. Configure GIT
+6. Configure GIT
 # sudo make --directory=/usr/share/doc/git/contrib/credential/libsecret
 # git config --global user.name "Daniel Buchan"
 # git config --global user.email "clone@myself.com"
 # git config --global --unset credential.helper
 # git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
 
-5. get the setup_linux repo
+7. get the setup_linux repo
 git clone https://github.com/DanBuchan/setup_linux.git
 
-6. Install amiga emulator
+8. Install amiga emulator
 sudo apt install fs-uae fs-uae-launcher
 
-7. Set up fs-uae amiga with harddrive, BetterWB and WHDLoad
+9. Set up fs-uae amiga with harddrive, BetterWB and WHDLoad
 https://www.youtube.com/watch?v=jJG8-KG9tLI vids 2 and 3
 Or link th appropriate dirs on the nvme disk
 
-8. Install FUSE
+10. Install FUSE
 sudo apt-get install spectrum-roms fuse-emulator-common fuse-emulator-sdl fuse-emulator-utils
 Get the Russian roms from https://github.com/pcbsd/pbi/tree/master/modules/emulators/fuse/resources/share/fuse
 Copy them to /usr/share/spectrum-roms
@@ -41,7 +46,7 @@ Don't forget to SAVE settings
 See also, for using trdos/PC modes
 https://spectrumcomputing.co.uk/forums/viewtopic.php?t=408
 
-9. Install CSpect, for Spectrum Next emulation
+11. Install CSpect, for Spectrum Next emulation
 http://www.cspect.org/
 Get the Next Roms, and unzip in the cspect dir, a 2GB emput and he 2GB Next distribution
 http://zxspectrumnext.online/cspect/
@@ -51,11 +56,11 @@ Check image-mount.sh for how to mount the image to get things on there
 see:
 https://askubuntu.com/questions/445979/how-to-mount-sd-card-image-created-with-dd
 
-10. Get Mame roms
+12. Get Mame roms
 The 0.174 Mame torrent set on archive.org is compatible with
 lr-mame2016. Place the roms on the NVME and symlink to ~/Retropie/roms/arcade/roms
 
-11. Edit mame rom list
+13. Edit mame rom list
 Loads of the roms are fruit machines or pinball tables (and even cash
 registers) would be worth removing those. Emulationstation uses 
 /opt/retropie/supplementary/emulationstation/resources/mamenames.xml to
@@ -65,25 +70,22 @@ way to ID which roms one wants to exclude
 mkdir ~/roms_excluded
 mamelist_edit.py 
 
-12. Install Moonlight
+14. Install Moonlight
 https://github.com/moonlight-stream/moonlight-docs/wiki/Installing-Moonlight-Qt-on-Raspberry-Pi-4
 Get for bullseye though
 
-13. Install better fonts - NOT MUCH POINT WHILE THERE ISN@T A NICE CODE EDITOR
+15. Install better fonts - NOT MUCH POINT WHILE THERE ISN@T A NICE CODE EDITOR
 https://rubjo.github.io/victor-mono/
 https://www.fontsquirrel.com/fonts/ - down load Droid sans mono and Noto sans
 apt update && sudo apt install ttf-mscorefonts-installer
 https://raspberrytips.com/install-fonts-raspberry-pi/
 sudo dpkg-reconfigure fontconfig-config
 
-14.  Install ZEsarUX
+16.  Install ZEsarUX
 https://github.com/chernandezba/zesarux/releases
 http://zxspectrumnext.online/cspect/
 https://www.youtube.com/watch?v=2a1Kv8HiP5M
 Sounds terrible withou SDL as the audo driver
-
-15. Increase swap space
-https://pimylifeup.com/raspberry-pi-swap-file/
 
 X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
