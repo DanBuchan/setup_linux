@@ -88,6 +88,9 @@ http://zxspectrumnext.online/cspect/
 https://www.youtube.com/watch?v=2a1Kv8HiP5M
 Sounds terrible withou SDL as the audo driver
 
+16. Adjust volume/gain
+https://www.reddit.com/r/raspberry_pi/comments/17w7vsm/raspberry_pi_5_audio_problem/
+
 X. Update panel preferences
 Edit ~/.config/wf-panel-pi.ini to set favourites order
 https://forums.raspberrypi.com/viewtopic.php?t=378786
