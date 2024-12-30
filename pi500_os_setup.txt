@@ -90,6 +90,7 @@ Sounds terrible withou SDL as the audo driver
 
 16. Adjust volume/gain
 https://www.reddit.com/r/raspberry_pi/comments/17w7vsm/raspberry_pi_5_audio_problem/
+pw-cli s 65 Props '{channelVolumes:[0.8,0.8]}'
 
 X. Update panel preferences
 Edit ~/.config/wf-panel-pi.ini to set favourites order
