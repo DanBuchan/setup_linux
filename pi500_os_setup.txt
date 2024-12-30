@@ -31,7 +31,7 @@ ln -s /media/dbuchan/ID/Deluge Deluge
 git clone https://github.com/DanBuchan/setup_linux.git
 
 8. Install amiga emulator
-sudo apt install amiberry
+https://amiberry.com/
 
 9. Install FUSE
 sudo apt-get install spectrum-roms fuse-emulator-common fuse-emulator-sdl fuse-emulator-utils
