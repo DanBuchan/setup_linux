@@ -89,6 +89,5 @@ https://www.youtube.com/watch?v=2a1Kv8HiP5M
 Sounds terrible withou SDL as the audo driver
 
 X. Update panel preferences
-right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
-scroll to 'Application launch bar' -> 'Preferences'
-Assign favourites
+Edit ~/.config/wf-panel-pi.ini to set favourites order
+https://forums.raspberrypi.com/viewtopic.php?t=378786
