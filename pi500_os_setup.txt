@@ -72,9 +72,12 @@ mamelist_edit.py
 https://github.com/moonlight-stream/moonlight-docs/wiki/Installing-Moonlight-Qt-on-Raspberry-Pi-4
 Get for bullseye though
 
+14. Install VS Code
+sudo apt-get code
+
 14. Install better fonts - NOT MUCH POINT WHILE THERE ISN@T A NICE CODE EDITOR
 https://rubjo.github.io/victor-mono/
-https://www.fontsquirrel.com/fonts/ - down load Droid sans mono and Noto sans
+https://www.fontsquirrel.com/ - download Droid sans mono and Noto sans
 apt update && sudo apt install ttf-mscorefonts-installer
 https://raspberrytips.com/install-fonts-raspberry-pi/
 sudo dpkg-reconfigure fontconfig-config
@@ -89,22 +92,3 @@ X. Update panel preferences
 right-click panel -> 'Panel Settings' -> 'Panel Applets' Tab
 scroll to 'Application launch bar' -> 'Preferences'
 Assign favourites
-
-
-
----------
-MAYBE
-
-3. Install MegaSync - NO DEB 11 BUILD
-Download .deb from mega.nz
-sudo dpkg -i megasync-Raspbian_10.0_armhf.deb
-Configure MegaSync
-Ensure 'Start on startup' is selected in setttings
-
-2. Install firefox - ADDON CRASHES
-Log in to firefox account
-
-6. Install retropie - NOT BULLSYE BUILD
-https://retropie.org.uk/docs/Manual-Installation/
-Don't forget to have it compile and install all the additional/experimental cores that you
-want. Move roms to the roms/ dir (or symlink from nvme disk)
