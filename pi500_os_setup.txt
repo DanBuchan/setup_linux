@@ -7,7 +7,9 @@ Defaults -> For Large Screens -> "Set Defaults"
 sudo cp /usr/bin/lxterminal /usr/bin/xterm
 # sudo reboot
 
-3. Install MEGA (SKIP, STILL NO AARCH64 BUILD, SIGH)
+3. Install MEGA (STILL NO AARCH64 BUILD, SIGH)
+login online
+https://mega.nz/fm
 
 4. Increase swap space
 https://pimylifeup.com/raspberry-pi-swap-file/
