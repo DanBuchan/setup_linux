@@ -45,8 +45,11 @@ See: https://www.youtube.com/watch?v=78bweS8-DsU&t=14s
 
 # Install WHDload
 
+https://www.youtube.com/watch?v=PWJ-JqZ-ogI&list=PLfl5qkIeWkBnxwbuGcp7uQVoL8v3-EhDP&index=3
+most things in my whdload directory, including renames kickstarts
+
 1. Add staging and LHA directories.
 2. Reset
-3. Open LHA and install from the WHDload directory
+3. Open LHA and install from the WHDload directory. You'll need to install skick kickstarts DIR and the renamed kickstart rom files
 4. Change WHDload quit key to F9, open shell 'ed S:WHDLoad.prefs'. Remove comment, set rawkey to $58
 5. Move kickstarts and files of devs:kickstarts (http://www.whdload.de/docs/en/need.html)
