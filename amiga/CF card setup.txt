@@ -14,22 +14,10 @@
 1GB for workbench, 15GB for WHDload, Rest of files
 See: https://www.youtube.com/watch?v=78bweS8-DsU&t=14s
 
-1. Get Workbench 3.1 Disks
-2. Get the x-bench PC files (https://www.dropbox.com/s/dup6b8y22kmz8yx/x-bench%20setup%20PC%20folder.zip?dl=0)
-3. In winUAE add a basic w3.1 install to boot with initially (C:\Users\Public\Documents\Amiga Files\WinUAE\hdf\basic31.hdf), don't forget to set the filesystem correctly
-4. In winUAE add the x-bench directory as a hard disk
-5. Boot winUAE
-6. Open a shell and Copy the files we need
-    PC:scsi.device.43.45 to devs:
-	PC:installer to c:
-	PC:loadmodule to c:
-	PC:setpatch to c:
-	PC:lha to c:
-	PC:pfs3aio to L:
-7. ed start up sequence, add
-    c:loadmodule devs:scsi.device.43.45
-8. Reset emulation
-9. (You must be running as Admin at this point) Back to emulation, remove PC folder and add our physical harddrive, set to . Set it to DH3, use UAE(uaehf.device)
+1. Get Workbench 3.2 Disks
+2. boot with install (as the HDtools is there)
+3. For HDTools, Ensure device type is scsi.device
+9. (You must be running as Admin at this point) Add the physical harddrive, set to . Set it to commodore A1200 IDE
 10. Restart the emulator then start the emulation (might take a while)
 11. Open Tools -> HDToolBox (might take a while), you may need to change the scsi.device to uaehf.device in the icon config/information
 12. Select the device -. "Change Drive Type" -> "Define New..."
@@ -43,32 +31,17 @@ See: https://www.youtube.com/watch?v=78bweS8-DsU&t=14s
 17. Set drive:
 	Start Cyl: 2
 	End Cyl: 2081
-18. Click 'Add/Upadte' -> "Add New File System...". Edit to 'l:pfs3aio'. Set DosType '0x50465303'. Then click Ok
-19. Click "Change...", change the "File System:" to 'PFS\03. ChangeM MaxTransder "0x1fe00", click ok.
 20. Change first partition to 'DH0' and ensure is bootable.
-21. Now make new partitions with similar logic. Click "New Partition", 15GB = 2080*10 = 20,800cylinders
+21. Now make new partitions with similar logic. Click "New Partition", 15GB = 2080*15 = 31,200cylinders
 22. Click ok. click "Save changes to drives" (do them all). Click Exit to leave HDtoolBox
 23. Restart emulation
 24. You can now format the drives, and give them names. Quick format given the size.
 
-# Now install WB31 in the new 1GB partition
+# Now install WB32 in the new 1GB partition
 
-https://www.youtube.com/watch?v=jJG8-KG9tLI&list=PLfl5qkIeWkBnxwbuGcp7uQVoL8v3-EhDP
-
-1. In the emulation remove the basic WB. Make CF card device 0. Add install disk for workbench31 to floppy drives and reset the emulation
-2. Select Install English.
-3. Follow the instructions adding the disks as requested
-
-# Now install BetterWB
-
-https://www.youtube.com/watch?v=jJG8-KG9tLI&list=PLfl5qkIeWkBnxwbuGcp7uQVoL8v3-EhDP
-
-1. reset the emulation, add the first 4 disks to drives and return to the emulation.
-2. Open Misc and InstallBetterWB
-3. Follow along with any disk swaps needed
-4. Say yes to the preferences things then reset the emulation
-5. In prefs -> ScreenMode change colours to 256
-5. In prefs -> Icons select GlowIcons
+1. Use the 3.2 installation disk and follow the instructions
+2. Restart the installer to install MMUlibs
+3. Install the ModulesA1200 (boot from the modules disk)
 
 # Install WHDload
 
