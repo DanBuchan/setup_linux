@@ -26,29 +26,20 @@ If you want to boot with the backup hdf, set device to DH0, Boot Priority "0", B
 
 NOTE: Anytime you want to start again you can boot with a Workbench Install floppy, format the Workbench31 partition and start again
 
-1. Install Workbench 3.1 as normal
-2. Install BetterWB
+1. Install Workbench 3.2 as normal
 
 ### Basic Config
 
-1. Open Workbench31 and show hidden and snapshot
+1. Open Workbench32 and show hidden and snapshot
 2. Open Prefs/Screen Mode: High Res Laced, 64 colours
-3. Prefs/Iconset select GlowIcons 
 4. Prefs/ run Full Pallette to fix colours
 
 ### Install basic programs/tools
 
 1. Install LHA (if not provided by BetterWB)
 2. Install ehide.device to DEVS: (for the extra IDE on the TF1230)
-3. Install scsi.device.43.45 to DEVS: (for large volume support)
 4. Install LoadModule to C:
 5. Install Mounter to C:
-6. Install pfs3aio to L:
-7. Install SetPatch to C:
-8. Install lha to C:
-8. Install Installer 44.1 to C: (http://eab.abime.net/showthread.php?t=21788)
-10. In S:startup-sequence After C:SetPatch
-        C:LoadModule devs:scsi.device.43.45
 		
 ### Install 68030 performance patches, http://eab.abime.net/showthread.php?t=113253
 
