@@ -47,9 +47,8 @@ NOTE: Anytime you want to start again you can boot with a Workbench Install flop
 3. Copy StackAttack_020 to C:, add `C:StackAttack_020` to S:Startup-sequence  before DF0 assign check, and `StackAttack_020 AUTO` before LOADWB
 4. FBlit. Copy FBlit and FBlitGui to C:, add fblit.library to Libs:. Then add 'C:Fblit', to S:startup-sequence after ENV: assignment (before Binddrivers)
 5. BlazeWCP. Copy BlazaWCP to C:, add to s:startup-sequence after  before DF0 assign check (and after FBlit?)
-6. SoftIEEE. copy softieee.library to LIBS:. Add SoftIEEE to C:, add softIEEE to S:startup-sequence after  before DF0 assign check. Add 500 bytes to stack 
-7. VBRControl. Copy VBRControl to C:. Add `C:VBRControl ON QUIET` to s:startup-sequence after before DF0 assign check
-8. Executive. Just follow the installer. I placed everything in SYS: but maybe elsewhere would be sensible. (If you run OS 3.2 or OS 3.2.1 you need to set the ramlib task to NoSchedule in ExecutivePrefs, otherwise the system will hang). You can always disable by editing s:startup-sequence
+6. VBRControl. Copy VBRControl to C:. Add `C:VBRControl ON QUIET` to s:startup-sequence after before DF0 assign check
+7. Executive. Just follow the installer. I placed everything in SYS: but maybe elsewhere would be sensible. (If you run OS 3.2 or OS 3.2.1 you need to set the ramlib task to NoSchedule in ExecutivePrefs, otherwise the system will hang). You can always disable by editing s:startup-sequence
 
 ### Install Programs
 
