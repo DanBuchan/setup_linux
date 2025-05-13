@@ -54,13 +54,9 @@ NOTE: Anytime you want to start again you can boot with a Workbench Install flop
 
 ### Install Programs
 
-
 1. Installed DOPUS4 to SYS:Tools/ (http://aminet.net/package/util/dopus/DOpus416JRbin)
 2. Install sysinfo (http://sysinfo.d0.se/) to Workbench31:Tools/
 3. Install MUI3.9 (https://github.com/amiga-mui/muidev) to Workbench31: drive. Doublecheck mui.key is in S:, if not copy it over
-4. Unpack skick346 (http://aminet.net/package/util/boot/skick346). Move kickstarts/ to SYS:Devs/ copy WHDload_renamed_kickstarts/ contents to Workbench:Devs/Kickstarts/.
-5. Unpack WHDload (http://whdload.de/), run installer and install to C: (https://www.youtube.com/watch?v=PWJ-JqZ-ogI&list=PLfl5qkIeWkBnxwbuGcp7uQVoL8v3-EhDP&index=3)
-6. Install sysinfo (http://sysinfo.d0.se/) to Workbench31:Tools/
 
 #### Configure WHDLoad
 
@@ -68,7 +64,6 @@ NOTE: Anytime you want to start again you can boot with a Workbench Install flop
 2. Uncomment MMU for 68030 operation
 
 ### Install Network software
-
 
 1. http://aminet.net/package/comm/tcp/AmiFTP, to SYS:Tools/
 2. AmiSSL, https://github.com/jens-maus/amissl, to SYS:
