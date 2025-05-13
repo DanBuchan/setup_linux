@@ -36,25 +36,21 @@ NOTE: Anytime you want to start again you can boot with a Workbench Install flop
 
 ### Install basic programs/tools
 
-1. Install LHA (if not provided by BetterWB)
+1. Install LHA (if not done so for whdload)
 2. Install ehide.device to DEVS: (for the extra IDE on the TF1230)
-4. Install LoadModule to C:
-5. Install Mounter to C:
+3. Install Mounter to C:
 		
 ### Install 68030 performance patches, http://eab.abime.net/showthread.php?t=113253
 
-1. MUlib - Use installer and add MuMove4k, MuFastZero, MuFastRom. Adding the ones you're asked about to startup but decline FastIEEE as it is not 68030 compatible
-2. CopyMemAIO. Copy to C:, then run in S:startup-sequence after C:SetPatch as C:CopyMemAIO
-3. SaferPatches. Copy to C: and in S:Startup-sequence immediately after C:SetPatch add `SaferPatches Install >NIL:`
-4. Copy StackAttack_020 to C:, add `C:StackAttack_020` to S:Startup-sequence after SetPatch, and `StackAttack_020 AUTO` before LOADWB
-5. FBlit. Copy FBlit and FBlitGui to C:, add fblit.library to Libs:. Then add 'C:Fblit', to S:startup-sequence after ENV: assignment (before Binddrivers)
-6. FText. Copy FText to C: and C:FText to S:Startup-sequence after FBlit is added
-7. BlazeWCP. Copy BlazaWCP to C:, add to s:startup-sequence after setpatch (and after FBlit?)
-8. SoftIEEE. copy softieee.library to LIBS:. Add SoftIEEE to C:, add softIEEE to S:startup-sequence after setpath. Add 500 bytes to stack 
-9. VBRControl. Copy VBRControl to C:. Add `C:VBRControl ON QUIET` to s:startup-sequence after setpatch
-10. TLSFMemPool (for 3.1 only). Install TLSFMen and TLSFMemPool to C:. Then add to s:startup-sequence. I've called them after SetPatch...
-11. Executive. Just follow the installer. I placed everything in SYS: but maybe elsewhere would be sensible. (If you run OS 3.2 or OS 3.2.1 you need to set the ramlib task to NoSchedule in ExecutivePrefs, otherwise the system will hang). You can always disable by editing s:startup-sequence
-12. PeterK's icon.library. Copy libs/icon.library to LIBS:. BetterWB should have already added the relevant text to s:startup-sequence
+1. CopyMemAIO. Copy to C:, then run in S:startup-sequence before DF0 assign check as C:CopyMemAIO
+2. SaferPatches. Copy to C: and in S:Startup-sequence  before DF0 assign check add `SaferPatches Install >NIL:`
+3. Copy StackAttack_020 to C:, add `C:StackAttack_020` to S:Startup-sequence  before DF0 assign check, and `StackAttack_020 AUTO` before LOADWB
+4. FBlit. Copy FBlit and FBlitGui to C:, add fblit.library to Libs:. Then add 'C:Fblit', to S:startup-sequence after ENV: assignment (before Binddrivers)
+5. FText. Copy FText to C: and C:FText to S:Startup-sequence after FBlit is added
+6. BlazeWCP. Copy BlazaWCP to C:, add to s:startup-sequence after  before DF0 assign check (and after FBlit?)
+7. SoftIEEE. copy softieee.library to LIBS:. Add SoftIEEE to C:, add softIEEE to S:startup-sequence after  before DF0 assign check. Add 500 bytes to stack 
+8. VBRControl. Copy VBRControl to C:. Add `C:VBRControl ON QUIET` to s:startup-sequence after before DF0 assign check
+9. Executive. Just follow the installer. I placed everything in SYS: but maybe elsewhere would be sensible. (If you run OS 3.2 or OS 3.2.1 you need to set the ramlib task to NoSchedule in ExecutivePrefs, otherwise the system will hang). You can always disable by editing s:startup-sequence
 
 ### Install Programs
 
