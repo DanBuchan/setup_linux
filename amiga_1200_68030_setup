@@ -65,11 +65,11 @@ NOTE: Anytime you want to start again you can boot with a Workbench Install flop
 
 1. http://aminet.net/package/comm/tcp/AmiFTP, to SYS:Tools/
 2. AmiSSL, https://github.com/jens-maus/amissl, to SYS:
-3. IBrowse, https://www.ibrowse-dev.net/, to SYS:Tools/ (having added SoftIEEE I used the FPU version for now.
+3. IBrowse, https://www.ibrowse-dev.net/, to SYS:Tools/
 4. CardInfo, just moved to C:
-4. Install Roadie (http://aminet.net/package/comm/net/Roadie) to Workbench31:Tools/
-5. Install NetMon (http://aminet.net/package/comm/net/netmon) to Workbench31:Tools/
-6. Install amispeedtest (http://aminet.net/package/comm/net/AmiSpeedTest) to Workbench31:Tools/
+4. Install Roadie (http://aminet.net/package/comm/net/Roadie) to SYS:Tools/
+5. Install NetMon (http://aminet.net/package/comm/net/netmon) to SYS:Tools/
+6. Install amispeedtest (http://aminet.net/package/comm/net/AmiSpeedTest) to SYS:Tools/
 7. ReqToolsUsr, http://aminet.net/package/util/libs/ReqToolsUsr, just followed installer
 8. ClassAct2Demo, http://aminet.net/package/dev/gui/ClassAct2Demo. Just followed installer with defaults
 
@@ -80,7 +80,7 @@ The Prism2 install is somewhat patterned after this (https://youtu.be/soGfXh0CIY
 When you install prism2v2 it builds access keys for the router. If your keys are invalid it'll make them again with each connection and slow down your connection. If you change things then it is worth reinstalling so the keys are regenerated
 
 1. http://aminet.net/package/driver/net/prism2v2
-2. Install Roadshow (http://roadshow.apc-tcp.de/index-en.php) to Workbench31:, run update if needed
+2. Install Roadshow (http://roadshow.apc-tcp.de/index-en.php) to Workbench32:, run update if needed
     copy SYS:Storage/NetInterfaces/prism2 Devs:NetInterfaces/
     Follow this, https://lyonsden.net/getting-an-a1200-online-part-2-adding-an-amiga-tcp-ip-stack/
 	ed Devs:NetInterfaces/prism2
@@ -91,16 +91,9 @@ When you install prism2v2 it builds access keys for the router. If your keys are
 	#configure=dhcp
 	
 	Then, additionally (https://www.youtube.com/watch?v=r_nDWK7COpQ) updated devs:internet/name_resolution to
-	add nameservers for 1.1.1.1, 8.8.8.8, and 192.168.1.254
+	add nameservers for 192.168.1.
 	AND ed Devs:Internet/routes
 	DEFAULT=192.168.1.254
 
   This can now be tested with `wirelessmanager prism2.device` in one shell and `addnetinterface prism2`. And then AmiSpeedTest will let you test the interface.
 
-## TODO 
-
-enable ehide.device to access the IDE on the TF1230 card
-
-xx. Before (first command even) C:setpatch add:
-		C:loadmodule >NIL: devs:ehide.device CURRENTLY COMMENTED OUT FOR NOT WORKING
-		https://www.exxosforum.co.uk/forum/viewtopic.php?t=5495
