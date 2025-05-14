@@ -91,7 +91,7 @@ When you install prism2v2 it builds access keys for the router. If your keys are
 	#configure=dhcp
 	
 	Then, additionally (https://www.youtube.com/watch?v=r_nDWK7COpQ) updated devs:internet/name_resolution to
-	add nameservers for 192.168.1.
+	add nameservers for 192.168.1.125
 	AND ed Devs:Internet/routes
 	DEFAULT=192.168.1.254
 
