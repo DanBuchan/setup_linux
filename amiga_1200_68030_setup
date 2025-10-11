@@ -54,7 +54,8 @@ NOTE: Anytime you want to start again you can boot with a Workbench Install flop
 
 1. Installed DOPUS4 to SYS:Tools/ (http://aminet.net/package/util/dopus/DOpus416JRbin)
 2. Install sysinfo (http://sysinfo.d0.se/) to Workbench31:Tools/
-3. Install MUI3.9 (https://github.com/amiga-mui/muidev) to Workbench31: drive. Doublecheck mui.key is in S:, if not copy it over
+3. Install MUI3.9 (https://github.com/amiga-mui/muidev) to Workbench31: drive. Doublecheck mui.key is in S:, if not copy it over. Check this is the right version
+4. Install https://bitplan.itch.io/gosnap
 
 #### Configure WHDLoad
 
@@ -96,4 +97,5 @@ When you install prism2v2 it builds access keys for the router. If your keys are
 	DEFAULT=192.168.1.254
 
   This can now be tested with `wirelessmanager prism2.device` in one shell and `addnetinterface prism2`. And then AmiSpeedTest will let you test the interface.
+
 
