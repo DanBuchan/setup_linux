@@ -31,6 +31,8 @@ See: https://www.youtube.com/watch?v=78bweS8-DsU&t=14s
 17. Set drive:
 	Start Cyl: 2
 	End Cyl: 2081
+18. Add filesystem pfs3aio with DosType 0x50465303
+19. Change fisk file system to pfs\03 with max transfer 0x1fe00
 20. Change first partition to 'DH0' and ensure is bootable.
 21. Now make new partitions with similar logic. Click "New Partition", 15GB = 2080*15 = 31,200cylinders
 22. Click ok. click "Save changes to drives" (do them all). Click Exit to leave HDtoolBox
@@ -52,3 +54,4 @@ most things in my whdload directory, including renames kickstarts
 2. Reset
 3. Open LHA and install from the WHDload directory. You'll need to install skick kickstarts DIR and the renamed kickstart rom files
 4. Move kickstarts and files of devs:kickstarts (http://www.whdload.de/docs/en/need.html)
+
